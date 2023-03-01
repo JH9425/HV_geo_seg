@@ -1,155 +1,51 @@
 \documentclass[11pt]{article}
  
+%%%% Packages
+\input{sections/2023_HV_geo_seg_0_packages.tex}
 
-%***************************************
-% Packages
-%**************************************** 
-% Format letter types
-\usepackage{fouriernc}
-\usepackage[T1]{fontenc}
+%%%%% Front matter
+\input{sections/2023_HV_geo_seg_1_frontmatter.tex}
 
-% Set page size and margins 
-\usepackage{setspace}
-\usepackage{hyphenat}
-\usepackage{ragged2e}
-
-\usepackage[top=0.85in,left=0.8in,right=0.8in,footskip=0.75in,marginparwidth=2in]{geometry}
-
-% Format options
-%\usepackage{mathpazo}
-\usepackage{amsmath,amssymb,amsthm,bbm}
-\usepackage{eurosym}
-\usepackage{mathtools}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-
-
-
-% Set format options for pictures and figures
-\usepackage{graphicx}
-
-% Set bibliography and appendix packages
-\usepackage{apacite} 
-\bibliographystyle{apacite}
-\usepackage{natbib} 
-\setcitestyle{round}
-\usepackage{appendix}
-\usepackage[right]{lineno}
-
-
-%Glue footnotes to the bottom of the text
-\usepackage[bottom]{footmisc}
-
-%Use additional packages
-\usepackage{array}
-\usepackage{multirow} %merge columns
-\usepackage{float} %place table at exact spots
-\usepackage{longtable} %used to split long table onto two pages
-\usepackage{arydshln}
-\usepackage{booktabs}
-\usepackage[most]{tcolorbox}
-\usepackage{lscape}
-
-\usepackage[labelfont=bf]{caption,subcaption}
-
-\usepackage[unicode,plainpages=false,hypertexnames=false]{hyperref,colortbl}
-\hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
-
-\makeatletter
-\let\myinput\@@input
-\makeatother
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-										% START OF THE DOCUMENT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-											   % PREAMBLE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%****************************************
-% Title 
-%****************************************
-\title{\vspace{-5pt}\textbf{On the Margins of Geographic Market Segmentation in the EU}\thanks{The data was obtained from Aimark.}}
-
-
-%****************************************
-% Authors
-%****************************************
-\author{
-	\begin{tabular}{c@{\extracolsep{50pt}}c}
-	\textbf{Joris Hoste}\thanks{Electronic Adress: \texttt{joris.hoste@kuleuven.be}} & 
-	\textbf{Frank Verboven}\thanks{Electronic Adress: \texttt{frank.verboven@kuleuven.be}} \\
-	KU Leuven & KU Leuven \\
-	& CEPR
-	\end{tabular}}
-
-\vspace{40pt}
-\date{\today}
-
-
-%****************************************
-% Start document
-%****************************************
+%%%%% Body of the paper
+%%% Tuning parameters for word splitting
 \tolerance=1
 \emergencystretch=\maxdimen
-\hyphenpenalty=10
+\hyphenpenalty=10 
 \hbadness=10000
 
+%%%% Document
 \begin{document}
+ 
+% Set line spacing
 \setstretch{1.2}
 
+% Title + abstract
 \maketitle
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-											   % Abstract
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{abstract}
-	\begin{spacing}{1}
-        We analyze the degree of geographic market integration in European final goods markets. We propose a unifying framework to analyze geographic market segmentation both in terms of Law of One Price (LOP) deviations and choice set differences. To this end, we decompose regional cost-of-living differences into (1) LOP deviations, (2) pure taste differences and (3) choice set differences. In turn, we detect geographic market segmentation by considering terms whether LOP deviations and choice set differences are larger across international region pairs compared to intranational pairs. Using regionally disaggregate consumption data on 68 fast-moving consumer goods, we estimate that overall cost-of-living differences across Belgium, France, Germany and the Netherlands are more than seven times larger compared to intranational region pairs. Roughly 60\% of the cost-of-living differences are explained by pure taste differences and the other 40\% by the margins of geographic market segmentation. While choice set differences account for 38\% of the variation, LOP deviations explain a mere 2\%. Our results highlight the importance of choice set differences relative to LOP deviations as margins of geographic market segmentation and the presence of large cross-country taste differences across European countries.
-    \end{spacing}
-\end{abstract}
-
-\begin{spacing}{1}
-	\noindent\textbf{JEL codes}: D12, F15 and R32\\
-\noindent\textbf{Keywords}: Market segmentation, Cost-of-living, Law of One Price deviations, Taste differences and Choice set variation
-\end{spacing}
-
-\newpage
+\input{sections/2023_HV_geo_seg_2_abstract.tex}
 
 % table of contents
+\newpage
 \begin{spacing}{1}
-\tableofcontents{}
+	\tableofcontents{}
 \end{spacing}
-\newpage 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-									    % Introduction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction 
+\newpage 
 \linenumbers
-\section{Introduction}  
-Understanding the presence of geographic market segmentation and the process towards geographically integrated international markets has been a question of central importance to both researchers and policymakers. For instance, the European Single Market (ESM) intends to forge a geographically integrated market from the national goods markets of its member states. A geographically integrated market is a market in which, beyond the costs associated with physically moving the product to the destination market, geography or the nationality of the buyer does not affect the terms at which producers sell their products (see \citet{Flam1992} and \citet{Goldberg1997}). Conversely, if geography or the nationality of the buyer has residual predictive power for the terms at which transactions take place, markets are geographically segmented. Prior work has relied on two strategies to assess whether markets are geographically segmented. One strategy is to investigate whether prices of identical products differ significantly more across countries than across regions of the same country (e.g. \citet{Engel1996} and \citet{Goldberg1997}). Comparing Law of One Price (LOP) deviations across countries to LOP deviations across regions of the same country, \citet{Beck2020} and \citet{Fontaine2020} find considerably higher deviations across countries in Europe. Another strategy is to investigate to what extent trade shares discontinuously fall at national borders (\citet{McCallum1995}). For instance, \citet{Santamaria2023} show that trade shares are substantially lower when goods cross a national European border compared to when they only cut across a regional border.
+\input{sections/2023_HV_geo_seg_3_introduction.tex}
+
+% Data section
+\input{sections/2023_HV_geo_seg_4_data.tex}
+
+% Reduced-form evidence
+\input{sections/2023_HV_geo_seg_5_redform.tex}
+
+% Theoretetical framework
+\input{sections/2023_HV_geo_seg_6_theory.tex}
+
+% Structural Estimation 
+\input{sections/2023_HV_geo_seg_7_structest.tex}
+
 
 \newpage 
 

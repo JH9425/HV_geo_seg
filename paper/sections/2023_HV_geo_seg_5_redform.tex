@@ -1,0 +1,169 @@
+\section{Reduced-form evidence}\label{sec:reduced_form}
+
+In this section, we confirm the empirical relevance of LOP deviations and choice set differences as margins of geographic market segmentation. We confirm that price differences for identical product varieties are larger across international region pairs compared to intranational pairs. Importantly, there are also substantial differences in the set of barcodes and firms that are commonly available to consumers between intranational and international pairs. 
+
+\subsection{LOP Deviations}
+To compute LOP deviations, we first aggregate the data to the product variety-NUTS2 region-year level and by computing average prices within each cell. Then, we compute for each product variety purchased in a given year the log price differences between all NUTS2 region pairs for which there exists a price observation in both regions. Figure \ref{fig: app_redform_dp_unw_p} shows that the distribution of LOP deviations is centered around zero with most mass falling in between $-0.25$ and $0.25$ log points. To understand whether LOP deviations are larger across international region pairs versus intranational pairs, we compute the standard deviation LOP deviations within product category-region pair-year cells across product varieties.\footnote{In contrast to \citet{Gopinath2011} and \citet{Beck2020} who focus on absolute log price deviations, we choose to compute standard deviations as the measure of dispersion to be consistent with section \ref{sec:border_effects_eu}.} Figure \ref{fig: redform_lop} shows the conditional distribution of the standard deviations for international pairs in red and intranational region pairs in gray. Price dispersion is larger for international region pairs as the conditional distribution for international pairs as both its mode and tail are shifted to the right compared to the distribution for intranational pairs. While a little under 70\% of LOP deviations fall between $[-0.124,0.124]$ for intranational pairs, this spread rises to $[-0.281,0.281]$ for international pairs.
+
+\begin{figure}[H]
+    \centering
+    \caption{Standard deviation of LOP deviations}
+    \label{fig: redform_lop}
+    \scalebox{0.90}{\input{figures/descriptives/P1_2_3_2_2_sd_nr.tex}}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the conditional distributions of the standard deviation of log LOP deviations across NUTS2-region pairs. The unit of observation is a product category-NUTS2 region pair steps. We bin the standard deviation of log price differences within product category-region pairs-year cells into 40 separate bins and compute for each bin the number of observations that fall into each bin. Finally, we winsorize the standard deviations at a standard deviation of 1.}
+        \end{spacing}}
+ \end{figure} 
+
+To see whether the increased price dispersion reflects geographic market segmentation, we need to account for the fact that international region pairs are also more distant from one another compared to intranational region pairs. To this end, we follow \citet{Engel1996} and estimate: 
+\begin{linenomath*}
+    \begin{equation}\label{eq:border_effect_prices}
+        \sigma_{pll',t} = \beta B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} +
+                    \lambda_{p,t} + \varepsilon_{pll',t}
+    \end{equation}
+\end{linenomath*}
+\noindent where 
+
+\begin{linenomath*}
+    \begin{equation*}
+        \sigma_{pll',t} \equiv 
+            \sqrt{
+                \frac{1}{N^{ll'}_{p}}
+                \sum_{i \in \mathcal{B}^{ll'}_{p}} \left(\text{log}\left(p_{il',t}/p_{il,t}\right) - \widehat{\mathbb{E}_{pll',t}}\left[\text{log}\left(p_{il',t}/p_{il,t}\right)\right]
+                \right)^2
+            }
+    \end{equation*}
+\end{linenomath*}
+is the standard deviation of log LOP deviations for region pair $ll'$ within product category $p$ in year $t$. We include a border dummy $B_{ll'}$ which is one when region pair $ll^{'}$ is an international pair and zero otherwise. To control for the distance between region pairs, we include $d_{ll'}$ which is the log of the population-weighted great circle distance between the regions. We focus on variation across region pairs within product category-year observations by including product category-year fixed effects. Finally, we add region fixed effects $\theta_l$ and $\theta_{l'}$ to account for the fact that certain regions might be characterized by always higher price dispersion.\footnote{Regions with disproportionally large urban centers might always have higher prices and therefore always larger price differences with any other region.}
+
+We present the baseline OLS estimates in columns (1)-(3) of Table \ref{tab: border_effects_sd}. Column (1) shows the results when we estimate equation \ref{eq:border_effect_prices} and only include log distance $d_{ll'}$. In this case, a 100\% increase in the distance between two regions leads to a statistically significant increase in the variance of log LOP differences of 8.4ppt. In line with Figure \ref{fig: redform_lop}, column (2) shows that the standard deviation of log price differences is 15ppt larger for international pairs compared to international pairs when we only include the border dummy. Finally, in column (3) we include both distance and the border dummy. Whereas the distance effect drops considerably, the border effect remains large and precisely estimated at 15.4ppt.\footnote{Reassuringly, these border effects are quantitatively in line with the RDD estimates from \citet{Beck2020} which reports an average absolute price difference of around 18\%.} Figure \ref{fig: app_redform_sd_years} and Figure \ref{fig: app_redform_sd_cats} explore variation in the average border effect over time and across product categories respectively. In line with the results from \citet{Beck2020}, there is little systematic variation over the years. There is, however, considerably more cross-category heterogeneity. Figure \ref{fig: app_redform_sd_cats} shows that border effects estimates are significantly different from zero in all but one case and range from a low of 3.2ppt for packaged meat to a high of 42.5 for mineral water. Importantly, Figure \ref{fig: app_redform_sd_cats} also shows that while there is significant cross-sectional variation in the border effects, there is little systematic cross-category variation in LOP deviations for intranational pairs.
+
+Columns (4) - (6) present two robustness checks. First, column (4) considers cross-country heterogeneity in the border effect. If there is substantial cross-country heterogeneity in price dispersion for intranational region pairs, \citet{Gorodnichenko2009} shows that the border effect estimate from equation \ref{eq:border_effect_prices} is contaminated with average cross-country differences in price dispersion for intranational region pairs.\footnote{This point is related to the broader issue of a simple differences-in-means regression that suffers from heterogeneous treatment effect bias under non-random treatment assignment.} To isolate the former effect, we follow \citet{Gorodnichenko2009} and augment equation \ref{eq:border_effect_prices} with country dummies that are one if region $l$ and $l'$ belong to that country and zero otherwise for all countries apart from Germany, which functions as the baseline country. In this way, the border variable $B_{ll'}$ measures the average difference in price dispersion for international region pairs relative to the average price dispersion for German intranational region pairs. The other country-specific border effects are obtained from $\beta - \gamma_{c(l)}$. Column (4) shows that the average border effect, now relative to average price dispersion for German intranational region pairs, is 12.5ppt. While the country dummies indicate that cross-country heterogeneity in price dispersion for intranational pairs exists, column (4) also shows that all border effects are positive and precisely estimated relative to average price dispersion for intranational pairs in each country. Second, in columns (5)-(6) we consider an alternative level of aggregation. To obtain the baseline results, we collapsed the retail chain dimension. However, \citet{Dellavigna2019} provides evidence that LOP deviations are much larger across chains compared to within chains. Hence, by averaging across stores, we might artificially increase price dispersion, potentially leading to an inconsistent border effect. In columns (5) and (6), we re-estimate equation \ref{eq:border_effect_prices} and its augmented version after computing LOP deviations within retail chains.\footnote{The number of observations is lower in this sample compared to the initial sample. This is because, by computing price differences within retail chains, it occurs that we cannot compute LOP deviations anymore for some product varieties.} We find that the average border effect falls from 15.4ppt to 13.1ppt (column (3) relative to (5)) and the spread changes from $[0.125,0.161]$ to $[0.066,0.262]$ (column (4) relative to (6)) but remains precisely estimated.
+
+\begin{table}
+    \centering
+    \caption{Border effect: Standard deviation of log price differences}
+    \label{tab: border_effects_sd}
+    \begin{spacing}{1.1}
+        \begin{tabular}{lcccccc} \toprule
+            & \multicolumn{4}{c}{Pooled} & \multicolumn{2}{c}{Store} \\ 
+            \cmidrule(lr){2-5} \cmidrule(lr){6-7}
+            $\sigma^{p}_{p(i)ll',t}$ & (1) & (2) & (3) & (4) & (5) & (6) \\ \midrule
+            \input{tables/descriptives/P1_2_3_2_1_sd_agg.tex}
+        \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table presents the OLS estimates from equation \ref{eq:border_effect_prices}. Columns (1)-(4) show the results from estimating the model when we compute price differences based on prices that are averaged across stores. $\hat{\sigma}^p_{\text{within}}$ represents the average value of the left-hand side variable for the intranational pairs in all columns, except in columns (4) and (6), (9) and (12). In these columns, this number represents the average for the baseline country which is Germany. We cluster standard errors at the region pairs and present them in brackets below the coefficient estimates. Reported significance levels are at the $p<0.1^{*}$,$p<0.05^{**}$ and $p<0.01^{***}$ levels.} 
+    \end{spacing}}
+ \end{table}
+
+\subsection{Choice set differences}
+While LOP deviations are larger across international region pairs compared to intranational pairs, the set of product varieties for which we can compute LOP deviations in the first place is quite small across international region pairs. To illustrate this, we compute two intuitive choice set dissimilarity measures: one based on counts and another based on expenditures. First, consider the product variety level and define $\mathcal{B}_{pl,t}$ as the set of the consumed product varieties in product category $p$ in region $l$ at time $t$ and $\mathcal{B}^{ll'}_{p}$ as the set of product varieties that are available in region $l$ and region $l'$.\footnote{Clearly,the set of commonly available $\mathcal{B}^{ll'}_{p}$ product varieties is computed based on a set of $\mathcal{B}_{pl,t}$'s. There are two dimensions along which this set could be defined. First, one could define the set of common varieties as a time-varying set (see e.g. \citet{Broda2010, Redding2020}) or as a set that does not vary across time (e.g. \citet{Argente2021}). Second, one could define the set of common varieties at the country (e.g. \citet{Broda2010, Redding2020}) or on the regional level (e.g. \citet{Handbury2015, Feenstra2020}). Because of the stability in coefficients on the border dummy over time for the absolute lof price differences (see supra) and for choice set differences (see infra), we decide to abstract from variation in the choice sets over time. We choose to define the set of common product varieties on the regional level. In this way, we allow for within-country variation in choice sets across regions. Nevertheless, the results are robust to an alternative definition.} We define the dissimilarity measures based on the counts $N^{B,ll'}_{p,t}$ and based on expenditure $E^{B,ll'}{p,t}$ as follows: 
+\begin{linenomath*}
+\begin{equation*}
+    N^{B,ll'}_{p,t} \equiv 
+        1 - \frac{\sum_{i \in \mathcal{B}_{pl,t}} 
+                    \mathbbm{1}\left(i \in \mathcal{B}_{pl,t} 
+                                        \cap i \in \mathcal{B}^{ll'}_p\right)}
+                 {\sum_{i \in \mathcal{B}_{pl,t}} 
+                    \mathbbm{1}\left(i \in \mathcal{B}_{pl,t}\right)}, \quad 
+    \lambda^{B,ll'}_{p,t} \equiv 
+        1 - \frac{\sum_{i \in \mathcal{B}_{pl,t}}P_{il,t}Q_{il,t} 
+                    \mathbbm{1}\left(i \in \mathcal{B}_{pl,t} 
+                                        \cap i \in \mathcal{B}^{ll'}_p\right)}
+                 {\sum_{i \in \mathcal{B}_{pl,t}}P_{il,t}Q_{il,t} 
+                    \mathbbm{1}\left(i \in \mathcal{B}_{pl,t}\right)}
+\end{equation*}
+\end{linenomath*}
+The dissimilarity measures have bounded support between zero and one: if any two regions only consume common varieties, the dissimilarity measures are equal to zero and they are at their maximum value of one if the regions do not have any product variety in common. The only difference between the two measures is that the measure based on expenditures weights the barcodes at their importance in the consumption basket.  Define $\mathcal{F}_{pl,t}$ as the set of the firms in product category $p$ selling in region $l$ at time $t$ and $\mathcal{F}^{ll'}_{p}$ as the set of firms that sell both region $l$ and region $l'$, then the dissimilarity measures at the firm level are similarly defined as: 
+\begin{linenomath*}
+    \begin{equation*}
+        N^{F,ll'}_{p,t} \equiv 
+            1 - \frac{\sum_{f \in \mathcal{F}_{pl,t}} 
+                        \mathbbm{1}\left(f \in \mathcal{F}_{pl,t} 
+                                            \cap f \in \mathcal{F}^{ll'}_p\right)}
+                     {\sum_{f \in \mathcal{F}_{pl,t}} 
+                        \mathbbm{1}\left(f \in \mathcal{F}_{pl,t}\right)}, \quad 
+        \lambda^{F,ll'}_{p,t} \equiv 
+            1 - \frac{\sum_{f \in \mathcal{F}_{pl,t}}P_{fpl,t}Q_{fpl,t} 
+                        \mathbbm{1}\left(f \in \mathcal{F}_{pl,t} 
+                                            \cap f \in \mathcal{F}^{ll'}_p\right)}
+                     {\sum_{f \in \mathcal{F}_{pl,t}}P_{fpl,t}Q_{fpl,t} 
+                        \mathbbm{1}\left(f \in \mathcal{F}_{pl,t}\right)}
+    \end{equation*}
+    \end{linenomath*}
+Figure \ref{fig: redform_choice} shows the conditional distributions of the dissimilarity measures across product category-year for intranational pairs in grey and international pairs in red. Starting with panel (a), which plots the count-based measure at the product variety level, there is a clear separation between the two conditional distributions. Whereas intranational pairs share more than 75\% of product varieties, it is very uncommon for international pairs to share more than 25\% of product varieties. Panel (b) confirms that this disparity continues to hold when we measure the dissimilarity in terms of expenditures. Moreover, Figures \ref{fig: app_redform_bar} - \ref{fig: app_redform_bar_b} plot the conditional distributions for a subsample of private label and branded product varieties and a subsample of branded product varieties only and confirm the same pattern.\footnote{The fact that the set of common barcodes across international pairs is small resonates well with prior work that studies LOP deviations across European countries (e.g. \citet{Cavallo2014, Beck2020})} Panels (c) and (d) show the conditional distributions of the dissimilarity measures at the firm level. While the count-based distributions remain equally separated, the expenditure-based conditional distributions overlap much more. Thus, in contrast to the set of common product varieties, the small set of common firms attracts a much larger share of total expenditure in each region. 
+\begin{figure}
+    \centering
+    \caption{Choice set dissimilarity}
+    \label{fig: redform_choice}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{$N^{B,ll'}_{p,t}$}
+         \label{fig: redform_bar_c}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{$\lambda^{B,ll'}_{p,t}$}
+         \label{fig: redform_bar_e}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex}}
+     \end{subfigure} \\
+     \begin{subfigure}[t]{.49\textwidth}
+        \centering
+        \caption{$N^{F,ll'}_{p,t}$}
+        \label{fig: redform_firm_c}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_3_4_1_firm_n_n_na.tex}}
+    \end{subfigure}
+    \begin{subfigure}[t]{.49\textwidth}
+        \centering
+        \caption{$\lambda^{F,ll'}_{p,t}$}
+        \label{fig: redform_firm_e}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_3_4_1_firm_n_s_na.tex}}
+    \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distribution for the count-based dissimilarity measures across NUTS2-region pairs. The unit of observation is at the product category-region $l$-region $l'$-year level. The grey bars plot the distribution for intranational pairs and the red bars do the same for international pairs. Panel (a) plots the count-based dissimilarity measure and panel (b) plots the expenditure-based dissimilarity measure for product varieties. Panel (c) and (d) do the same for firm-level dissimilarity measures. Note that panel (d) has two y-axes: the left y-axis scales with the different country region pairs and the right y-axis scales with the same country region pairs. }
+        \end{spacing}}
+\end{figure} 
+To control for increased geographic differences across international region pairs, we re-estimate equation \ref{eq:border_effect_prices} for the four dissimilarity measures: 
+\begin{linenomath*}
+\begin{equation}\label{eq:border_effect_barcodes}
+    y_{pll',t} = \beta B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} +
+                    \lambda_{p,t} + \varepsilon_{p(i)ll',t}
+\end{equation}
+\end{linenomath*}
+where $y_{pll',t} = \left\{N^{B,ll'}_{p,t},\lambda^{B,ll'}_{p,t},N^{F,ll'}_{p,t},\lambda^{F,ll'}_{p,t}\right\}$. As before, we include a border dummy $B_{ll'}$ which is one when NUTS2-region $l$ and NUTS2-region $l'$ are an international region pair and zero otherwise, $d_{ll'}$, the log of the population-weighted distance between NUTS2-region $l$ and NUTS2-region $l'$ and product category-year $\lambda_{p,t}$ and region fixed effects $\theta_l$ and $\theta_{l'}$. 
+
+Table \ref{tab: border_effects_choice} presents the baseline OLS estimates. First, columns (1), (4), (7) and (10) show that more distant regions are characterized by larger choice set differences independent of the dissimilarity measure used. Even if the distance coefficient considerably drops when conditioning on national borders in columns (2), (5), (7) and (11), it remains positive and significantly different from zero. For instance, column (2) shows that a 100\% increase in distance or a doubling of the distance between two regions increases choice set differences in terms of product variety counts by 5.1\%. Second, in line with Figures \ref{fig: redform_bar_c} and \ref{fig: redform_bar_e} we estimate large border effects for the product variety level dissimilarity measures. Within product category - years, column (2) illustrates that the overlap in choice sets decreases by more than 71.7ppt for international pairs. In other words, intranational pairs have more than five times as many product varieties in common compared to international pairs.\footnote{This number is obtained from the following calculation: $\frac{0.178+0.717}{0.178} = 5.028$} The border effect for expenditure-based choice set differences in column (5) is similarly estimated at 73.8ppt. Although there is cross-country heterogeneity in the average choice set dissimilarity for intranational pairs, columns (3) and (6) confirm that the border effects are positive, independent of the chosen baseline country. Third, the border effects for the dissimilarity measures at the firm level are lower relative to the ones at the product variety level. Column (8) shows that intranational pairs have more than five times as many firms in common compared to international pairs.\footnote{This number is obtained from the following calculation: $\frac{0.149+0.649}{0.149} = 5.35$} However, consistent with Figure \ref{fig: redform_firm_e} the firm-level border effects in terms of expenditure are substantially lower. Column (10) illustrates that consumers across international pairs spend on average more than 50\% on product varieties provided by firms common to both regions. Nevertheless, large differences remain as consumers in intranational pairs spend on average more than 97\% on product varieties provided by common firms. Columns (9) and (12) confirm that these results are robust to accounting for cross-country heterogeneity in differences for intranational pairs. \footnote{Throughout the analysis, Belgium seems to consistently have lower estimated border effects. The country dummy indicates that variation across Belgian region pairs is consistently higher compared to other countries. Therefore, the border effects from the Belgian perspective are lower.}
+
+\begin{landscape}
+    \begin{table}
+        \centering
+        \caption{Border effect: Choice set dissimilarity}
+        \label{tab: border_effects_choice}
+        \begin{spacing}{1.1}
+            \scalebox{0.8}{
+            \begin{tabular}{lcccccccccccc} \toprule
+                & \multicolumn{3}{c}{$N^{B,ll'}_{p,t}$} & \multicolumn{3}{c}{$\lambda^{B,ll'}_{p,t}$}   
+                & \multicolumn{3}{c}{$N^{F,ll'}_{p,t}$} & \multicolumn{3}{c}{$\lambda^{F,ll'}_{p,t}$} \\ 
+                \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+                $y_{p(i)ll',t}$ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12) \\ 
+                \midrule
+                \input{tables/descriptives/P1_2_3_3_1_choice_agg.tex}
+            \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table presents the OLS estimates from equation \label{eq:border_effect_barcodes}. Columns (1) - (3) and columns (4) - (6) estimate the results for the count-based and expenditure dissimilarity measure on the product variety level respectively. Columns (7) - (9) and columns (10) - (12) estimate the results for the count-based and expenditure dissimilarity measure on the firm level respectively. $\hat{\mathbb{E}}\left(y_{p(i)ll',t}|\text{same}\right)$ represents the average value of the left-hand side variable for the same country region pairs in all columns, expect in columns (3), (6), (9) and (12). In these columns, this number represents the average for the baseline country which is Germany. We cluster standard errors at the region pairs and present them in brackets below the coefficient estimates. Reported significance levels are at the $p<0.1^{*}$,$p<0.05^{**}$ and $p<0.01^{***}$ levels.} 
+        \end{spacing}}
+     \end{table}
+\end{landscape}
+
+In accordance with the results for the standard deviation of log price differences, there is much more heterogeneity across product categories compared to the time series. Figure \ref{fig: app_redform_choice_years} shows that the border effects are very stable for the count- and expenditure-based dissimilarity measures, independent of whether they are computed at the product variety or the firm level. In contrast, Figures \ref{fig: app_redform_choice_bar_cats_n} - \ref{fig: app_redform_choice_firm_cats_e} illustrate that, consistently across all the dissimilarity measures, there is substantial variation across product categories. For instance, Figure \ref{fig: app_redform_choice_firm_cats_e}, which plots the expenditure-based dissimilarity measure at the firm level, shows that choice set overlap varies from a little under 20ppt for deodorants to 60ppt for toilet paper all the while both product categories have a very similar choice set overlap for intranational pairs.

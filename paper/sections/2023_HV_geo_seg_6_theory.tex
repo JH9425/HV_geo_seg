@@ -1,0 +1,308 @@
+\section{Theoretical Framework}\label{sec:theory}
+The previous section showed that both LOP deviations and choice set differences are larger across international region pairs compared to intranational pairs. To jointly analyze both margins of geographic market segmentation, we now specify a flexible model of consumer preferences that provides a theoretically-grounded expression for regional cost-of-living differences. We use the structure of the model to decompose this expression into (1) LOP deviations, corrected for substitution effects, (2) pure taste differences and (3) choice set differences. 
+
+\subsection{Consumer preferences}
+As mentioned before, we model preferences as a nested CES utility system for three reasons. First, nested CES utility systems have shown the ability to fit empirical patterns in international economics while maintaining empirical tractability. In particular, \citet{Atkeson2008} and \citet{Hottman2016} show that nested CES system can rationalize the positive correlations between markups and firm size uncovered in \citet{Deloecker2012} and \citet{Deloecker2016} and between markup elasticities and firm size (see \citet{Berman2012, Amiti2019}). At the same, with data on prices and quantities, the elasticities of substitution are the only structural parameters one needs to estimate. Second, the nested CES utility system is part of a family of preference systems that admits an intuitive way to appraise the importance of taste differences for cost-of-living differences. \citet{Redding2020} show how, given a normalization of the average taste level across regions, the importance of taste differences can be uncovered by comparing cost-of-living differences obtained from the general nested CES price index to the Sato-Vartia CES price index, which restricts tastes to be equal across regions. Finally, CES systems are the workhorse model to understand differences in product variety in international trade (e.g. \citet{Feenstra1994,Broda2006}), urban economics (e.g. \citet{Handbury2015}) and macroeconomics (e.g. \citet{Romer1990,Jaravel2019}). To gauge the role of choice set differences, it intuitively depends on expenditure shares on the common set of product varieties and firms and estimates of the elasticities of substitution at each level of aggregation. 
+
+\paragraph{Preferences}   Within each region consumers derive utility from a triple nested utility system. We assume that the final good aggregator is separable across the set of product categories $\mathcal{P}$, but we leave its particular functional form unspecified:
+\begin{linenomath*}
+    \begin{equation*}
+        U(C_{l,t}) =  \mathit{F}_{l,t} \left(\left\{C_{pl,t}\right\}_{p = 1}^{\mathcal{P}}\right)
+    \end{equation*}
+\end{linenomath*}
+\noindent where $\mathit{F}_{l,t}(\cdot)$ is the final good aggregator which can be region-specific and time-varying.\footnote{A Cobb-Douglas aggregator would satisfy this condition.} $C_{pl,t}$ is the real consumption level in region $l$ of product category $p$ at time $t$. Each product category-level consumption bundle $C_{pl,t}$ comprises two CES-utility nests that sequentially aggregate consumption of individual product varieties. In the middle nest, consumers allocate $C_{pl,t}$ across different firms that supply at least one product variety in that product category and region subject to the following aggregator: 
+\begin{linenomath*}
+    \begin{equation*}
+        C_{pl,t} = \left(\sum_{f\in\mathcal{F}_{pl,t}}
+                        \left(\phi_{fplt}C_{fpl,t}\right)^{\frac{\eta_p-1}{\eta_p}}
+                    \right)^{\frac{\eta_p}{\eta_p-1}}
+    \end{equation*} 
+\end{linenomath*}
+\noindent where $\mathcal{F}_{pl,t}$ is the set of firms that supply at least one product variety in product category $p$ in region $l$ at time $t$. $\phi_{fpl,t}$ represents consumer taste for product varieties supplied by firm $f$ in product category $p$ in region $l$ at time $t$ and $\eta_p$ denotes the constant elasticity of substitution across firms which is allowed to vary across product categories. In the lower nest, consumers allocate $C_{fpl,t}$ across product varieties, denoted by $i$ subject to another CES-utility aggregator: 
+\begin{linenomath*}
+    \begin{equation*}
+        C_{il,t} = \left(\sum_{i\in\mathcal{B}_{fpl,t}}
+                    \left(\phi_{il,t}C_{il,t}\right)^{\frac{\sigma_p-1}{\sigma_p}}
+                  \right)^{\frac{\sigma_p}{\sigma_p-1}}
+    \end{equation*} 
+\end{linenomath*}
+\noindent where $\mathcal{B}_{fpl,t}$ is the set of product varieties supplied by firm $f$ in product category $p$ in region $l$ at time $t$. $\phi_{il,t}$ captures consumer taste for product variety and $\sigma_p$ is the elasticity of substitution across product varieties which is also allowed to vary across product categories. $C_{il,t}$ is the corresponding consumption level of variety $i$ in region $l$ at time $t$.
+
+\paragraph{Cost-of-living} Given the preference structure and the assumption that consumers maximize utility subject to their budget constraint $P_{l,t}C_{l,t} \leq I_{l,t}$, the product category-level cost-of-living for consumers in region $l$ at time $t$ is given by: 
+\begin{linenomath*}
+    \begin{equation*}
+        P_{pl,t} = \left(\sum_{f\in\mathcal{F}_{pl,t}}
+                        \left(\frac{P_{fpl,t}}{\phi_{fpl,t}}\right)^{1-\eta_p}\right)
+                    ^{\frac{1}{1-\eta_p}}, \qquad \qquad \text{where} \qquad
+        P_{fpl,t} = \left(\sum_{i\in\mathcal{B}_{fpl,t}}
+                        \left(\frac{P_{il,t}}{\phi_{il,t}}\right)^{1-\sigma_p}\right)
+                    ^{\frac{1}{1-\sigma_p}} 
+    \end{equation*}
+\end{linenomath*}
+\noindent and where $P_{il,t}$ is the price of product variety $i$ in region $l$ at time $t$. 
+
+%\subsection{Market Structure}
+%We specify a parsimonious market structure in which we take the current set of firms and product varieties as given and in which firms set prices under Bertrand competition within countries and product categories. We choose this market structure for a couple of reasons. First, firms are allowed to be large relative to the market but they cannot affect the overall price level in the economy given the separable final good aggregator. Second, firms can have markups above one, but we abstract from retail markups which are subsumed in the marginal cost term. We do this because we want to stay close to the literature on international price differences which typically abstract from differences in retail markups (e.g. \citet{Verboven1996, Goldberg2001}) and because the international trade literature has often considered retail markups to be part of the distribution costs necessary to enter markets (\citet{Anderson2004}). Third, we assume that firms set prices at the country level. In this way, our market structure is in line with the mounting evidence that firms set prices uniformly across regions within countries (see \citet{Dellavigna2019}). Firms' profit maximization problem is given by: 
+%\begin{linenomath*}
+%    \begin{equation*}
+%        \max_{P_{il,t}} \quad \Pi_{npl,t} = 
+%            \sum_{l \in \mathcal{L}_n} \sum_{i \in \mathcal{B}_{fpl,t}} 
+%            \left(P_{il,t} - MC_{il,t}\right)C_{il,t}
+%    \end{equation*}
+%\end{linenomath*}
+%where $\mathcal{L}_n$ is the set of regions in country $n$, $P_{il,t}$ and $C_{il,t}$ are the unit price and quantity demanded of product variety $i$ in location $l$  and $MC_{il,t}$ is the marginal cost of providing product variety $i$ to region $l$, which we assume to be constant.\footnote{Assuming that marginal costs are constant is not without loss of generality. In this way, demand shocks in one region do not lead to price increases in other regions by affecting marginal costs. Nonetheless, assuming constant marginal costs is a common assumption to gain tractability over the spatial pricing problem with non-constant elasticities of substitution (e.g.\citet{Feenstra2020, Faber2021})}. This market structure gives rise to the following pricing rule (see Appendix XXX):
+%\begin{linenomath*}
+%    \begin{equation}\label{eq:pricing_rule}
+%        P_{il,t} = \frac{\varepsilon_{fnp,t}}{\varepsilon_{fnp,t} - 1}MC_{il,t},
+%        \qquad \text{where} \qquad
+%        \varepsilon_{fnp,t} \equiv \eta_p - \left(\eta_p - 1 \right)S_{fpn,t} 
+%    \end{equation}
+%\end{linenomath*}
+%The pricing rule for nested demand systems typically does not depend on the elasticity of substitution at the lowest nest. \citet{Hottman2016} illustrate that, within each firm nest, the firm is the monopoly supplier of the product varieties in that nest. Therefore, the profit maximization problem boils down to choosing the optimal firm-level price $P_{fpl,t}$ and to supplying the associated firm-level quantity at the lowest possible costs. Supplying at the lowest possible costs requires setting relative prices of the product varieties equal to their marginal costs. Consequently, markups do not vary across product varieties within the nests. Still, markups can differ across product categories, countries and time. Markups depend on the firm-level elasticity of substitution $\eta_p$ and the country-level market share $S_{fpn,t}$. Intuitively, higher firm-level elasticities of substitution reflect easier substitution across firms leading to lower markups. As the market share approaches zero,  firms have less and less influence on the product category level price, the elasticity of demand converges to the elasticity of substitution $\eta_p$ and markups are the same as under monopolistic competition. Conversely, as the market share grows the elasticity of demand falls and optimal markups increase. 
+%
+\subsection{Decomposing Cost-of-living Differences}
+We decompose cost-of-living differences across two regions $l$ and $l'$ into three structural components: (1) LOP deviations, corrected for substitution effects (2) pure taste differences and (3) choice set differences. To this end, we define the share spent in region $l$ at time $t$ on firms that sell both in region $l$ and region $l'$ in product category $p$, $\lambda^{F,ll'}_{pl,t}$, and the share spent in region $l$ in at time $t$ on common product varieties sold by firm $f$ between region $l$ and region $l'$ in product category $p$, $\lambda^{B,ll'}_{fpl,t}$, as: 
+\begin{linenomath*}
+    \begin{equation*}
+        \lambda^{F,ll'}_{pl,t} \equiv  
+            \frac{\sum_{f \in \mathcal{F}^{ll'}_p}P_{fpl,t}C_{fpl,t}}
+                 {\sum_{f \in \mathcal{F}_{pl,t}} P_{fpl,t}C_{fpl,t}}, \qquad 
+        \lambda^{B,ll'}_{fpl,t} \equiv  
+                 \frac{\sum_{i \in \mathcal{B}^{ll'}_{fp}}P_{il,t}C_{il,t}}
+                      {\sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}C_{il,t}}
+    \end{equation*}
+\end{linenomath*}
+\noindent where $\mathcal{F}^{ll'}_p$ is the set of firms that sell both to region $l$ and region $l'$ in product category $p$, $\mathcal{F}_{pl,t}$ is the set of all firms selling to region $l$ in product category $p$ at time $t$. Likewise, $\mathcal{B}^{ll'}_{fp}$ is the set of product varieties sold by firm $f$ that are available in region $l$ and region $l'$ in product category $p$ and $\mathcal{B}_{fpl,t}$ is the set of all product varieties that are available in region $l$ sold by firm $f$ in product category $p$ at time $t$. In addition, define for all firms and for all product varieties that sell in region $l$ and $l'$ in product category $p$ and the common market share in region $l$ at time $t$ as: 
+\begin{linenomath*}
+    \begin{equation*}
+        S^{ll'}_{fpl,t} \equiv  
+            \frac{P_{fpl,t}C_{fpl,t}}
+                 {\sum_{f \in \mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}, \qquad 
+        S^{ll'}_{il,t} \equiv  
+                 \frac{P_{il,t}C_{il,t}}
+                      {\sum_{i \in \mathcal{B}^{ll'}_{fp}} P_{il,t}C_{il,t}}
+    \end{equation*}
+\end{linenomath*}
+\noindent This allows us to write the market shares of firms and product varieties that are available in region $l$ and region $l^{'}$ at time $t$ as a combination of their common market share and the share spent on common firms and product varieties in region $l$ at time $t$: 
+\begin{linenomath*}
+    \begin{equation*}
+        S_{fpl,t} = S^{ll'}_{fpl,t} \lambda^{F,ll'}_{pl,t}
+            \quad \forall f \in \mathcal{F}^{ll'}_{p}, \qquad \qquad 
+        S_{il,t}  = S^{ll'}_{il,t} \lambda^{B,ll'}_{fpl,t}
+            \quad \forall i \in \mathcal{B}^{ll'}_{fp}
+    \end{equation*}
+\end{linenomath*}
+
+Using the definitions of the common market shares and the definitions of the expenditure shares on common firms and product varieties, we can write the difference in the cost-of-living between region $l'$ and $l$ for product category $p$ as the sum of two parts: 
+\begin{linenomath*}
+    \begin{equation*}
+        \text{ln}\left(\frac{P_{pl',t}}{P_{pl,t}}\right)
+            =   \frac{1}{N^{F,ll'}_{p}}
+                \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                \left[
+                    \text{ln}\left(\frac{P_{fpl',t}}{P_{fpl,t}}\right)
+                        -   \text{ln}\left(\frac{\varphi_{fpl',t}}{\varphi_{fpl,t}}\right)
+                        +   \frac{1}{\eta_p-1}\text{ln}
+                            \left(
+                                \frac{S^{ll'}_{fpl',t}}{S^{ll'}_{fpl,t}}
+                            \right)
+                \right]
+                + \frac{1}{\eta_p-1}
+                    \text{ln}
+                    \left(
+                        \frac{\lambda^{F,ll'}_{pl',t}}{\lambda^{F,ll'}_{pl,t}}
+                    \right)
+    \end{equation*}
+\end{linenomath*}
+\noindent where $N^{F,ll'}_{p} \equiv |\mathcal{F}^{ll'}_{p}|$ is the number of firms in product category $p$ that sell to region $l'$ and $l$. The first part captures cost-of-living differences between the two regions that stem from price and expenditure differences within the set of firms that sell to both regions. This term intuitively depends on the differences in the unweighted geometric average price level across region $l^{'}$ and region $l$. This term is given by $\prod_{f \in \mathcal{F}^{ll'}_{p}} \left[P_{fpl',t}\bigg /P_{fpl,t}\right]^{\frac{1}{N^{F,ll'}_{p}}}$ and captures the fact that if firm-level prices are on average higher in region $l^{'}$, the cost-of-living in region $l^{'}$ should be higher.\footnote{This price index is also known as the Jevons price index.} However, to translate average price level differences into welfare-relevant numbers, two correction terms are required. The first is the difference in the unweighted geometric average taste levels across regions. Still, as in \citet{Redding2020}, we rule out cost-of-living differences that solely reflect differences in the average taste level across regions. The reason for this normalization is related to the fact we only observe choices and not the underlying utility levels. Hence, to avoid arbitrary shifts in cost-of-living levels, the cost-of-living levels should be the same across regions if prices and market shares are identical across regions. In practice, we make the following normalization: 
+\begin{linenomath*}
+    \begin{equation*}
+    \tilde{\varphi}_{pl',t} \equiv 
+        \prod_{f \in \mathcal{F}_{pl',t}} 
+        \left[\varphi_{fpl,t} \right]^{\frac{1}{N^{ll'}_{p}}} 
+    = 
+        \prod_{f \in \mathcal{F}_{pl,t}} 
+        \left[\varphi_{fpl,t} \right]^{\frac{1}{N^{ll'}_{p}}}
+    \equiv  \tilde{\varphi}_{pl,t} 
+\end{equation*}
+\end{linenomath*}
+\noindent Importantly, the normalization does not rule out taste differences across regions altogether. This is because the second correction term $\prod_{f \in \mathcal{F}^{ll'}_{p}} \left[\left(S^{ll'}_{fpl',t}\bigg / S^{ll'}_{fpl,t}\right)^{\frac{1}{\eta_p-1}}\right]^{\frac{1}{N^{F,ll'}_p}}$, which is the difference in the unweighted geometric average of the firm-level common market share across regions, represents a substitution effect and differences in consumer taste. The substitution effect captures the idea that in the presence of LOP deviations, consumers in different regions will have different expenditure shares as they substitute away from expensive bundles to bundles with lower relative prices. To reflect the relative importance of each product in total expenditure in each region, we need to correct the average price differences with a term that is a function of the market shares on common firms in each region.\footnote{Note that this is also the effect that gives rise to the traditionally-used Sato-Vartia weights. However, these weights are only the correct weights for CES preferences under the assumption that there are no differences in consumer taste: $\varphi_{fpl',t} = \varphi_{fpl,t} \quad \forall f \mathcal{F}^{ll'}_{p,t}$. The Sato-Vartia price index is, for instance, used by \citet{Handbury2015} to study cost-of-living differences across US cities.} To see why the second correction term also captures taste differences across regions, suppose that consumer tastes are more dispersed in region $l'$ relative to region $l$ and that there are no LOP deviations. Such a difference in dispersion in consumer taste leads consumers in $l^{'}$ to allocate a greater share of expenditure firms for which they have a high taste which results in a lower cost-of-living level for consumers in region $l^{'}$. As the greater dispersion in consumer taste also increases the dispersion in firm-level common market shares, it lowers the geometric average of common market shares reflecting the lower cost-of-living level. In addition to the difference in geometric average common market shares, the second correction term also depends on the firm-level elasticity of substitution. To see how, consider the limit when goods are perfect substitutes, $\eta_p \rightarrow\infty$. In this case, goods are perfect substitutes and common market shares are completely detached from taste-adjusted relative prices. Therefore, changes in taste-adjusted prices, originating from LOP deviations or taste differences, do not matter anymore for cost-of-living differences. In contrast, when firm-level bundles are very differentiated,  $\eta_p \rightarrow 1$, consumers value taste-adjusted price differences which translates into a much larger correction term given the same difference in the geometric average common market share.
+
+The second term in the expression, $\left(\lambda^{F,ll'}_{pl',t}\bigg /\lambda^{F,ll'}_{pl,t}\right)^{\frac{1}{\eta_p-1}}$, accounts for choice set differences across regions. This term is the cross-sectional firm-level equivalent of the product variety term derived in \citet{Feenstra1994} and \citet{Broda2006} and depends on two moments of the data. For a given elasticity of substitution, the expenditure share on common firms in region $l^{'}$ region relative to region $l$ captures the relative importance of common firms in total expenditure. If the expenditure share on common firms is lower in region $l'$ it must mean that consumers in region $l^{'}$ have a better option outside of the set of common firms compared to consumers in region $l$ which translates into a lower cost of living in region $l^{'}$. The extent to which relative differences in expenditure on common firms lead to a lower cost of living depends on the firm-level elasticity of substitution. If this elasticity of substitution is high, bundles offered by firms are considered close substitutes. In this case, an increase in the choice set adds little additional substitution possibilities and the effect on the cost of living should be small.
+
+The differences in the unweighted geometric average price level still depend on $P_{fpl,t}$ which are firm-level aggregators across product varieties part of the sets $\mathcal{B}_{fpl,t}$. To eliminate these firm-level price indices, we further decompose them like before:
+\begin{linenomath*}
+    \begin{equation}\label{eq:cle_decomp}
+        \begin{aligned}
+        \text{ln}\left(\frac{P_{pl',t}}{P_{pl,t}}\right)
+            &=  \underbrace{
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                        \left[
+                            \frac{1}{N^{B,ll'}_{p}}
+                            \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                            \text{ln}
+                            \left(
+                                \frac{P_{il',t}}{P_{il,t}}
+                            \right)
+                        \right]
+                }_{\text{LOP deviations}} \\
+                & \qquad + 
+                \underbrace{
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \left[
+                        \frac{1}{\eta_p-1}
+                        \text{ln}
+                        \left(
+                            \frac{S^{ll'}_{fpl',t}}{S^{ll'}_{fpl,t}}
+                        \right)
+                        +
+                        \frac{1}{\sigma_p-1}
+                        \frac{1}{N^{B,ll'}_{p}}
+                        \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                            \text{ln}
+                            \left(
+                                \frac{S^{ll'}_{il',t}}{S^{ll'}_{il',t}}
+                            \right)
+                    \right]
+                }_{\text{Common expenditure share differences}} \\
+                & \qquad +
+                \underbrace{
+                    \frac{1}{\eta_p-1}
+                    \text{ln}
+                    \left(
+                        \frac{\lambda^{ll'}_{pl',t}}{\lambda^{ll'}_{pl',t}}
+                    \right)
+                    + 
+                    \frac{1}{\sigma_p-1}
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                        \text{ln}
+                        \left(
+                            \frac{\lambda^{ll'}_{fpl',t}}{\lambda^{ll'}_{fpl',t}}
+                        \right)}_{\text{Choice set differences}}
+    \end{aligned}
+    \end{equation}
+\end{linenomath*}
+\noindent Equation \ref{eq:cle_decomp} illustrates that we can express cost-of-living differences across regions into three terms: (1) LOP deviations (2) common expenditure share differences and (3) choice set differences. Like before, we have normalized the unweighted geometric average of product variety-level taste differences such that cost-of-living levels are the same if prices, expenditure shares and choice sets are the same across regions: 
+\begin{linenomath*}
+    \begin{equation*}
+        \tilde{\varphi}_{fpl',t} \equiv 
+            \prod_{i \in \mathcal{B}_{fpl',t}} \left[\varphi_{il,t} \right]^{\frac{1}{N^{ll'}_{fp}}} 
+        = 
+            \prod_{i \in \mathcal{B}_{fpl,t}} \left[\varphi_{fpl,t} \right]^{\frac{1}{N^{ll'}_{fp}}}
+        \equiv  \tilde{\varphi}_{fpl,t} 
+    \end{equation*}
+\end{linenomath*}
+
+The common firm-level and product variety-level market share terms capture both substitution effects and taste differences. Isolating taste differences from LOP deviations, choice set differences and substitution effects is needed for the following reason. In a world without geographic market segmentation, LOP deviations and choice set differences only occur because the cost of physically moving goods to specific regions differs. Conversely, once the cost of physically moving goods is appropriately controlled for, LOP deviations and choice set differences should vanish. Importantly, also substitution effects zero in the absence of LOP deviations, but differences in taste differences remain. 
+
+To isolate taste differences from the other terms, we follow \citet{Redding2020} and add and subtract: $\sum_{f \in \mathcal{F}^{ll'}_{p}} 
+\omega_{fpl,t}
+\left[
+    \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+    \omega_{il,t}
+    \text{ln}
+    \left(
+        \frac{P_{il',t}}{P_{il,t}}
+    \right)
+\right]$ from equation \ref{eq:cle_decomp}: 
+\begin{linenomath*}
+    \begin{equation}\label{eq:cle_decomp2}
+        \begin{aligned}
+        \text{ln}\left(\frac{P_{pl',t}}{P_{pl,t}}\right)
+            &=  \underbrace{
+                \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \omega_{fpl,t}
+                    \left[
+                        \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                        \omega_{il,t}
+                        \text{ln}
+                        \left(
+                            \frac{P_{il',t}}{P_{il,t}}
+                        \right)
+                    \right]
+                }_{\text{LOP deviations + Substitution Effect}} \\
+                & \qquad + 
+                \underbrace{
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                        \left[
+                            \frac{1}{N^{B,ll'}_{p}}
+                            \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                            \left(
+                                \frac{P_{il',t}}{P_{il,t}}
+                            \right)
+                        \right]
+                    -
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \omega_{fpl,t}
+                    \left[
+                        \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                        \omega_{il,t}
+                        \text{ln}
+                        \left(
+                            \frac{P_{il',t}}{P_{il,t}}
+                        \right)
+                    \right]
+                }_{\text{Taste differences}} \\
+                & \qquad \qquad + 
+                \underbrace{
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \left[
+                        \frac{1}{\eta_p-1}
+                        \text{ln}
+                        \left(
+                            \frac{S^{ll'}_{fpl',t}}{S^{ll'}_{fpl,t}}
+                        \right)
+                        +
+                        \frac{1}{\sigma_p-1}
+                        \frac{1}{N^{B,ll'}_{p}}
+                        \sum_{i \in \mathcal{B}^{ll'}_{p}} 
+                            \text{ln}
+                            \left(
+                                \frac{S^{ll'}_{il',t}}{S^{ll'}_{il',t}}
+                            \right)
+                    \right]
+                }_{\text{Taste differences (ctd.)}} \\
+                & \qquad +
+                \underbrace{
+                    \frac{1}{\eta_p-1}
+                    \text{ln}
+                    \left(
+                        \frac{\lambda^{ll'}_{pl',t}}{\lambda^{ll'}_{pl',t}}
+                    \right)
+                    + 
+                    \frac{1}{\sigma_p-1}
+                    \frac{1}{N^{F,ll'}_{p}}
+                    \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                        \text{ln}
+                        \left(
+                            \frac{\lambda^{ll'}_{fpl',t}}{\lambda^{ll'}_{fpl',t}}
+                        \right)}_{\text{Choice set differences}}
+    \end{aligned}
+    \end{equation}
+\end{linenomath*}
+where 
+\begin{linenomath*}
+    \begin{equation*}
+        \omega_{fpl,t} 
+            \equiv  \frac{
+                        \frac{S^{ll'}_{fpl',t} - S^{ll'}_{fpl,t}}
+                             {\text{ln }S^{ll'}_{fpl',t} - \text{ln }S^{ll'}_{fpl,t}}}
+                         {\sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                            \frac{S^{ll'}_{fpl',t} - S^{ll'}_{fpl,t}}
+                            {\text{ln }S^{ll'}_{fpl',t} - \text{ln }S^{ll'}_{fpl,t}}}, 
+        \qquad 
+        \omega_{il,t} 
+            \equiv  \frac{
+                        \frac{S^{ll'}_{il',t} - S^{ll'}_{il,t}}
+                             {\text{ln }S^{ll'}_{il',t} - \text{ln }S^{ll'}_{il,t}}}
+                         {\sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                            \frac{S^{ll'}_{il',t} - S^{ll'}_{il,t}}
+                            {\text{ln }S^{ll'}_{il',t} - \text{ln }S^{ll'}_{il,t}}}, 
+    \end{equation*}
+\end{linenomath*}
+This expression decomposes cost-of-living differences into (1) LOP deviations, corrected for substitution effects, (2) pure taste differences and (3) choice set differences. The first part is the Sato-Vartia price index and captures only LOP deviations and substitution effects. The reason why it captures LOP deviations and substitution effects and not taste differences is that it is the ideal price index for common firms and product varieties for our nested CES preference system in the absence of taste differences.\footnote{This follows immediately from the derivation of the common market share terms when setting $\varphi_{fpl',t} = \varphi_{fpl,t} \quad \forall f \mathcal{F}^{ll'}_{p,t}$ and $\varphi_{il',t} = \varphi_{il,t} \quad \forall i \mathcal{B}^{ll'}_{fp,t}$} The second part captures pure taste differences. This is because this term is defined as the difference between the generalized price index, which allows for pure taste differences, and the Sato-Vartia price index, which abstracts from taste differences. This term is the cross-sectional analog to the taste-bias term derived in \citet{Redding2020}. The final part is the same as the one in equation \ref{eq:cle_decomp} and therefore still captures differences in choice sets between region $l'$ and $l$. This expression forms the basis to detect geographic market segmentation in section \ref{sec:border_effects_eu} and to separate taste differences from LOP deviations and choice set differences.

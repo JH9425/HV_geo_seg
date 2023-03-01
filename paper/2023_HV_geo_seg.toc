@@ -1,1 +1,23 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.2}%
+\contentsline {section}{\numberline {2}Data}{7}{section.11}%
+\contentsline {section}{\numberline {3}Reduced-form evidence}{10}{section.23}%
+\contentsline {subsection}{\numberline {3.1}LOP Deviations}{10}{subsection.24}%
+\contentsline {subsection}{\numberline {3.2}Choice set differences}{13}{subsection.33}%
+\contentsline {section}{\numberline {4}Theoretical Framework}{19}{section.42}%
+\contentsline {subsection}{\numberline {4.1}Consumer preferences}{19}{subsection.43}%
+\contentsline {paragraph}{Preferences}{19}{section*.44}%
+\contentsline {paragraph}{Cost-of-living}{20}{section*.46}%
+\contentsline {subsection}{\numberline {4.2}Decomposing Cost-of-living Differences}{20}{subsection.47}%
+\contentsline {section}{\numberline {5}Structural Estimation}{25}{section.53}%
+\contentsline {subsection}{\numberline {5.1}Elasticities of Substitution}{25}{subsection.54}%
+\contentsline {subsubsection}{\numberline {5.1.1}Product variety-level elasticities - $\sigma _p$}{25}{subsubsection.55}%
+\contentsline {paragraph}{Estimation strategy}{25}{section*.56}%
+\contentsline {paragraph}{Baseline results}{26}{section*.60}%
+\contentsline {paragraph}{Robustness}{27}{section*.64}%
+\contentsline {subsubsection}{\numberline {5.1.2}Firm-level elasticities - $\eta _p$}{28}{subsubsection.66}%
+\contentsline {paragraph}{Estimation strategy}{28}{section*.67}%
+\contentsline {paragraph}{Baseline results}{30}{section*.72}%
+\contentsline {paragraph}{Robustness}{30}{section*.75}%
+\contentsline {paragraph}{Cross-country Heterogeneity}{30}{section*.76}%
+\contentsline {paragraph}{Implied markups}{31}{section*.77}%
+\contentsline {subsection}{\numberline {5.2}Regional Cost-of-living Differences}{32}{subsection.82}%
