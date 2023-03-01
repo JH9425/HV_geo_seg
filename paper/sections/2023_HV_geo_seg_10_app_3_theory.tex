@@ -1,0 +1,334 @@
+\section{Derivations in the theoretical framework}
+\subsection{Cost-of-living decomposition}
+In this section, we provide a stepwise derivation of the decomposition of cost-of-living differences. 
+
+\paragraph{Definitions} Define the share spend in region $l$ at time $t$ on firms that sell both in region $l$ and region $l'$ in product category $p$, $\lambda^{F,ll'}_{pl,t}$, and the share spend in region $l$ in at time $t$ on common product varieties sold by firm $f$ between region $l$ and region $l'$ in product  category $p$, $\lambda^{B,ll'}_{fpl,t}$, as: 
+\begin{linenomath*}
+    \begin{equation*}
+        \lambda^{F,ll'}_{pl,t} \equiv  
+            \frac{\sum_{f \in \mathcal{F}^{ll'}_p}P_{fpl,t}C_{fpl,t}}
+                 {\sum_{f \in \mathcal{F}_{pl,t}} P_{fpl,t}C_{fpl,t}}, \qquad 
+        \lambda^{B,ll'}_{fpl,t} \equiv  
+                 \frac{\sum_{i \in \mathcal{B}^{ll'}_{fp}}P_{il,t}C_{il,t}}
+                      {\sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}C_{il,t}}
+    \end{equation*}
+\end{linenomath*}
+\noindent where $\mathcal{F}^{ll'}_p$ is the set of firms that sell both to region $l$ and region $l'$ and $\mathcal{F}_{pl,t}$ is the set all firms selling to region $l$ at time $t$ in product category $p$, $P_{fpl,t}$ is the firm-level price index defined in the main body of the text and $C_{fpl,t}$ is the corresponding firm-level consumption level. Likewise, $\mathcal{B}^{ll'}_{fp}$ is the set of product varieties sold by firm $f$ that are available in both region $l$ and region $l'$, $\mathcal{B}_{fpl,t}$ is the set all product varieties that are available in region $l$ at time $t$ in product category $p$ sold by firm $f$, $P_{il,t}$ is the price of product variety $i$ in region $l$ at time $t$ and $C_{il,t}$ is the corresponding consumption level. In addition, define for all firms that sell in region $l$ and $l'$ in product category $p$ the common market share and for all common product varieties the common market share in region $l$ at time $t$ in product category $p$ as: 
+\begin{linenomath*}
+    \begin{equation*}
+        S^{ll'}_{fpl,t} \equiv  
+            \frac{P_{fpl,t}C_{fpl,t}}
+                 {\sum_{f \in \mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}, \qquad 
+        S^{ll'}_{il,t} \equiv  
+                 \frac{P_{il,t}C_{il,t}}
+                      {\sum_{i \in \mathcal{B}^{ll'}_{fp}} P_{il,t}C_{il,t}}
+    \end{equation*}
+\end{linenomath*}
+
+\noindent Then, we can write the regular market shares as the combination of the common market share and the share spent on the common choice set. For the firm-level market share:
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+        S_{fpl,t}   &=  \frac{P_{fpl,t}C_{fpl,t}}
+                             {\sum_{f \in \mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}, 
+                        \qquad \forall f \in \mathcal{F}^{ll'}_{p} \\
+                    &=  \frac{P_{fpl,t}C_{fpl,t}}
+                             {\sum_{f \in \mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}
+                        \frac{\sum_{f \in \mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}
+                             {\sum_{f \in \mathcal{F}_{pl,t}} P_{fpl,t}C_{fpl,t}}, 
+                        \qquad \forall f \in \mathcal{F}^{ll'}_p\\
+                    &=  \frac{P_{fpl,t}C_{fpl,t}}
+                             {\sum_{\mathcal{F}^{ll'}_{p}} P_{fpl,t}C_{fpl,t}}
+                        \frac{\sum_{f \in \mathcal{F}^{ll'}_{p}}P_{fpl,t}C_{fpl,t}}
+                             {\sum_{f \in \mathcal{F}_{pl,t}}P_{fplt}C_{fpl,t}}, 
+                        \qquad \forall f \in \mathcal{F}^{ll'}_p
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+
+\noindent Therefore, we can write the market shares for each common firm and product variety:  
+
+\begin{linenomath*}
+    \begin{equation*}
+        S_{fpl,t} = S^{ll'}_{fpl,t} \lambda^{F,ll'}_{pl,t}
+            \quad \forall f \in \mathcal{F}^{ll'}_{p}, \qquad \qquad 
+        S_{il,t}  = S^{ll'}_{il,t} \lambda^{B,ll'}_{fpl,t}
+            \quad \forall i \in \mathcal{B}^{ll'}_{fp}
+    \end{equation*}
+\end{linenomath*}
+
+\paragraph{Cost-of-living decomposition} Using these definitions, we decompose cost-of-living differences $\Delta \text{CLE}_{ll',t}$ between regions $l$ and $l'$ at time $t$: 
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+    \Delta \text{CLE}_t 
+        &\equiv \text{ln}e(\boldsymbol{P}_{l',t},U_{l,t}) - \text{ln}e(\boldsymbol{P}_{l,t},U_{l,t}) \\
+        &= \text{ln}\frac{e(\boldsymbol{P}_{l',t},U_{l,t})}{e(\boldsymbol{P}{l,t},U{l,t})} \\
+        &= \text{ln}\frac{e(\boldsymbol{P}_{l',t},1)}{e(\boldsymbol{P}_{l,t},1)} \\
+        &= \text{ln}\prod_{p \in \mathcal{P}}\left[\frac{P_{pl',t}}{P_{pl,t}}\right]^{\alpha_p} \\
+        &= \sum_{p \in \mathcal{P}} \alpha_p (\text{ln} P_{pl',t} - \text{ln} P_{pl,t}) 
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent where we have used the assumption of homothetic preferences and the assumption of Cobb-Douglas preferences across product categories. Note that from Shephard's lemma, we can write firm-level and product variety-level market shares as:
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+        S_{fpl,t}    
+            = \frac{C_{fplt}P_{fpl,t}}{\sum_{f \in \mathcal{F}_{pl,t}} P_{fplt}C_{fpl,t}}  
+            = \frac{\left(\frac{P_{fpl,t}}{\phi_{fpl,t}}\right)^{1-\eta_p}}{P_{pl,t}^{1-\eta_p}},
+        \qquad 
+        S_{il,t}    
+            = \frac{C_{il,t}P_{il,t}}{\sum_{i \in \mathcal{B}_{pl,t}} P_{ilt}C_{il,t}}  
+            = \frac{\left(\frac{P_{il,t}}{\phi_{il,t}}\right)^{1-\sigma_p}}{P_{fpl,t}^{1-\sigma_p}},
+        \end{aligned}
+    \end{equation*}   
+\end{linenomath*} 
+
+\noindent Consider the firm-level market share and take logs
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+        \text{ln} S_{fpl,t} 
+            &=  \left(1-\eta_p\right) \text{ln}P_{fpl,t} - \left(1-\eta_p\right) \text{ln}P_{pl,t} + 
+                \left(\eta_p-1\right)\text{ln} \varphi_{fpl,t} \\
+        \text{ln} P_{pl,t} 
+            &=  \text{ln}P_{fpl,t} - \text{ln} \varphi_{fpl,t} + 
+                \frac{1}{\eta_p-1}\left(\text{ln} S_{fpl,t}\right) \\
+            &=  \text{ln}P_{fpl,t} - \text{ln} \varphi_{fpl,t} + 
+                \frac{1}{\eta_p-1}
+                \left(\text{ln} S^{ll'}_{fpl,t} + \text{ln} \lambda^{ll'}_{pl,t}\right)
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent Take the difference between $\text{ln} P_{pl',t}$ and $\text{ln} P_{pl,t}$ and take an unweighted arithmetic average over the set of common firms ($f \in \mathcal{F}^{ll'}_{p}$) and a cross-sectional difference across regions $l$ and $l'$ at time $t$:
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+        \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+            \left[\text{ln}P_{pl',t} - \text{ln} P_{plt}\right] 
+            &=  \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                \Bigg[ 
+                    \left(\text{ln}P_{fpl',t} - \text{ln}P_{fpl,t} \right) 
+                    - \left(\text{ln}\varphi_{fpl',t} - \text{ln}\varphi_{fpl',t} \right) \\
+                    & \qquad \qquad 
+                    + \frac{1}{\eta_p-1}
+                        \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                    + \frac{1}{\eta_p-1}
+                        \left(\text{ln} \lambda^{F,ll'}_{pl',t} - \text{ln}\lambda^{F,ll'}_{pl,t} \right)
+                \Bigg] \\
+        \text{ln}P_{pl',t} - \text{ln} P_{pl,t} 
+            &=  \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \left(\text{ln}P_{fpl',t} - \text{ln}P_{fpl,t} \right) 
+                + \frac{1}{\eta_p-1} 
+                    \frac{1}{N^{F,ll'}_{p}} \sum_{f \mathcal{F}^{ll'}_{p}} 
+                    \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right) \\
+                & \qquad \qquad 
+                + \frac{1}{\eta_p-1} 
+                    \left(\text{ln} \lambda^{F,ll'}_{pl',t} - \text{ln}\lambda^{F,ll'}_{pl,t} \right)
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent where we have used the normalization that consumer tastes in region $l$ and $l'$ for the set of firms that sell both to region $l$ and $l'$ are the same on average: 
+\begin{linenomath*}    
+\begin{equation*}
+    \tilde{\varphi}_{pl,t} \equiv 
+    \left(
+        \prod_{f \in \mathcal{F}^{ll'}_{p}} \varphi_{fpl,t} 
+    \right)^{\frac{1}{N^{ll'}_{p}}} = 1 \qquad \forall l \in \mathcal{L}
+\end{equation*}
+\end{linenomath*}    
+
+
+\noindent Decomposing $P_{fpl',t} - P_{fpl,t}$ follows similar steps. Consider the product variety-level market share and take logs
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+        \text{ln} S_{il,t} 
+            &=  \left(1-\sigma_p\right) \text{ln}P_{il,t} - \left(1-\sigma_p\right) \text{ln}P_{fpl,t} + 
+                \left(\sigma_p-1\right)\text{ln} \varphi_{il,t} \\
+        \text{ln} P_{fpl,t} 
+            &=  \text{ln}P_{il,t} - \text{ln} \varphi_{il,t} + 
+                \frac{1}{\sigma_p-1}\left(\text{ln} S_{il,t}\right) \\
+            &=  \text{ln}P_{il,t} - \text{ln} \varphi_{il,t} + 
+                \frac{1}{\sigma_p-1}
+                \left(\text{ln} S^{ll'}_{il,t} + \text{ln} \lambda^{B,ll'}_{fpl,t}\right)
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent Take the difference between $\text{ln} P_{fpl',t}$ and $\text{ln} P_{fpl,t}$ and take an unweighted arithmetic average over the set of common product varieties ($i \in \mathcal{B}^{ll'}_{fp}$) and a cross-sectional difference across regions $l$ and $l'$ at time $t$:
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+        \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+            \left[\text{ln}P_{fpl',t} - \text{ln} P_{plt}\right] 
+            &=  \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                \Bigg[ 
+                    \left(\text{ln}P_{il',t} - \text{ln}P_{il,t} \right) 
+                    - \left(\text{ln}\varphi_{il',t} - \text{ln}\varphi_{il',t} \right) \\
+                    & \qquad \qquad 
+                    + \frac{1}{\sigma_p-1}
+                        \left(\text{ln}S^{ll'}_{il',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                    + \frac{1}{\sigma_p-1}
+                        \left(\text{ln} \lambda^{B,ll'}_{fpl',t} - \text{ln}\lambda^{B,ll'}_{fpl,t} \right)
+                \Bigg] \\
+        \text{ln}P_{fpl',t} - \text{ln} P_{fpl,t} 
+            &=  \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                    \left(\text{ln}P_{il',t} - \text{ln}P_{il,t} \right) 
+                + \frac{1}{\sigma_p-1} 
+                    \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                    \left(\text{ln}S^{ll'}_{il',t} - \text{ln}S^{ll'}_{il',t} \right) \\
+                & \qquad \qquad 
+                + \frac{1}{\sigma_p-1} 
+                    \left(\text{ln} \lambda^{B,ll'}_{fpl',t} - \text{ln}\lambda^{B,ll'}_{fpl,t} \right)
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent where we have used the normalization that consumer tastes in region $l$ and $l'$ for the set of common product varieties sold by firm $f$ in region $l$ and $l'$ are the same on average: 
+\begin{linenomath*}    
+\begin{equation*}
+    \tilde{\varphi}_{fpl,t} \equiv 
+    \left(
+        \prod_{i \in \mathcal{B}^{ll'}_{fp,t}} \varphi_{il,t} 
+    \right)^{\frac{1}{N^{B,ll'}_{fp,t}}} = 1 \qquad \forall l \in \mathcal{L}
+\end{equation*}
+\end{linenomath*}    
+
+\noindent Then, we can plug this expression into the expression for $\text{ln} P_{pl',t} - \text{ln} P_{pl,t}$ to arrive at the final decomposition: 
+
+\begin{linenomath*}    
+\begin{equation*}
+    \begin{aligned}
+        \text{ln}P_{pl',t} - \text{ln} P_{pl,t} 
+            &=  \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                \Bigg[
+                    \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                    \left(\text{ln}P_{il',t} - \text{ln}P_{il,t} \right) \\
+                    & \qquad \qquad
+                    +   \frac{1}{\sigma_p-1} 
+                        \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                        \left(\text{ln}S^{ll'}_{il',t} - \text{ln}S^{ll'}_{il',t} \right)
+                    +   \frac{1}{\sigma_p-1} 
+                        \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                        \left(\text{ln} \lambda^{B,ll'}_{fpl',t} - \text{ln}\lambda^{B,ll'}_{fpl,t} \right)  
+                \Bigg] \\
+                & \qquad \qquad \qquad \qquad 
+                +   \frac{1}{\eta_p-1} 
+                    \frac{1}{N^{F,ll'}_{p}} \sum_{f \mathcal{F}^{ll'}_{p}} 
+                    \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right) 
+                +   \frac{1}{\eta_p-1} 
+                    \left(\text{ln} \lambda^{F,ll'}_{pl',t} - \lambda^{F,ll'}_{pl,t} \right) \\
+            &=  \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                \Bigg[
+                    \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                    \left(\text{ln}P_{il',t} - \text{ln}P_{il,t} \right)
+                \Bigg] \\
+            & \qquad \qquad
+                +   \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}}
+                    \Bigg[ 
+                        \frac{1}{\eta_p-1} 
+                        \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                        + \frac{1}{\sigma_p-1} 
+                        \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                        \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                    \Bigg] \\
+            & \qquad \qquad
+                +   \frac{1}{\eta_p-1} 
+                        \left(\text{ln} \lambda^{F,ll'}_{pl',t} - \text{ln}\lambda^{F,ll'}_{pl,t} \right)
+                    + \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \Bigg[
+                        \frac{1}{\sigma_p-1} 
+                        \left(\text{ln} \lambda^{B,ll'}_{fpl',t} - \text{ln}\lambda^{B,ll'}_{fpl,t} \right)  
+                    \Bigg] \\
+            &=  \underbrace{\frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                    \Bigg[
+                        \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                        \left[
+                            \left(\text{ln}MC_{il',t} - \text{ln}MC_{il,t}\right) +
+                            \left(\text{ln}\mathcal{M}_{il',t} - \text{ln}\mathcal{M}_{il,t}\right)
+                        \right]
+                    \Bigg]}_{\text{LOP deviations: Marginal cost + Markups }} \\
+                & \qquad \qquad
+                    +   \underbrace{\frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}}
+                        \Bigg[ 
+                            \frac{1}{\eta_p-1} 
+                            \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                            + \frac{1}{\sigma_p-1} 
+                            \frac{1}{N^{B,ll'}_{fp}} \sum_{i \in \mathcal{B}^{ll'}_{fp}} 
+                            \left(\text{ln}S^{ll'}_{fpl',t} - \text{ln}S^{ll'}_{fpl',t} \right)
+                        \Bigg]}_{\text{Differences in Tastes}} \\
+                & \qquad \qquad
+                    +   \underbrace{
+                        \frac{1}{\eta_p-1} 
+                            \left(\text{ln} \lambda^{F,ll'}_{pl',t} - \text{ln}\lambda^{F,ll'}_{pl,t} \right)
+                        + \frac{1}{N^{F,ll'}_{p}} \sum_{f \in \mathcal{F}^{ll'}_{p}} 
+                        \Bigg[
+                            \frac{1}{\sigma_p-1} 
+                            \left(\text{ln} \lambda^{B,ll'}_{fpl',t} - \text{ln}\lambda^{B,ll'}_{fpl,t} \right)  
+                        \Bigg]}_{\text{Differences in Choice sets}}    
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}
+
+\subsection{Optimal pricing rule}
+
+\subsection{Product variety-level residuals and Structural Instrument}\label{app:theory_residuals_instrument}
+Given our normalization, we back out the product variety-level taste parameters by taking the ratio of the market share $S_{il,t}$ and its geometric average $\tilde{S}_{fpclt}$: 
+\begin{equation*}
+    \begin{aligned}
+        \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
+            &=  \frac{\bigg(\frac{P_{ilt}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
+                     {  \left(
+                            \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}
+                        \right)^{\frac{1}{N_{fpl,t}}}} \\
+            &=  \frac{\bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
+                     {\bigg(\frac{\tilde{P}_{fpl,t}}{\tilde{\varphi}_{fpl,t}}\bigg)^{1-\sigma_p}} \\
+        \varphi_{il,t} 
+            &=  \frac{P_{il,t}}{\tilde{P}_{fpl,t}}  
+                \left(\frac{S_{il,t}}{\tilde{S}_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} 
+                \tilde{\varphi}_{fpl,t}
+    \end{aligned}
+\end{equation*}
+
+\noindent where $\tilde{\varphi}_{fpl,t}$ is defined as before and $\tilde{P}_{fpl,t} \equiv \left(\prod_{i \in \mathcal{B}_{fpl,t}} P_{il,t}\right)^{\frac{1}{N_{fpl,t}}}$. In addition, we can write the overall price index as the product of the unweighted geometric average firm-level price index and a term that depends on the dispersion in market share within firm 
+
+\begin{equation*}
+    \begin{aligned}
+       P_{fpl,t}   &=   \left(
+                            \sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p} \varphi_{il,t}^{\sigma_p-1} 
+                        \right)^{\frac{1}{1-\sigma_p}} \\
+                    &=  \left(\sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p}
+                                \left(\frac{P_{il,t}}{\tilde{P}_{il,t}}  
+                                    \left(\frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} \tilde{\varphi}_{fpl,t}
+                                \right)^{\sigma_p-1} 
+                        \right)^{\frac{1}{1-\sigma_p}} \\
+                    &=  \tilde{P}_{fpl,t} 
+                        \left(
+                            \sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
+                            \tilde{\varphi}_{fpl,t}^{\sigma_p-1}
+                        \right)^{\frac{1}{1-\sigma_p}}
+    \end{aligned}
+\end{equation*}
+
+To see that market the instrument is uncorrelated with the firm-level demand, shock note that: 
+
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \left(\sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} \tilde{\varphi}_{fpl,t}^{\sigma_p-1}\right)^{\frac{1}{1-\sigma_p}}
+                &=  \frac{P_{il,t}C_{il,t}}
+                         {  \left(
+                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
+                            \right)^{\frac{1}{N_{fpl,t}}}} \\
+                &=  \frac{P_{il,t}C_{il,t}}
+                {           \left(
+                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
+                            \right)^{\frac{1}{N_{fpl,t}}}}
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}

@@ -30,3 +30,24 @@
 \contentsline {paragraph}{Robustness}{39}{section*.103}%
 \contentsline {subsection}{\numberline {6.3}Detecting Geographic Market Segmentation}{40}{subsection.106}%
 \contentsline {section}{\numberline {7}Concluding Remarks}{42}{section.110}%
+\contentsline {section}{\numberline {A}Data}{47}{appendix.112}%
+\contentsline {subsection}{\numberline {A.1}Barcodes and Firms}{47}{subsection.113}%
+\contentsline {subsection}{\numberline {A.2}Product categories}{52}{subsection.119}%
+\contentsline {subsection}{\numberline {A.3}Households}{54}{subsection.122}%
+\contentsline {subsection}{\numberline {A.4}Stores}{57}{subsection.128}%
+\contentsline {section}{\numberline {B}Reduced form evidence}{58}{appendix.130}%
+\contentsline {subsection}{\numberline {B.1}LOP deviations}{58}{subsection.131}%
+\contentsline {subsection}{\numberline {B.2}Choice set differences}{64}{subsection.138}%
+\contentsline {section}{\numberline {C}Derivations in the theoretical framework}{71}{appendix.147}%
+\contentsline {subsection}{\numberline {C.1}Cost-of-living decomposition}{71}{subsection.148}%
+\contentsline {paragraph}{Definitions}{71}{section*.149}%
+\contentsline {paragraph}{Cost-of-living decomposition}{73}{section*.150}%
+\contentsline {subsection}{\numberline {C.2}Optimal pricing rule}{76}{subsection.151}%
+\contentsline {subsection}{\numberline {C.3}Product variety-level residuals and Structural Instrument}{76}{subsection.152}%
+\contentsline {section}{\numberline {D}Structural Estimation results}{77}{appendix.153}%
+\contentsline {subsection}{\numberline {D.1}Barcode-level Elasticities}{77}{subsection.154}%
+\contentsline {subsection}{\numberline {D.2}Firm-level Elasticities}{81}{subsection.159}%
+\contentsline {subsection}{\numberline {D.3}Structural components}{89}{subsection.168}%
+\contentsline {section}{\numberline {E}Border effects}{89}{appendix.170}%
+\contentsline {subsection}{\numberline {E.1}Estimation design}{89}{subsection.171}%
+\contentsline {subsection}{\numberline {E.2}Estimation results}{95}{subsection.180}%

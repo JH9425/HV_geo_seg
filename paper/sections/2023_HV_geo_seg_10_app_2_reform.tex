@@ -1,0 +1,332 @@
+\section{Reduced form evidence}
+\subsection{LOP deviations}
+ \begin{figure}[H]
+    \centering
+    \caption{LOP deviations - Unweighted}
+    \label{fig: app_redform_dp_unw}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled}
+         \label{fig: app_redform_dp_unw_p}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_nr.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within household types}
+         \label{fig: app_redform_dp_unw_h}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_nr_h.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within store types}
+         \label{fig: app_redform_dp_unw_s}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_nr_s.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within household-store types}
+         \label{fig: app_redform_dp_unw_hs}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_nr_hs.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of LOP deviations across observations at the product variety-NUTS1 pair-year level. Panel (a) pools across stores and household types when computing the LOP deviations. Hence, when computing the price of a product variety in a certain region, we average across stores and household types. Panel (b) and (c) compute LOP deviations within household and store types respectively. Panel (d) computes LOP deviations within store types and household types. The distributions are based on simple counts per bin.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{LOP deviations - Transaction weighted}
+    \label{fig: app_redform_dp_w}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_trans.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within household types}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_trans_h.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within store types}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_trans_s.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Within household-store types}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_1_dp_trans_hs.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of LOP deviations across observations at the product variety-NUTS1 pair-year level. Panel (a) pools across stores and household types when computing the LOP deviations. Hence, when computing the price of a product variety in a certain region, we average across stores and household types. Panel (b) and (c) compute LOP deviations within household and store types respectively. Panel (d) computes LOP deviations within store types and household types. The distributions are based on simple transactions associated with each product variety-region pair per bin.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Variance of LOP deviations - Unweighted}
+    \label{fig: app_redform_sd_unw}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_nr.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Store}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_nr_s.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_nr_h.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Store-Household}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_nr_hs.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distribution of the variance of log LOP deviations across product category-year-NUTS2-region pairs. The grey bars plot the conditional distribution for intranational pairs, and the red bars do the same for international pairs. We compute these distributions in three steps. First, we compute LOP deviations and winsorize the distribution symmetrically at 3 log points. Second, we compute the variance within product category-year-region pair cells. Finally, we bin the variance into 100 separate bins and compute for each bin the number of observations that fall into each bin. Panel (a) replicates the result we show in the paper and is based on pooling across households and stores when computing price differences. Panel (b) computes price differences for identical product varieties within store types. Panel (c) computes price differences for identical product varieties within household types. Panel (d) computes price differences for identical product varieties within stores and household types.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Variance of LOP deviations - Transaction weighted}
+    \label{fig: app_redform_sd_w}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_trans.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Store}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_trans_s.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_trans_h.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Store-Household}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_2_2_var_trans_hs.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distribution of the variance of log LOP deviations across product category-year-NUTS2-region pairs. The grey bars plot the conditional distribution for intranational pairs, and the red bars do the same for international pairs. We compute these distributions in three steps. First, we compute LOP deviations and winsorize the distribution symmetrically at 3 log points. Second, we compute the variance within product category-year-region pair cells. Finally, we bin the variance into 100 separate bins and compute for each bin the number of transactions, associated with the variances, that fall into each bin. Panel (a) replicates the result we show in the paper and is based on pooling across households and stores when computing price differences. Panel (b) computes price differences for identical product varieties within store types. Panel (c) computes price differences for identical product varieties within household types. Panel (d) computes price differences for identical product varieties within stores and household types.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Absolute LOP deviations: Years}
+    \label{fig: app_redform_sd_years}
+    \input{figures/descriptives/P1_2_3_2_4_sd_years.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following regression:
+            $$ \sigma^{P,ll'}_{p,t} = \beta_t B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} +\lambda_{p} + \varepsilon_{pll',t}$$ 
+            The red diamonds are the $\beta_{t}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and at the $l^{'}$-NUTS2 level. The black circles show the average absolute price percentage price difference for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Absolute LOP deviations: Categories}
+    \label{fig: app_redform_sd_cats}
+    \input{figures/descriptives/P1_2_3_2_3_sd_cats.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating an adaption of equation \ref{eq:border_effect_prices}:$$\sigma^{P,ll'}_{p,t} = \beta_p B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} +\lambda_{t} + \varepsilon_{p(i)ll',t}$$The red diamonds are the $\beta_{p}$ coefficients and the error bars show 95\%-confidence intervals based on clustered standard errors at the region pair. The black circles show the average absolute price percentage price difference for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \subsection{Choice set differences}
+ \begin{figure}[H]
+    \centering
+    \caption{Choice set differences: All product varieties}
+    \label{fig: app_redform_bar}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_n_na.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_s_na.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distributions for the product variety-level dissimilarity measure across NUTS2-region pairs. The grey bars plot the distribution for NUTS2-region pairs when the two NUTS2-region pairs belong to the same country. The red bars do the same for NUTS1-region pairs that do not belong to the same country. In panels (a) and (b), the unit of observation is at the product category-region $l$-region $l'$-year level. Panel (a) plots the count-based dissimilarity measure and panel (b) plots the expenditure-based dissimilarity measure. The unit of observation is at the household type-product category-region $l$-region $l'$-year level. Panel (c) and (d) do the same for firm-level dissimilarity measures. Note that panel (d) has two y-axes: the left y-axis scales with the different country region pairs and the right y-axis scales with the same country region pairs.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Choice set differences: Branded or Private label product varieties}
+    \label{fig: app_redform_bar_bp}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_n_na_bp.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_s_na_bp.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_n_na_bp.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_s_na_bp.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distributions for the product variety-level dissimilarity measure across NUTS2-region pairs. The grey bars plot the distribution for NUTS1-region pairs when the two NUTS2-region pairs belong to the same country. The red bars do the same for NUTS2-region pairs that do not belong to the same country. In panels (a) and (b), the unit of observation is at the product category-region $l$-region $l'$-year level. Panel (a) plots the count-based dissimilarity measure and panel (b) plots the expenditure-based dissimilarity measure. The unit of observation is at the household type-product category-region $l$-region $l'$-year level. Panel (c) and (d) do the same for firm-level dissimilarity measures. Note that panel (d) has two y-axes: the left y-axis scales with the different country region pairs and the right y-axis scales with the same country region pairs. We restrict the sample of product varieties to only branded or private-label product varieties.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Choice set differences: Branded product varieties}
+    \label{fig: app_redform_bar_b}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_n_na_b.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Pooled - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_1_bar_n_s_na_b.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $N^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_n_na_b.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Household - $\lambda^{B,ll'}_{p,t}$}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_2_bar_n_s_na_b.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distributions for the product variety-level dissimilarity measure across NUTS2-region pairs. The grey bars plot the distribution for NUTS1-region pairs when the two NUTS2-region pairs belong to the same country. The red bars do the same for NUTS2-region pairs that do not belong to the same country. In panels (a) and (b), the unit of observation is at the product category-region $l$-region $l'$-year level. Panel (a) plots the count-based dissimilarity measure and panel (b) plots the expenditure-based dissimilarity measure. The unit of observation is at the household type-product category-region $l$-region $l'$-year level. Panel (c) and (d) do the same for firm-level dissimilarity measures. Note that panel (d) has two y-axes: the left y-axis scales with the different country region pairs and the right y-axis scales with the same country region pairs. We restrict the sample of product varieties to only branded or product varieties.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Choice set differences: Across Years}
+    \label{fig: app_redform_choice_years}
+        \begin{subfigure}[t]{.49\textwidth}
+            \centering
+            \caption{$N^{B,ll'}_{p,t}$}
+            \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_4_bar_years_n_na.tex}}
+        \end{subfigure}
+        \begin{subfigure}[t]{.49\textwidth}
+            \centering
+            \caption{$\lambda^{B,ll'}_{p,t}$}
+            \scalebox{0.45}{\input{figures/descriptives/P1_2_3_3_4_bar_years_s_na.tex}}
+        \end{subfigure}\\
+        \begin{subfigure}[t]{.49\textwidth}
+            \centering
+            \caption{$ N^{F,ll'}_{p,t}$}
+            \scalebox{0.45}{\input{figures/descriptives/P1_2_3_4_4_firm_years_n_na.tex}}
+        \end{subfigure}
+        \begin{subfigure}[t]{.49\textwidth}
+            \centering
+            \caption{$\lambda^{F,ll'}_{p,t}$}
+            \scalebox{0.45}{\input{figures/descriptives/P1_2_3_4_4_firm_years_s_na.tex}}
+        \end{subfigure}\\
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following regression: $$ y^{ll'}_{p,t} = \beta_t B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} + \lambda_{p(i)} + \varepsilon_{pll',t}$$The red diamonds are the $\beta_{t}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and $^{l'}$-NUTS2 level. The black circles show the average choice set dissimilarity for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Product variety-level choice set differences: $N^{B,ll'}_{p,t}$ Across 
+    Categories}
+    \label{fig: app_redform_choice_bar_cats_n}
+    \input{figures/descriptives/P1_2_3_3_3_bar_cats_n_na.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following regression:$$ N^{B,ll'}_{p,t} = \beta_{p} B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} + \lambda_{t} + \varepsilon_{pll',t}$$ The red diamonds are the $\beta_{p}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and $l^{'}$-NUTS2 level. The black circles show the average choice set dissimilarity for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Product variety-level choice set differences: $\lambda^{B,ll'}_{p,t}$ Across 
+    Categories}
+    \label{fig: app_redform_choice_bar_cats_e}
+    \input{figures/descriptives/P1_2_3_3_3_bar_cats_s_na.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following 
+            regression:$$\lambda^{B,ll'}_{p,t} = \beta_{p} B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} + \lambda_{t} + \varepsilon_{p(i)ll',t}$$ The red diamonds are the $\beta_{p(f)}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and $l^{'}$-NUTS2 level. The black circles show the average choice set dissimilarity for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Firm-level choice set differences: $N^{F,ll'}_{p,t}$ Across Categories}
+    \label{fig: app_redform_choice_firm_cats_n}
+    \input{figures/descriptives/P1_2_3_4_3_firm_cats_n_na.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following regression: $$N^{F,ll'}_{p,t} = \beta_{p} B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} + \lambda_{t} + \varepsilon_{pll',t}$$bThe red diamonds are the $\beta_{p}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and $l^{'}$-NUTS2 level. The black circles show the average choice set dissimilarity for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Firm-level choice set differences: $\lambda^{F,ll'}_{p,t}$ Across Categories}
+    \label{fig: app_redform_choice_firm_cats_e}
+    \input{figures/descriptives/P1_2_3_4_3_firm_cats_s_na.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the results from estimating the following regression:
+            $$\lambda^{F,ll'}_{p,t} = \beta_{p} B_{ll'} + \gamma d_{ll'} + \theta_l + \theta_{l'} + \lambda_{t} + \varepsilon_{pll',t}$$ The red diamonds are the $\beta_{p}$ coefficients and the error bars show 95\%-confidence intervals based on two-way clustered standard errors both at $l$-NUTS2 and $l^{'}$-NUTS2 level. The black circles show the average choice set dissimilarity for region pairs within the same country.}
+        \end{spacing}}
+ \end{figure} 

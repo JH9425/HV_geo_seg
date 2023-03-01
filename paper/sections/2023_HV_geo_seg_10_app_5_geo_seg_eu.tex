@@ -1,0 +1,248 @@
+\section{Border effects}
+\subsection{Estimation design}
+\begin{table}[H]
+	\centering		
+    \caption{Cross-border shopping - Overall}
+    \label{tab: app_border_eff_spectest_cbshopping_overall}
+	\begin{spacing}{1.1}
+        \scalebox{0.97}{
+        \begin{tabular}{lrrrr} \toprule
+            &   \multicolumn{2}{c}{Total} & \multicolumn{2}{c}{Share} 
+                \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} 
+            Store region & Transaction & Sales & Transaction & Sales \\ \midrule
+		    \input{tables/descriptives/P1_2_1_1_2_crossborder_overall.tex}
+	    \end{tabular}}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides the total number of transactions, the total expenditure, the share in the total number of transactions and the share in total expenditure for stores located in Belgium, France, the Netherlands, in another country and for stores which we cannot locate. To obtain these numbers we include all purchases made by Belgian households for the full sample period. Expenditure is expressed in EUR.}
+        \end{spacing}}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \caption{Cross-border shopping - Distance to the border}
+    \label{fig: app_border_eff_spectest_cbshopping_distance}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{France - Propensity}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_1_2_crossborder_fr_prop.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{France - Expenditure}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_1_2_crossborder_fr_exp.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{The Netherlands - Propensity}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_1_2_crossborder_nl_prop.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{The Netherlands - Expenditure}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_1_2_crossborder_nl_exp.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the prevalence of cross-border shopping for Belgian households. Panel (a) and panel (c) plot the share of households that engages at least once in cross-border shopping over the full sample period in either France or the Netherlands as a function of their distance to the respective border. Panel (b) and panel (d) plot the share in total expenditure that accounts for cross-border shopping in either France or the Netherlands as a function of their distance to the respective border. To obtain these numbers we include all households for which we observe their ZIPcode. If so, we compute the smallest great arc distance from the respective ZIPcode to the national border. Given these distances, we create 5km-wide bins to which we allocate households based on their distance to the border. To compute the propensity to engage in cross-border shopping we compute in each distance bin the sum of population weights of the group of people that engages in cross-border shopping. To compute the expenditure share we compute a weighted average of individual household expenditure shares on cross-border transactions by their population weight in each distance bin.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{table}[H]
+    \centering
+    \caption{Summary statistics: Geographic Variables }
+    \label{tab: app_prop_score_sum_stats}
+    \begin{spacing}{1}
+    \scalebox{0.65}{
+    \begin{tabular}{lcccccccccccc} \toprule
+        &\multicolumn{5}{c}{Overall}  & \multicolumn{2}{c}{National} & 
+         \multicolumn{2}{c}{International} & \multicolumn{3}{c}{Overlap tests} \\
+         \cmidrule(lr){2-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-13}
+         Variable & Mean & St. dev & Median & $10^{\text{th}}$ perc. & $90^{\text{th}}$ perc. &
+         Mean & St. dev & Mean & St. dev & t & $\hat{\pi}_{\text{nat}}^{0.05}$ & $\hat{\pi}_{\text{int}}^{0.05}$ \\
+        \midrule 
+        \input{tables/estimation/P1_3_4_2_prop_score_sumstat.tex}
+    \end{tabular}}
+    \end{spacing}
+    \parbox{1\textwidth}{
+    \vspace{10pt}
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table provides the summary statistics of the geographic variables. Columns 2 to 5 present the mean, standard deviation, median, $10^{th}$ percentile and $90^{th}$ percentile the overall distribution of the variables. Columns 6 and 7 report the mean and standard deviation of the conditional distributions for national pairs and columns 8 and 9 do so for international region pairs. Column 10 presents a t-statistic indicating the normalized differences in the distribution means. This statistic is defined as: 
+        $t\equiv
+            \frac{\hat{\mathbb{E}}(X|l\in\mathcal{L}_{\text{inter}})-\hat{\mathbb{E}}(X|l \in \mathcal{L}_{\text{intra}})}
+                 {\sqrt{\left(\hat{\sigma}(X|l \in \mathcal{L}_{\text{inter}}) + \hat{\sigma}(X|l \in \mathcal{L}_{\text{intra}})\right)/2}}$  
+        Finally, columns 11 and 12 compute the mass of the conditional distribution for national pairs that fall outside of the 5\%-95\% range of the conditional distribution of the international pairs and vice versa. More precisely, 
+        $\hat{\pi}_{\text{intra}}^{\alpha} \equiv 
+            \left(1 - \hat{F_\text{intra}}\left(\hat{F_\text{inter}}^{-1}\left(1-\alpha/2\right)\right)\right) 
+            + \hat{F_\text{intra}}\left(\hat{F_\text{inter}}^{-1}\left(\alpha/2\right)\right)$ and 
+        $\hat{\pi}_{\text{inter}}^{\alpha} \equiv 
+            \left(1 - \hat{F_\text{inter}}\left(\hat{F_\text{intra}}^{-1}\left(1-\alpha/2\right)\right)\right) 
+            + \hat{F_\text{inter}}\left(\hat{F_\text{intra}}^{-1}\left(\alpha/2\right)\right)$ and where the $\hat{F}_{\text{intra}}$, $\hat{F}_{\text{inter}}$, $\hat{F}^{-1}_{\text{intra}}$ and $\hat{F}^{-1}_{\text{inter}}$ are the conditional cumulative and conditional quantile distributions.}
+        \end{spacing}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Propensity score estimation: Model selection}
+    \label{tab: app_prop_score_model_selection}
+    \begin{spacing}{1}
+    \scalebox{0.85}{
+    \begin{tabular}{lcccccccc} \toprule
+        & \multicolumn{8}{c}{Iterations} \\ \cmidrule(lr){2-9}
+        Variable & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)  \\
+        \midrule 
+        \input{tables/estimation/P1_3_4_2_prop_score_spec.tex}
+    \end{tabular}}
+    \end{spacing}
+    \parbox{1\textwidth}{
+    \vspace{10pt}
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table presents the likelihood ratio statistic for the different second-order terms at each of the iterations of the model selection algorithm. In the first step, we include the four geographic variables in levels and estimate the restricted model. In a second step, we estimate for each potential second order the augmented model and report the likelihood ratio statistic defined as $LR \equiv -2\left(\text{log}(L_{\text{R}}) - \text{log}(L_{\text{A}})\right)$ where $L_{\text{R}}$ and $L_{\text{A}}$ are the likelihoods of the restricted and the augmented models respectively. If there are second-order terms that surpass the threshold level of 2.71, we pick the second-order term with the highest likelihood ratio statistic and add it to the augmented model in the next iteration. We keep iterating until none of the non-included terms do not surpass the threshold level.}
+        \end{spacing}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Propensity score estimation: Estimation}
+    \label{tab: app_prop_score_estimation}
+    \begin{spacing}{1}
+    \scalebox{0.85}{
+    \begin{tabular}{lcccccccc} \toprule
+        & \multicolumn{2}{c}{Full sample} & \multicolumn{2}{c}{Trimmed sample} \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        $P\left(B_{ll'} = 1\right)$ & (1) & (2) & (3) & (4)  \\
+        \midrule 
+        \input{tables/estimation/P1_3_4_2_prop_score_est.tex}
+    \end{tabular}}
+    \end{spacing}
+    \parbox{1\textwidth}{
+    \vspace{10pt}
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table presents the results from estimating the probability of being separated by a national border using the augmented logistic model. Columns (1) and (2) present the results for the full sample and columns (3) and (4) present the results for the trimmed sample. We report robust standard errors in brackets below the coefficient estimates and indicate significance levels are at the $p<0.1^{*}$,$p<0.05^{**}$ and $p<0.01^{***}$ levels.}
+        \end{spacing}}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \caption{Propensity scores}
+    \label{fig: app_prop_score}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Full sample}
+         \label{fig: app_prop_score_full}
+         \scalebox{0.45}{\input{figures/estimation/P1_2_4_3_2_ps_n_untrimmed.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Trimmed sample}
+         \label{fig: app_prop_score_trimmed}
+         \scalebox{0.45}{\input{figures/estimation/P1_2_4_3_2_ps_n_trimmed.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Trimmed sample - Re-estimated}
+         \label{fig: app_prop_score_trimmed_re}
+         \scalebox{0.45}{\input{figures/estimation/P1_2_4_3_2_ps_n_trimmed_re.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures provide the conditional distributions of predicted propensity scores based on the augmented model. We plot the conditional distribution of national pairs in grey and the one for international pairs in red. Panel (a) and (b) show the distributions for the full and trimmed sample respectively. Panel (c) plots the conditional distributions of predicted propensity scores for the trimmed sample after re-estimating the augmented model on the trimmed sample.}
+        \end{spacing}}
+ \end{figure} 
+
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Trimming cut-off: Grid search results}
+    \label{fig: app_prop_score_trimming_algo}
+    \scalebox{0.85}{\input{figures/estimation/P1_2_4_3_1_trimming.tex}}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the results from a grid search algorithm that searches for the $\alpha$ such that we omit region pairs with a propensity score outside of the $[\alpha,1-\alpha]$-range of the overall propensity score distribution. \citet{Crump2009} derive the optimal $\alpha$ as the one that balances a decrease in sampling variance as outliers are omitted and an increase in sampling as the number of included observations decreases. Formally, the eventual set of included observations $\mathbb{C}$ is given by: $\mathbb{C} = \{\boldsymbol{x} \in \boldsymbol{X}^{K} | \alpha \leq \hat{e}(\boldsymbol{x}) \leq 1-\alpha \}$ where $\hat{e}(\boldsymbol{x})$ is the estimated propensity score for an observation with a value $\boldsymbol{x} \in \boldsymbol{X}^{K}$ and $\alpha$ is the solution to the following problem: 
+            \begin{equation*}
+                \alpha = \frac{1}{2} - \sqrt{\frac{1}{4} - \frac{1}{\gamma}}, 
+                \qquad 
+                \Delta \equiv \frac{\gamma}{N}\sum_{i=1}^{N}\mathbb{1}\left(\frac{1}{\hat{e}(\boldsymbol{x}_i)(1-\hat{e}(\boldsymbol{x}_i))} \leq \gamma\right)
+                    - \frac{2}{N}\sum_{i=1}^{N}\mathbb{1}\left(\frac{1}{\hat{e}(\boldsymbol{x}_i)(1-\hat{e}(\boldsymbol{x}_i))} \leq \gamma\right)
+                        \frac{1}{\hat{e}(\boldsymbol{x}_i)(1-\hat{e}(\boldsymbol{x}_i))} = 0
+            \end{equation*}
+            On the figure, we plot for different values of $\alpha$ the $\text{log}(1+\Delta)$ which reaches a solution $\Delta = 0$ or where $\text{log}(1+\Delta) = 0$.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{table}[H]
+    \centering
+    \caption{Propensity score estimation: Estimation}
+    \label{tab: app_prop_score_blocks}
+    \begin{spacing}{1}
+    \scalebox{0.85}{
+    \begin{tabular}{lcccccccc} \toprule
+        & & & & \multicolumn{5}{c}{Propensity score} \\ \cmidrule(lr){5-9}
+        & \multicolumn{3}{c}{Size} & \multicolumn{2}{c}{Intra} & \multicolumn{2}{c}{Inter} & \\ \cmidrule(lr){2-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+        Blocks & Total & Intra & Inter & Mean & St. dev & Mean & St dev. & T-stat \\
+        \midrule 
+        \input{tables/estimation/P1_3_4_2_prop_score_blockdiff.tex}
+    \end{tabular}}
+    \end{spacing}
+    \parbox{1\textwidth}{
+    \vspace{10pt}
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table provides an overview of the different subclassification blocks that were created based on the algorithm from \citet{Imbens2015}. For each block, we provide the total number of region pairs and the number of intranational and international pairs. In addition, we provide for each block the mean and standard deviation of the conditional propensity score distribution for the intranational and international pairs. The last column provides the standardized mean difference of the propensity score of the international and intranational pairs which is computed as $t\equiv
+        \frac{\hat{\mathbb{E}}(X|l\in\mathcal{L}_{\text{inter}})-\hat{\mathbb{E}}(X|l \in \mathcal{L}_{\text{intra}})}
+             {\sqrt{\left(\hat{\sigma}(X|l \in \mathcal{L}_{\text{inter}}) + \hat{\sigma}(X|l \in \mathcal{L}_{\text{intra}})\right)/2}}$. Following, \citet{Imbens2015} we take a critical value of 1.96 for the standardized difference as one that requires further subclassification.}
+        \end{spacing}}
+\end{table}
+
+\subsection{Estimation results}
+
+\begin{table}[H]
+    \centering
+    \caption{Border effect: Cost-of-living - Sensitivity}
+    \label{tab: app_border_effects_cle_sens}
+    \begin{spacing}{1.1}
+        \begin{tabular}{lccccc} \toprule 
+            $\mathbb{V}\left[p_{l^{'},t}-p_{l,t}\right]$ & & & & & \\ 
+            Winsorized & $\hat{\sigma}_p$ & $\hat{\sigma}_p+0.5$ & $\hat{\sigma}_p+1$ & $\hat{\sigma}_p+1.5$ & $\hat{\sigma}_p+2$  \\ 
+            \midrule
+            \input{tables/estimation/P1_3_4_3_NCES_cl_sens.tex}
+        \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: This table results We cluster standard errors at the region pairs and present them in brackets below the coefficient estimates. Reported significance levels are at the $p<0.1^{*}$,$p<0.05^{**}$ and $p<0.01^{***}$ levels.} 
+\end{spacing}}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Border effect: Decomposition}
+    \label{tab: border_effects_decomp_sens}
+    \begin{spacing}{1.1}
+        \begin{tabular}{lcccccc} \toprule 
+             & $mc_{pl,t}$ & $\mu_{pl,t}$ & $S^{i,ll'}_{pl,t}$ & $S^{f,ll'}_{pl,t}$
+                & $\lambda^{ll',i}_{pl,t}$ & $\lambda^{ll',f}_{pl,t}$ \\ 
+            $\mathbb{V}_{ll',t}\left[y_{pl^{'},t}-y_{pl,t}\right]$ & (1) & (2) & (3) & (4) & (5) & (6) \\ \midrule
+            \textit{Panel (a): Variety-level elasticity = $\hat{\sigma}_p$} & & & & & & \\ 
+            \input{tables/estimation/P1_3_4_3_NCES_decomp0.tex}
+            \textit{Panel (b): Variety-level elasticity = $\hat{\sigma}_p + 1$} & & & & & & \\
+            \input{tables/estimation/P1_3_4_3_NCES_decomp1.tex}
+            \textit{Panel (c): Variety-level elasticity = $\hat{\sigma}_p + 2$} & & & & & & \\
+            \input{tables/estimation/P1_3_4_3_NCES_decomp2.tex}
+    \end{tabular}
+\end{spacing}
+    \parbox{\textwidth}{
+    \begin{spacing}{1} 
+        {\footnotesize 
+        \textit{Notes}: We cluster standard errors at the region pairs and present them in brackets below the coefficient estimates. Reported significance levels are at the $p<0.1^{*}$,$p<0.05^{**}$ and $p<0.01^{***}$ levels.} 
+\end{spacing}}
+\end{table} 

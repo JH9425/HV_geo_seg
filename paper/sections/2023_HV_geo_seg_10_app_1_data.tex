@@ -1,0 +1,337 @@
+\section{Data}
+\subsection{Barcodes and Firms}\label{app:data_bars_firms}
+We elaborate on the procedure that we use to associate barcodes with firm ids. The starting point is the data obtained from GS1 that matches the GS1 firm ID to each 8-digit or 13-digit barcode. Then, we assume that with a country, there will be only one firm that owns a particular brand, e.g. Coca-Cola European Partners in Belgium. We do allow for brands to be owned by different firms in different countries. For instance, the soda brand Dr. Pepper is owned by PepsiCo, inc. in most countries, but is owned by Coca-Cola European Partners in the Netherlands. By grouping barcodes through brand-country combinations, we can allow for such structures. As firms may own many country-brand combinations under multiple GS1 firm IDs, we obtain links across GS1 firm IDs when they both own a significant share of barcodes within the same country-brand combination. However, there are a couple of issues with this raw dataset that we need to deal with: 
+\begin{itemize}
+    \item   Even though each barcode is associated with only one GS1 firm ID, within a country-brand combination it is often the case that more than one GS1 firm ID owns barcodes.
+    \item   Often retailers are owners of some barcodes within country-(non-private) brand combination, for instance for repacking purposes, we might be grouping white label products with branded products through this feature of the data. An even bigger problem arises when retailers own barcodes across many countries-brand combinations because then we would counterfactually group barcodes that are owned by different firms. 
+\end{itemize}
+
+\noindent To guard against these concerns, we clean the GS1 firm IDs in the following way. 
+
+\begin{itemize}
+    \item   We identify all GS1 firm IDs used by retailers for their private labels and remove them from branded barcodes. In this way, we break spurious GS1 firm ID links through IDs associated with retailers. 
+    \item   We remove all GS1 firm IDs that have a transaction share below 10\%. The idea behind this step is to limit the potential for spurious linkages across firms through barcodes that have very little sales. Conversely, if it is really true that a firm has significant operations through more than one GS1 firm ID, it must be that these firm IDs account for a significant transaction share. We note that in most cases there is only one GS1 firm ID that passes this cleaning step, but for some multinationals, e.g. Pepisco, Inc., P\&G, it turns out that barcodes in one country are owned by local affiliates of different nationalities of the same multinational. 
+    \item   Related to the previous point, in cases where the largest GS1 firm ID has a bigger than 80\% transaction share in a country-brand combination, we identify this as the only firm ID and remove the smaller ones. 
+    \item   Finally, we keep only multiple GS1 firm IDs within the same country-brand combination that has a number of transactions that exceeds 200. If the country-brand combination has a transaction count below 200, we only keep the largest GS1 firm ID. In this way, we determine links across GS1 firm IDs using country-brand combinations that are not occasionally offered. 
+\end{itemize}
+
+\begin{table}[H]
+	\centering
+	\caption{Barcode types}
+    \label{tab: app_bars_firms_barcode_type}
+	\begin{spacing}{1.1}
+        \begin{tabular}{lrrrrrrrr} \toprule
+			& \multicolumn{4}{c}{Nr. barcodes} & \multicolumn{4}{c}{Expenditure share} \\ 
+                \cmidrule(lr){2-5} \cmidrule(lr){6-9}
+		    Barcode type & BEL & FRA & GER & NLD & BEL & FRA & GER & NLD \\ \midrule
+		    \input{tables/descriptives/P1_1_5_2_2_barcodes_omit.tex}
+	    \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+	\begin{spacing}{1} 
+		{\footnotesize 
+		\textit{Notes}: This table provides a sense of the importance of the different barcode types present in the data. Branded products are products that are associated with a non-retailer brand. Private label products are products whose brand coincides with a retail chain. Loose items are unbranded items. The excluded categories contain all expenditure on barcodes that could be classified in a product category and which is therefore omitted from the analysis. Columns 2 to 5 and columns 6 to 9 present across countries the importance of each category in terms of the number of barcodes and in terms of the total expenditure respectively.} 
+	\end{spacing}}
+\end{table}
+
+\begin{table}[H]
+	\centering		
+	\caption{Average Firm and UPC size}
+    \label{tab: app_bars_firms_avg_size}
+	\begin{spacing}{1.1}
+        \begin{tabular}{lrrrrrrrr} \toprule
+            & \multicolumn{4}{c}{Belgium} & \multicolumn{4}{c}{France} \\ 
+                \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+		     & Mean & Median & 10$^{th}$\% & 90$^{th}$\% & Mean & Median & 10$^{th}$\% & 90$^{th}$\% \\
+                \midrule
+		    \input{tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_BEFR.tex}
+            & \multicolumn{4}{c}{Germany} & \multicolumn{4}{c}{Netherlands} \\ 
+                \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+            & Mean & Median & 10$^{th}$\% & 90$^{th}$\% & Mean & Median & 10$^{th}$\% & 90$^{th}$\% \\ 
+                \midrule
+           \input{tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_DENL.tex}
+	    \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides across countries the distribution of the (1) number of firms, (2) firms sales, (3) log of firm sales, (4) numbers of UPCs per firm and (5) sales per UPC. We compute the mean across product category-year combinations where we weight product category-year observations with product category-year expenditures.}
+        \end{spacing}}
+\end{table}
+
+\begin{table}[H]
+	\centering		
+	\caption{Size distribution by Decile}
+    \label{tab: app_bars_firms_size_decile}
+	\begin{spacing}{1.1}
+        \scalebox{0.87}{
+        \begin{tabular}{lrrrrrrrr} \toprule
+            & \multicolumn{4}{c}{Belgium} & \multicolumn{4}{c}{France} \\ 
+                \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+            Decile &    Decile mkt & Firm mkt & Mean UPCs & Median UPCs & 
+                        Decile mkt & Firm mkt & Mean UPCs & Median UPCs\\ \midrule
+		    \input{tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_BEFR.tex}
+            & \multicolumn{4}{c}{Germany} & \multicolumn{4}{c}{Netherlands} \\ 
+                \cmidrule(lr){2-5} \cmidrule(lr){6-9} 
+            Decile &    Decile mkt & Firm mkt & Mean UPCs & Median UPCs & 
+                        Decile mkt & Firm mkt & Mean UPCs & Median UPCs\\ \midrule
+           \input{tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_DENL.tex}
+	    \end{tabular}}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides across countries the mean (1) market share, (2) mean firm market share, (3) mean number of UPCs per firm and (4) median number of UPCs per firm for each firm size decile for each country separately. We compute the mean across product category-year where we weigh product category-year observations with product category-year expenditures. }
+        \end{spacing}}
+\end{table}
+
+\begin{table}[H]
+	\centering		
+	\caption{Size Distribution by firm rank} 
+    \label{tab: app_bars_firms_size_top}
+	\begin{spacing}{1.1}
+        \scalebox{0.97}{
+        \begin{tabular}{lrrrrrrrr} \toprule
+            &   \multicolumn{2}{c}{Belgium} & \multicolumn{2}{c}{France} & 
+                \multicolumn{2}{c}{Germany} & \multicolumn{2}{c}{Netherlands} 
+                \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} 
+            Firm rank & Market share & Nr. UPCs & Market share & Nr. UPCs & 
+                        Market share & Nr. UPCs & Market share & Nr. UPCs  \\ \midrule
+		    \input{tables/descriptives/P1_2_2_3_desc_firms_HRW2016_T3.tex}
+	    \end{tabular}}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table zooms in on the first decile of the previous table. It provides across countries the mean (1) firm market share and (2) number of UPCs per firm for the 10 biggest firms in each product category-year combination. The mean is computed across product category-year combinations where we weight product category-year observations with product category-year expenditures. }
+        \end{spacing}}
+\end{table}
+
+\begin{table}[H]
+	\centering		
+	\caption{Size Distribution by number of UPCs}
+    \label{tab: app_bars_firms_size_nupcs}
+	\begin{spacing}{1.1}
+        \begin{tabular}{lrrrrrr} \toprule
+            & \multicolumn{3}{c}{Belgium} & \multicolumn{3}{c}{France} \\ 
+                \cmidrule(lr){2-4} \cmidrule(lr){5-7} 
+            Nr. UPCs &  Nr. Firms & Bin share & St dev. UPC sales &
+                        Nr. Firms & Bin share & St dev. UPC sales\\ \midrule
+		    \input{tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_BEFR.tex}
+            & \multicolumn{3}{c}{Germany} & \multicolumn{3}{c}{Netherlands} \\ 
+                \cmidrule(lr){2-4} \cmidrule(lr){5-7} 
+                Nr. UPCs &  Nr. Firms & Bin share & St dev. UPC sales &
+                Nr. Firms & Bin share & St dev. UPC sales\\ \midrule
+           \input{tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_DENL.tex}
+	    \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table shows across countries (1) the mean number of firms, (2) the total market share (3) the standard deviation of UPC level sales within firms for different bins based on the number of UPCs per firm. The mean is computed across product category-year combinations where we weight product category-year observations with product category-year expenditures. }
+        \end{spacing}}
+\end{table}
+
+
+\subsection{Product categories}
+\begin{table}[H]
+	\centering		
+	\caption{Excluded product categories}
+    \label{tab: app_data_prod_cat_excluded}
+	\begin{spacing}{1.1}
+        \begin{tabular}{lccccl} \toprule
+            Category & Belgium & France & Germany & Netherlands & Reason \\ \midrule
+		    \input{tables/descriptives/P1_1_5_2_1_categories_omit.tex}
+	    \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the product categories that were excluded from the sample. An "X" indicates that the category was present, but was omitted; an "-" indicates that the product category was not present. Observations are excluded because they were not present in each country ("not observed"), because the category was observed, but only consumed by less than 5\% of the households in the sample ("too few observations") or because there are concerns about how the product category is represented. Wine is excluded because France collects a separate household panel for this specific category. First aid and medicines are excluded because countries differ in the extent to which households can access them through regular retail stores. The other category is removed as we are uncertain about the exact nature of such product varieties.}
+        \end{spacing}}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\caption{Product categories}
+    \label{fig: app_data_prod_cat_overview}
+        \scalebox{0.8}{
+		\input{figures/descriptives/P1_2_1_3_categories_desc_exp_share.tex}}
+	\parbox{\textwidth}{
+	\begin{spacing}{1} 
+		{\footnotesize} 
+        \textit{Notes}: The graph plots the average expenditure share across the product categories. We compute this by pooling expenditure across the countries for each year and then averaging over years. 
+	\end{spacing}}
+\end{figure}
+
+\subsection{Households}
+\begin{table}[H]
+	\centering		
+	\caption{Size Distribution by number of UPCs}
+    \label{tab: app_households_excluded}
+	\begin{spacing}{1.1}
+        \begin{tabular}{lrrrrrr} \toprule
+            & \multicolumn{3}{c}{Belgium} & \multicolumn{3}{c}{France} \\ 
+                \cmidrule(lr){2-4} \cmidrule(lr){5-7} 
+            &   Households & Transactions & Exp. share &
+                Households & Transactions & Exp. share\\ \midrule
+		    \input{tables/descriptives/P1_2_1_1_1_desc_households_excluded_BEFR.tex}
+            & \multicolumn{3}{c}{Germany} & \multicolumn{3}{c}{Netherlands} \\ 
+                \cmidrule(lr){2-4} \cmidrule(lr){5-7} 
+            &   Households & Transactions & Exp. share &
+                Households & Transactions & Exp. share\\ \midrule
+           \input{tables/descriptives/P1_2_1_1_1_desc_households_excluded_DENL.tex}
+	    \end{tabular}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table shows for each country (1) the number of households, (2) the number of transactions and (3) the share in total expenditure in the group of included and excluded households.}
+        \end{spacing}}
+\end{table}
+\begin{figure}[H]
+   \centering
+   \caption{Expenditure per year}
+   \label{fig: app_data_households_exp_year}
+   \begin{subfigure}[t]{.49\textwidth}
+		\centering
+        \caption{Belgium}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_2_households_desc_sales_1.tex}}
+    \end{subfigure}
+    \begin{subfigure}[t]{.49\textwidth}
+		\centering
+        \caption{France}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_2_households_desc_sales_2.tex}}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{.49\textwidth}
+		\centering
+        \caption{Germany}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_2_households_desc_sales_3.tex}}
+    \end{subfigure}
+    \begin{subfigure}[t]{.49\textwidth}
+		\centering
+        \caption{The Netherlands}
+        \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_2_households_desc_sales_4.tex}}
+    \end{subfigure}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of average expenditure per year across households in the final sample on the 68 included product categories for each country.}
+        \end{spacing}}
+\end{figure} 
+
+\begin{figure}[H]
+    \centering
+    \caption{Barcodes per year}
+    \label{fig: app_data_households_bar_year}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Belgium}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_3_households_desc_nbar_1.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{France}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_3_households_desc_nbar_2.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Germany}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_3_households_desc_nbar_3.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{The Netherlands}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_3_households_desc_nbar_4.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of the average number of consumed barcodes per year across households in the final sample on the 68 included product categories for each country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Purchases per week}
+    \label{fig: app_data_households_trans_year}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Belgium}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_4_households_desc_trans_1.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{France}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_4_households_desc_trans_2.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Germany}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_4_households_desc_trans_3.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{The Netherlands}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_4_households_desc_trans_4.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of the average number of transactions barcodes per week across households in the final sample on the 68 included product categories for each country.}
+        \end{spacing}}
+ \end{figure} 
+
+ \begin{figure}[H]
+    \centering
+    \caption{Store visits per week}
+    \label{fig: app_data_households_stores_year}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Belgium}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_1.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{France}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_2.tex}}
+     \end{subfigure}\\
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{Germany}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_3.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{The Netherlands}
+         \scalebox{0.45}{\input{figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_4.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: These figures plot the distribution of the average number of store visits barcodes per week across households in the final sample on the 68 included product categories for each country. We define a store visit as a combination of visiting a store on a certain day. Hence, visiting two different stores on the same day is counted as two store visits.}
+        \end{spacing}}
+ \end{figure} 
+
+
+\subsection{Stores}
+\begin{table}[H]
+	\centering		
+	\caption{Stores: Overview}
+    \label{tab: app_data_stores_overview}
+	\begin{spacing}{1.1}
+        \scalebox{0.97}{
+        \begin{tabular}{lrrrrrrrr} \toprule
+            &   \multicolumn{2}{c}{Belgium} & \multicolumn{2}{c}{France} & 
+                \multicolumn{2}{c}{Germany} & \multicolumn{2}{c}{Netherlands} 
+                \\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} 
+            Store & Sales & Trans & Sales & Trans & Sales & Trans & Sales & Trans\\ \midrule
+		    \input{tables/descriptives/P1_2_1_4_desc_stores.tex}
+	    \end{tabular}}
+    \end{spacing}
+    \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table shows for each country the expenditure and transaction share across the different stores respectively.}
+        \end{spacing}}
+\end{table}

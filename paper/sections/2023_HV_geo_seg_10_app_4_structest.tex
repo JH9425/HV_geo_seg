@@ -1,0 +1,313 @@
+\section{Structural Estimation results}
+\subsection{Barcode-level Elasticities}
+
+\begin{figure}[H]
+    \centering
+    \caption{Elasticity of substitution $\sigma_p$: Weekly frequency $\sum_{t \in y(t)} \mathbb{1}(P_{il,t}C_{il,t} > 0) \geq 0.5$}
+    \label{fig: app_elas_sigma_cats_weekly_50ptt}
+    \input{figures/estimation/P1_3_1_1_1_elas_bar_w_cat.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the OLS and IV-estimates of the product variety level elasticities of substitution $\sigma_p$ estimated using consumption data at the weekly frequency. The estimations include all product variety-region-week observations for which weekly sales are positive in over 50\% of weeks in a given year. We include product variety-region-chain-year FEs, product variety-region-chain-week and product category-region-chain-week FEs. Alongside the parameters, we plot 95\% confidence intervals based on clustered standard errors at the product variety level. For expositional purposes, we omit estimates for which the confidence intervals are outside of the $[-10,2]$ range.}
+        \end{spacing}}
+ \end{figure} 
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Barcode-level Elasticities: Within store instrument}
+        \label{tab: app_elas_sigma_cats_weekly}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{IV}} \neq 0$ & $\hat{\beta}_{\text{IV}} \neq -1$ & $\hat{\beta}_{\text{IV}} > -1$ &
+            $\hat{\beta}_{\text{IV}} \neq 0$ & $\hat{\beta}_{\text{IV}} \neq -1$ & $\hat{\beta}_{\text{IV}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_1_2_elas_bar_w_cat.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV-estimates of the product variety level elasticities of substitution $\sigma_p$ estimated using consumption data at the weekly frequency for different specifications. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+    \begin{figure}[H]
+        \centering
+        \caption{Elasticity of substitution $\sigma_p$: Monthly frequency $\sum_{t \in y(t)} \mathbb{1}(P_{il,t}C_{il,t} > 0) \geq 0.5$}
+        \label{fig: app_elas_sigma_cats_monthly_50ptt}
+        \input{figures/estimation/P1_3_1_2_1_elas_bar_m_cat.tex}
+         \parbox{\textwidth}{
+            \begin{spacing}{1} 
+                {\footnotesize 
+                \textit{Notes}: This figure shows the OLS and IV-estimates of the product variety level elasticities of substitution $\sigma_p$ estimated using consumption data at the monthly frequency. The estimations include all product variety-region-month observations for which weekly sales are positive in over 50\% of weeks in a given year. We include product variety-region-chain-year FEs, product variety-region-chain-month and product category-region-chain-month FEs. Alongside the parameters, we plot 95\% confidence intervals based on clustered standard errors at the product variety level. We omit estimates for which the confidence intervals are outside of the $[-10,2]$ range.}
+            \end{spacing}}
+     \end{figure} 
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Monthly Barcode-level Elasticities: Within store instrument}
+        \label{tab: app_elas_sigma_cats_monthly}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_1_2_elas_bar_m_cat.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV-estimates of the product variety level elasticities of substitution $\sigma_p$ estimated using consumption data at the monthly frequency for different specifications. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\subsection{Firm-level Elasticities}
+
+\begin{figure}[H]
+    \centering
+    \caption{Elasticity of substitution $\eta_p$: Weekly frequency $\sum_{t \in y(t)} \mathbb{1}(P_{il,t}C_{il,t} > 0) \geq 0.5$}
+    \label{fig: app_elas_eta_cats_weekly_50ptt}
+    \input{figures/estimation/P1_3_2_1_1_elas_firm_w_cat.tex}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure shows the OLS and IV-estimates of the firm-level elasticities of substitution $\eta$ estimated using consumption data at the weekly frequency. The estimations include all firm-region-week observations for which weekly sales are positive in over 50\% of weeks in a given year. We include product category-firm-region- FEs and product category-region-week FEs. Alongside the parameters, we plot 95\% confidence intervals based on clustered standard errors at the firm level. For expositional purposes, we omit estimates for which the confidence intervals are outside of the $[-10,2]$ range.}
+        \end{spacing}}
+ \end{figure} 
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument}
+        \label{tab: app_elas_eta_cats_weekly_q}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Monthtly Firm-level Elasticities: Dispersion instrument}
+        \label{tab: app_elas_eta_cats_monthly_q}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_m_cat.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV-estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the monthly frequency for different specifications. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument - Country comparison}
+        \label{tab: app_elas_eta_cats_weekly_q_comp}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llcccccccccccc} \toprule
+            & &\multicolumn{3}{c}{Belgium}  &\multicolumn{3}{c}{France} & 
+             \multicolumn{3}{c}{The Netherlands} & \multicolumn{3}{c}{Germany} \\
+             \cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14}
+             Sample & Specification & p10 & p50 & p90 &p10 & p50 & p90 &p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat_country_comp.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the IV estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications across the different countries. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. For each country, we provide the distribution of firm-level elasticities of substitution across the product categories.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument - Belgium}
+        \label{tab: app_elas_eta_cats_weekly_q_BE}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c1.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications for Belgium. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument - France}
+        \label{tab: app_elas_eta_cats_weekly_q_FR}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c2.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications for France. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument - The Netherlands}
+        \label{tab: app_elas_eta_cats_weekly_q_NL}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c3.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications for The Netherlands. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[H]
+        \centering
+        \caption{Weekly Firm-level Elasticities: Dispersion instrument - Germany}
+        \label{tab: app_elas_eta_cats_weekly_q_DE}
+        \begin{spacing}{1}
+        \scalebox{0.65}{
+        \begin{tabular}{llccccccccccccc} \toprule
+            & & &\multicolumn{3}{c}{Unweighted}  &\multicolumn{3}{c}{Weighted} & 
+             \multicolumn{3}{c}{OLS} & \multicolumn{3}{c}{IV} \\
+             \cmidrule(lr){4-6} \cmidrule(lr){7-9} \cmidrule(lr){10-12} \cmidrule(lr){13-15}
+             Sample & Specification & nr. Cat &
+             $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+            $\hat{\beta}_{\text{2SLS}} \neq 0$ & $\hat{\beta}_{\text{2SLS}} \neq -1$ & $\hat{\beta}_{\text{2SLS}} > -1$ &
+             p10 & p50 & p90 &p10 & p50 & p90 \\
+            \midrule 
+            \input{tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c4.tex}
+        \end{tabular}}
+        \end{spacing}
+        \parbox{1.2\textwidth}{
+        \vspace{10pt}
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This table provides an overview of the OLS and IV-estimates of the firm-level elasticities of substitution $\eta_p$ estimated using consumption data at the weekly frequency for different specifications for Germany. The sample column indicates which restriction we place on the included sample. The specification columns indicate which sets of fixed effects we include. The nr. Cat shows how many product categories the minimization routine for the IV-estimator converged successfully. The unweighted columns plot the fraction of IV estimates which are significantly different from 0, different from -1 and whether any estimates are statistically significantly larger than -1. The weighted column computes weighted shares by weighting each product category at its expenditure share. Finally, the OLS and IV columns provide the distribution of OLS and IV estimates across product categories respectively. All statistical tests are based on standard errors that are clustered at the product variety level.}
+            \end{spacing}}
+    \end{table}
+\end{landscape}
+
+\subsection{Structural components}
+\begin{figure}[H]
+    \centering
+    \caption{Relative expenditure shares}
+    \label{fig: struc_est_rel_share}
+    \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{$\lambda^{B,ll'}_{pl',t}\bigg/\lambda^{B,ll'}_{pl,t}$}
+         \label{fig: feenstra_bar}
+         \scalebox{0.45}{\input{figures/estimation/P1_3_4_1_2_rel_share_bar.tex}}
+     \end{subfigure}
+     \begin{subfigure}[t]{.49\textwidth}
+         \centering
+         \caption{$\lambda^{F,ll'}_{pl',t}\bigg/\lambda^{F,ll'}_{pl,t}$}
+         \label{fig: feenstra_firm}
+         \scalebox{0.45}{\input{figures/estimation/P1_3_4_1_3_rel_share_firm.tex}}
+     \end{subfigure}
+     \parbox{\textwidth}{
+        \begin{spacing}{1} 
+            {\footnotesize 
+            \textit{Notes}: This figure plots the distribution for the relative expenditure share on common product varieties and common firms in panel (a) and panel (b) respectively. The unit of observation is at the product category-region $l$-region $l'$-year level. Within each product category, we compute for each NUTS2-region combination the ratio of expenditure on either common product varieties or common firms relative total expenditure. Hereafter, we bin the data into 0.05 bins and winsorize the data at a relative share of 3.}
+        \end{spacing}}
+\end{figure} 
