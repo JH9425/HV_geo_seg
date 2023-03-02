@@ -1500,13 +1500,9 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecss0600.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8t.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/public/fourier/futr8t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/public/fourier/futr8t.vf
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/public/fourier/futb8t.vf
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8r.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-alt-bold.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/public/fourier/futsy.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-ms.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-mcl.tfm
@@ -1631,6 +1627,7 @@ INPUT ./sections/2023_HV_geo_seg_7_structest.tex
 INPUT sections/2023_HV_geo_seg_7_structest.tex
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8t.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8t.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8t.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futmiib.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futmiib.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futmiib.tfm
@@ -1640,6 +1637,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futmib.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/public/fourier/futmiib.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-mlitb.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/fourier-mlb.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futb8r.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/fourier/futbi8r.tfm
 INPUT ./figures/estimation/P1_3_4_1_1_markups_hom_country.tex
 INPUT figures/estimation/P1_3_4_1_1_markups_hom_country.tex
