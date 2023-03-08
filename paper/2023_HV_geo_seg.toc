@@ -1,54 +1,62 @@
 \contentsline {section}{\numberline {1}Introduction}{4}{section.2}%
 \contentsline {section}{\numberline {2}Data}{8}{section.10}%
-\contentsline {section}{\numberline {3}Reduced-form evidence}{11}{section.22}%
-\contentsline {subsection}{\numberline {3.1}LOP Deviations}{11}{subsection.23}%
-\contentsline {subsection}{\numberline {3.2}Choice set differences}{15}{subsection.32}%
-\contentsline {section}{\numberline {4}Theoretical Framework}{19}{section.41}%
-\contentsline {subsection}{\numberline {4.1}Consumer preferences}{19}{subsection.42}%
-\contentsline {paragraph}{Preferences}{19}{section*.43}%
-\contentsline {paragraph}{Cost-of-living}{20}{section*.45}%
-\contentsline {subsection}{\numberline {4.2}Decomposing Cost-of-living Differences}{20}{subsection.46}%
-\contentsline {subsection}{\numberline {4.3}Detecting geographic market segmentation}{24}{subsection.53}%
-\contentsline {section}{\numberline {5}Structural Estimation}{24}{section.55}%
-\contentsline {subsection}{\numberline {5.1}Elasticities of Substitution}{24}{subsection.56}%
-\contentsline {subsubsection}{\numberline {5.1.1}Product variety-level elasticities - $\sigma _p$}{24}{subsubsection.57}%
-\contentsline {paragraph}{Estimation strategy}{24}{section*.58}%
-\contentsline {paragraph}{Baseline results}{26}{section*.62}%
-\contentsline {paragraph}{Robustness}{26}{section*.66}%
-\contentsline {subsubsection}{\numberline {5.1.2}Firm-level elasticities - $\eta _p$}{27}{subsubsection.68}%
-\contentsline {paragraph}{Estimation strategy}{27}{section*.69}%
-\contentsline {paragraph}{Baseline results}{29}{section*.74}%
-\contentsline {paragraph}{Robustness}{29}{section*.77}%
-\contentsline {paragraph}{Cross-country Heterogeneity}{30}{section*.78}%
-\contentsline {paragraph}{Implied markups}{30}{section*.79}%
-\contentsline {subsection}{\numberline {5.2}Regional Cost-of-living Differences}{32}{subsection.84}%
-\contentsline {section}{\numberline {6}Geographic Market Segmentation in Europe}{32}{section.88}%
-\contentsline {subsection}{\numberline {6.1}Empirical design}{34}{subsection.89}%
-\contentsline {paragraph}{Potential outcomes framework}{34}{section*.90}%
-\contentsline {paragraph}{Propensity score and subclassification}{36}{section*.97}%
-\contentsline {subsection}{\numberline {6.2}Cost-of-living Differences for Comparable Regions}{37}{subsection.103}%
-\contentsline {paragraph}{Basline results}{38}{section*.104}%
-\contentsline {paragraph}{Robustness}{38}{section*.105}%
-\contentsline {subsection}{\numberline {6.3}Detecting Geographic Market Segmentation}{39}{subsection.108}%
-\contentsline {section}{\numberline {7}Concluding Remarks}{41}{section.112}%
-\contentsline {section}{\numberline {A}Data}{46}{appendix.114}%
-\contentsline {subsection}{\numberline {A.1}Barcodes and Firms}{46}{subsection.115}%
-\contentsline {subsection}{\numberline {A.2}Product categories}{51}{subsection.121}%
-\contentsline {subsection}{\numberline {A.3}Households}{53}{subsection.124}%
-\contentsline {subsection}{\numberline {A.4}Stores}{56}{subsection.130}%
-\contentsline {section}{\numberline {B}Reduced form evidence}{57}{appendix.132}%
-\contentsline {subsection}{\numberline {B.1}LOP deviations}{57}{subsection.133}%
-\contentsline {subsection}{\numberline {B.2}Choice set differences}{63}{subsection.140}%
-\contentsline {section}{\numberline {C}Derivations in the theoretical framework}{70}{appendix.149}%
-\contentsline {subsection}{\numberline {C.1}Cost-of-living decomposition}{70}{subsection.150}%
-\contentsline {paragraph}{Definitions}{70}{section*.151}%
-\contentsline {paragraph}{Cost-of-living decomposition}{72}{section*.152}%
-\contentsline {subsection}{\numberline {C.2}Optimal pricing rule}{75}{subsection.153}%
-\contentsline {subsection}{\numberline {C.3}Product variety-level residuals and Structural Instrument}{75}{subsection.154}%
-\contentsline {section}{\numberline {D}Structural Estimation results}{76}{appendix.155}%
-\contentsline {subsection}{\numberline {D.1}Barcode-level Elasticities}{76}{subsection.156}%
-\contentsline {subsection}{\numberline {D.2}Firm-level Elasticities}{80}{subsection.161}%
-\contentsline {subsection}{\numberline {D.3}Structural components}{88}{subsection.170}%
-\contentsline {section}{\numberline {E}Border effects}{88}{appendix.172}%
-\contentsline {subsection}{\numberline {E.1}Estimation design}{88}{subsection.173}%
-\contentsline {subsection}{\numberline {E.2}Estimation results}{94}{subsection.182}%
+\contentsline {paragraph}{Countries}{8}{section*.12}%
+\contentsline {paragraph}{Product categories}{9}{section*.13}%
+\contentsline {paragraph}{Varieties}{9}{section*.15}%
+\contentsline {paragraph}{Firms}{10}{section*.20}%
+\contentsline {paragraph}{Households}{10}{section*.25}%
+\contentsline {paragraph}{Stores}{11}{section*.26}%
+\contentsline {paragraph}{Geographic data}{11}{section*.27}%
+\contentsline {section}{\numberline {3}Reduced-form evidence}{11}{section.29}%
+\contentsline {subsection}{\numberline {3.1}LOP Deviations}{12}{subsection.30}%
+\contentsline {subsection}{\numberline {3.2}Choice set differences}{15}{subsection.39}%
+\contentsline {section}{\numberline {4}Theoretical Framework}{20}{section.48}%
+\contentsline {subsection}{\numberline {4.1}Consumer preferences}{20}{subsection.49}%
+\contentsline {paragraph}{Preferences}{20}{section*.50}%
+\contentsline {paragraph}{Cost-of-living}{21}{section*.52}%
+\contentsline {paragraph}{Decomposing cost-of-living differences}{21}{section*.53}%
+\contentsline {subsection}{\numberline {4.2}Technology and market structure}{25}{subsection.60}%
+\contentsline {subsection}{\numberline {4.3}Detecting geographic Market segmentation}{26}{subsection.63}%
+\contentsline {section}{\numberline {5}Structural Estimation}{26}{section.65}%
+\contentsline {subsection}{\numberline {5.1}Elasticities of Substitution}{27}{subsection.66}%
+\contentsline {subsubsection}{\numberline {5.1.1}Product variety-level elasticities - $\sigma _p$}{27}{subsubsection.67}%
+\contentsline {paragraph}{Estimation strategy}{27}{section*.68}%
+\contentsline {paragraph}{Baseline results}{28}{section*.72}%
+\contentsline {paragraph}{Robustness}{29}{section*.76}%
+\contentsline {subsubsection}{\numberline {5.1.2}Firm-level elasticities - $\eta _p$}{30}{subsubsection.78}%
+\contentsline {paragraph}{Estimation strategy}{30}{section*.79}%
+\contentsline {paragraph}{Baseline results}{32}{section*.84}%
+\contentsline {paragraph}{Robustness}{32}{section*.87}%
+\contentsline {paragraph}{Cross-country Heterogeneity}{32}{section*.88}%
+\contentsline {paragraph}{Implied markups}{33}{section*.89}%
+\contentsline {subsection}{\numberline {5.2}Regional Cost-of-living Differences}{34}{subsection.94}%
+\contentsline {section}{\numberline {6}Geographic Market Segmentation in Europe}{35}{section.98}%
+\contentsline {subsection}{\numberline {6.1}Empirical design}{37}{subsection.99}%
+\contentsline {paragraph}{Potential outcomes framework}{37}{section*.100}%
+\contentsline {paragraph}{Propensity score and subclassification}{39}{section*.107}%
+\contentsline {subsection}{\numberline {6.2}Cost-of-living Differences for Comparable Regions}{40}{subsection.113}%
+\contentsline {paragraph}{Basline results}{40}{section*.114}%
+\contentsline {paragraph}{Robustness}{41}{section*.115}%
+\contentsline {subsection}{\numberline {6.3}Detecting Geographic Market Segmentation}{42}{subsection.118}%
+\contentsline {section}{\numberline {7}Concluding Remarks}{44}{section.122}%
+\contentsline {section}{\numberline {A}Data}{50}{appendix.124}%
+\contentsline {subsection}{\numberline {A.1}Barcodes and Firms}{50}{subsection.125}%
+\contentsline {subsection}{\numberline {A.2}Product categories}{55}{subsection.131}%
+\contentsline {subsection}{\numberline {A.3}Households}{57}{subsection.134}%
+\contentsline {subsection}{\numberline {A.4}Stores}{60}{subsection.140}%
+\contentsline {section}{\numberline {B}Reduced form evidence}{61}{appendix.142}%
+\contentsline {subsection}{\numberline {B.1}LOP deviations}{61}{subsection.143}%
+\contentsline {subsection}{\numberline {B.2}Choice set differences}{67}{subsection.150}%
+\contentsline {section}{\numberline {C}Derivations in the theoretical framework}{74}{appendix.159}%
+\contentsline {subsection}{\numberline {C.1}Cost-of-living decomposition}{74}{subsection.160}%
+\contentsline {paragraph}{Definitions}{74}{section*.161}%
+\contentsline {paragraph}{Cost-of-living decomposition}{76}{section*.162}%
+\contentsline {subsection}{\numberline {C.2}Proof of Proposition \ref {prop:test}}{78}{subsection.163}%
+\contentsline {section}{\numberline {D}Structural Estimation results}{86}{appendix.164}%
+\contentsline {subsection}{\numberline {D.1}Barcode-level Elasticities}{86}{subsection.165}%
+\contentsline {subsection}{\numberline {D.2}Firm-level Elasticities: Identification}{90}{subsection.170}%
+\contentsline {subsection}{\numberline {D.3}Firm-level Elasticities: Results}{91}{subsection.171}%
+\contentsline {subsection}{\numberline {D.4}Structural components}{99}{subsection.180}%
+\contentsline {section}{\numberline {E}Border effects}{99}{appendix.182}%
+\contentsline {subsection}{\numberline {E.1}Estimation design}{99}{subsection.183}%
+\contentsline {subsection}{\numberline {E.2}Estimation results}{105}{subsection.192}%

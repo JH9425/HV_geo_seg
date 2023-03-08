@@ -58,8 +58,7 @@ To jointly analyze both margins of geographic market segmentation, we specify a 
 %\end{linenomath*}
 %The pricing rule for nested demand systems typically does not depend on the elasticity of substitution at the lowest nest. \citet{Hottman2016} illustrate that, within each firm nest, the firm is the monopoly supplier of the product varieties in that nest. Therefore, the profit maximization problem boils down to choosing the optimal firm-level price $P_{fpl,t}$ and to supplying the associated firm-level quantity at the lowest possible costs. Supplying at the lowest possible costs requires setting relative prices of the product varieties equal to their marginal costs. Consequently, markups do not vary across product varieties within the nests. Still, markups can differ across product categories, countries and time. Markups depend on the firm-level elasticity of substitution $\eta_p$ and the country-level market share $S_{fpn,t}$. Intuitively, higher firm-level elasticities of substitution reflect easier substitution across firms leading to lower markups. As the market share approaches zero,  firms have less and less influence on the product category level price, the elasticity of demand converges to the elasticity of substitution $\eta_p$ and markups are the same as under monopolistic competition. Conversely, as the market share grows the elasticity of demand falls and optimal markups increase. 
 %
-\subsection{Decomposing Cost-of-living Differences}
-We decompose cost-of-living differences between any two regions $l$ and $l'$ into three structural components: (1) LOP deviations, corrected for substitution effects (2) pure taste differences and (3) choice set differences. To this end, define the share spent in region $l$ at time $t$ on firms that sell both in region $l$ and region $l'$ in product category $p$, $\lambda^{F,ll'}_{pl,t}$, and the share spent in region $l$ in at time $t$ on common product varieties sold by firm $f$ between region $l$ and region $l'$ in product category $p$, $\lambda^{B,ll'}_{fpl,t}$, as: 
+\paragraph{Decomposing cost-of-living differences} We decompose cost-of-living differences between any two regions $l$ and $l'$ into three structural components: (1) LOP deviations, corrected for substitution effects (2) pure taste differences and (3) choice set differences. To this end, define the share spent in region $l$ at time $t$ on firms that sell both in region $l$ and region $l'$ in product category $p$, $\lambda^{F,ll'}_{pl,t}$, and the share spent in region $l$ in at time $t$ on common product varieties sold by firm $f$ between region $l$ and region $l'$ in product category $p$, $\lambda^{B,ll'}_{fpl,t}$, as: 
 \begin{linenomath*}
     \begin{equation*}
         \lambda^{F,ll'}_{pl,t} \equiv  
@@ -220,7 +219,7 @@ from equation \ref{eq:cle_decomp} to arrive at the decomposition:
                             \frac{P_{il',t}}{P_{il,t}}
                         \right)
                     \right]
-                }_{\text{LOP deviations + Substitution Effect } (P_{pll',t})} \\
+                }_{\text{LOP deviations + Substitution Effect } (SV_{pll',t})} \\
                 & \qquad + 
                 \underbrace{
                     \frac{1}{N^{F,ll'}_{p}}
@@ -278,7 +277,8 @@ from equation \ref{eq:cle_decomp} to arrive at the decomposition:
                         \text{ln}
                         \left(
                             \frac{\lambda^{ll'}_{fpl',t}}{\lambda^{ll'}_{fpl',t}}
-                        \right)}_{\text{Choice set differences } (\Lambda_{pll',t})}
+                        \right)
+                }_{\text{Choice set differences } (\Lambda_{pll',t})}
     \end{aligned}
     \end{equation}
 \end{linenomath*}
@@ -304,15 +304,54 @@ where
 \end{linenomath*}
 This expression decomposes cost-of-living differences into (1) LOP deviations, corrected for substitution effects (2) pure taste differences and (3) choice set differences. The first part, given by, $P_{pll',t}$, is the Sato-Vartia price index and captures only LOP deviations and substitution effects. The reason why it captures LOP deviations and substitution effects and not taste differences is that it is the ideal price index for common firms and product varieties for our nested CES preference system in the absence of taste differences.\footnote{This follows immediately from the derivation of the common market share terms when setting $\varphi_{fpl',t} = \varphi_{fpl,t} \quad \forall f \mathcal{F}^{ll'}_{p,t}$ and $\varphi_{il',t} = \varphi_{il,t} \quad \forall i \mathcal{B}^{ll'}_{fp,t}$} The second part, $T_{pll',t}$, captures pure taste differences. This is because this term is defined as the difference between the generalized price index, which allows for pure taste differences, and the Sato-Vartia price index, which abstracts from taste differences. This term is the cross-sectional analog to the taste-bias term derived in \citet{Redding2020}. The final part is denoted by $\Lambda_{pll',t}$, and captures differences in choice sets between region $l'$ and $l$. This expression forms the basis to detect geographic market segmentation in section \ref{sec:border_effects_eu} and to separate taste differences from LOP deviations and choice set differences.
 
-\subsection{Detecting geographic market segmentation}
+\subsection{Technology and market structure}
+Even though equation \ref{eq:cle_decomp2} provides a way to measure LOP-deviations and choice set differences in a unified way, additional restrictions are needed to derive a test to detect geographic market segmentation. In addition to staying within the CES family of preference systems, we additionally restrict the production technology and market structure in which firms compete. The first assumption applies to the production function. Each firm is born in a location $z$ and can set up one plant where it produces according to the following cost function: 
+\begin{linenomath*}
+    \begin{equation*}
+        \text{C}_{pf,t} = 
+            \sum_{l \in \mathcal{L}}\sum_{i \in \mathcal{B}_{pfl,t}}\varphi_{i,t}\cdot q_{il,t} 
+                +   F_{pf,t}\cdot
+                    \mathbb{1}\left(\sum_{l \in \mathcal{L}}\sum_{i \in \mathcal{B}_{pfl,t}}q_{il,t}>0\right)
+    \end{equation*}
+\end{linenomath*}
+The cost function has a variable part that depends on the marginal cost of producing product variety $i$ at time $t$, $\varphi_{i,t}$. The cost function also has a fixed part that $F_{pf,t}$ that is incurred if there is any quantity produced, indicated by $q_{il,t}$. This fixed cost not only captures the costs of setting up a production plant, but also the costs to create a domestic distribution system that grants access to all locations in the country where the firm produces.\footnote{Assuming no economies of scope nor economies of scale on the variable factors of production is restrictive, but standard in the trade literature on multiproduct firms, see \citet{Eckel2010}, \citet{Bernard2011} and \citet{Mayer2014}. Still, because we leave the distribution of $F_{pf,t}$ unrestricted, we can allow for economies of scale through the fixed costs of setting up production.}. 
 
+The second restriction pertains to the market structure in which firms compete. The market structure has two stages in which firms first decide whether to produce and in which locations to enter and then compete by setting prices. In the second stage, in each location firms compete in a monopolistic competitive environment. Combined with the nested CES structure, this yields the following optimal pricing rule: 
+\begin{linenomath*}
+    \begin{equation*}
+        P_{il,t} = \mu_{il,t}\text{MC}_{il,t}, \qquad \text{where} \quad \mu_{il,t} = \frac{\eta_{p(i)}}{\eta_{p(i)}-1}
+    \end{equation*}
+\end{linenomath*}
+where $\mu_{il,t}$ is the markup charged for product variety $i$ in location $l$ at time $t$ and $\text{MC}_{il,t}$ is the marginal cost of delivering product variety $i$ to location $l$, which is given by: 
+\begin{linenomath*}
+    \begin{equation*}
+        \text{MC}_{il,t} = \varphi_{i,t}t(\boldsymbol{X}_{z,l})\left(1+\tau_{i,t}B_{z,l}\right)
+    \end{equation*}
+\end{linenomath*}
+and depends on the marginal cost of production $\varphi_{i,t}$, transport costs $t(\boldsymbol{X}_{z,l})$ that continuously depend on the geography traversed when shipping from the production plant in location $z$ to the destination market $l$ and an additional trade costs $\tau_{i,t}$ incurred if $B_{z,l} = 1$, indicating that $z$ and $l$ are not part of the same country. The presence of $\tau_{i,t} \neq 0$ allows for LOP deviations beyond the costs of simply moving goods to the destination market. Conditional on producing domestically, firms decide whether to enter other countries and determine the set of product varieties to offer: 
+\begin{linenomath*}
+    \begin{equation*}
+        \max_{\mathcal{B}_{pfl,t}} 
+            =   \sum_{l \in n(l)}\sum_{i \in \mathcal{B}_{pfl,t}}
+                \left(P_{il,t} - \text{MC}_{il,t}\right)Q_{il,t} 
+                - F^X_{pf,t}\cdot
+                    \mathbb{1}\left(\sum_{l \in n(l)}\sum_{i \in \mathcal{B}_{pfl,t}}B_{z,l}Q_{il,t}>0\right)
+                - \sum_{i \in \mathcal{B}_{pfl,t}}F^X_{i,t}\cdot
+                    \mathbb{1}\left(\sum_{l \in n(l)}B_{z,l}Q_{il,t}>0\right)
+    \end{equation*}
+\end{linenomath*}
+where $F^X_{pf,t}$ is a fixed cost incurred in case the firm enters location $l$ and $F^X_{i,t}$ is a fixed cost incurred for every product variety supplied to location $l$. These costs capture, for instance, the costs associated with setting up distribution and allow us to capture choice set differences both at the firm and product variety levels. Like before, paying these costs grants access to all locations in that particular country.\footnote{Altough section \ref{sec:reduced_form} highlights that choice set differences exist for intranational region pairs, they are pronounced for international region pairs. This particular set of assumptions can therefore capture most of the variation in the data.}
+
+Many popular international trade models are contained in this set of assumptions. We cover among others, Armington-type models, e.g. \citet{Anderson2003}, Ricardian models, e.g. \citet{Eaton2002}, \citet{Costinot2012} and \citet{Caliendo2015} and increasing returns to scale models, e.g. \citet{Krugman1980}, \citet{Melitz2003}, \citet{Melitz2015} and \citet{Antras2017}. In addition, all models in the class of models considered in \citet{Arkolakis2012} are included. (\textcolor{red}{We can use our markup results to soften this assumption and allow for oligopolistic competitive environment, which would then allow us to include trade models along the lines of Atkeson and Burstein (2008), Edmond et al. (2015) and Crowley et al. (2023) in the set of models that the next proposition covers}). However, our framework does not accommodate models with non-CES preferences, e.g. \citet{Fajgelbaum2016} and \citet{Arkolakis2019}, with non-iceberg trade costs as in \citet{Hummels2004} nor with production technologies characterized with non-constant returns to scale, e.g. \citet{Almunia2021}. This is because in these models selection across markets can happen even if there are no fixed trade costs. In addition, the framework does not encompass models with multinational production as in \citet{Helpman2004} and \citet{Tintelnot2016}.
+
+\subsection{Detecting geographic Market segmentation}
 The common firm-level and product variety-level market share terms capture both substitution effects and taste differences. Isolating taste differences from LOP deviations, choice set differences and substitution effects is needed for the following reason. In a world without geographic market segmentation, LOP deviations and choice set differences only occur because the cost of physically moving goods to specific regions differs. Conversely, once the cost of physically moving goods is appropriately controlled for, LOP deviations and choice set differences should vanish. Importantly, also substitution effects zero in the absence of LOP deviations, but differences in taste differences remain. 
 
 When does expre
 
-\begin{proposition}[Sufficieny ]\label{prop: Eta}
+\begin{proposition}[Testing for Geographic Market Segmentation]\label{prop:test}
     The steady-state equilibrium exists and is unique for the following models: (1) homogeneous firms in a perfectly competitive market; (2) homogeneous firms in monopolistic competition; (3) homogeneous firms in monopolistic competition with access to increasing returns to importing. 
 \end{proposition} 
 \begin{proof}
-    See Appendix XXX.
+    See Appendix XXX
 \end{proof}

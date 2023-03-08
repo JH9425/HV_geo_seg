@@ -275,60 +275,780 @@ In this section, we provide a stepwise derivation of the decomposition of cost-o
 \end{equation*}
 \end{linenomath*}
 
-\subsection{Optimal pricing rule}
-
-\subsection{Product variety-level residuals and Structural Instrument}\label{app:theory_residuals_instrument}
-Given our normalization, we back out the product variety-level taste parameters by taking the ratio of the market share $S_{il,t}$ and its geometric average $\tilde{S}_{fpclt}$: 
-\begin{equation*}
-    \begin{aligned}
-        \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
-            &=  \frac{\bigg(\frac{P_{ilt}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
-                     {  \left(
-                            \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}
-                        \right)^{\frac{1}{N_{fpl,t}}}} \\
-            &=  \frac{\bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
-                     {\bigg(\frac{\tilde{P}_{fpl,t}}{\tilde{\varphi}_{fpl,t}}\bigg)^{1-\sigma_p}} \\
-        \varphi_{il,t} 
-            &=  \frac{P_{il,t}}{\tilde{P}_{fpl,t}}  
-                \left(\frac{S_{il,t}}{\tilde{S}_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} 
-                \tilde{\varphi}_{fpl,t}
-    \end{aligned}
-\end{equation*}
-
-\noindent where $\tilde{\varphi}_{fpl,t}$ is defined as before and $\tilde{P}_{fpl,t} \equiv \left(\prod_{i \in \mathcal{B}_{fpl,t}} P_{il,t}\right)^{\frac{1}{N_{fpl,t}}}$. In addition, we can write the overall price index as the product of the unweighted geometric average firm-level price index and a term that depends on the dispersion in market share within firm 
-
-\begin{equation*}
-    \begin{aligned}
-       P_{fpl,t}   &=   \left(
-                            \sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p} \varphi_{il,t}^{\sigma_p-1} 
-                        \right)^{\frac{1}{1-\sigma_p}} \\
-                    &=  \left(\sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p}
-                                \left(\frac{P_{il,t}}{\tilde{P}_{il,t}}  
-                                    \left(\frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} \tilde{\varphi}_{fpl,t}
-                                \right)^{\sigma_p-1} 
-                        \right)^{\frac{1}{1-\sigma_p}} \\
-                    &=  \tilde{P}_{fpl,t} 
-                        \left(
-                            \sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
-                            \tilde{\varphi}_{fpl,t}^{\sigma_p-1}
-                        \right)^{\frac{1}{1-\sigma_p}}
-    \end{aligned}
-\end{equation*}
-
-To see that market the instrument is uncorrelated with the firm-level demand, shock note that: 
-
+\subsection{Proof of Proposition \ref{prop:test}}
+Before we proof Proposition \ref{prop:test}, let's introduce some notation. Consider two countries $n,n' \in \mathcal{N}$ where $\mathcal{N}$ is the set of countries and three locations $l,k,m \in \mathcal{L}$ where $\mathcal{L}$ is the set of locations. Define $B_{l \rightarrow (k,m)}$:
+\begin{linenomath*}
+    \begin{equation*}
+        B_{l \rightarrow (k,m)}
+         = 
+         \begin{cases}
+            0 & \qquad \text{if} \quad l,k,m \in n \\
+            1 & \qquad \text{if} \quad l,m \in n  \cap  k \in n' 
+         \end{cases}
+    \end{equation*}
+\end{linenomath*}
+Note that if $l \in n \cap k,m \in n'$, one can always redefine $n$ and $n'$ to fit this definition. Now define, the variance of the difference in cost-of-living differences $V_{l \rightarrow (k,m),t}$: 
+\begin{linenomath*}
+    \begin{equation*}
+        V_{l \rightarrow (k,m),t} 
+            \equiv \mathbb{V}
+                \left(\Delta_{ml}^{kl}SV_{p,t}^{kl} + \Delta_{ml}^{kl}T_{p,t}^{kl} - \Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+    \end{equation*}
+\end{linenomath*}
+where $\Delta_{ml}^{kl} y_{p,t}^{kl}$ is a difference operator between two region pairs $(l,k)$ and $(l,m)$ defined as $\Delta_{ml}^{kl} \equiv y_{p,t}^{kl} - y_{p,t}^{ml}$ is a difference and $\mathbb{V} = \mathbb{V}_{l \rightarrow (k,m),t}$ is the variance operator over product categories. In addition, define the potential outcomes: 
+\begin{linenomath*}
+    \begin{equation*}
+        V_{l \rightarrow (k,m),t} 
+         = 
+         \begin{cases}
+            V_{l \rightarrow (k,m),t}(0) & \qquad \text{if} \quad B_{l \rightarrow (k,m)} = 0 \\
+            V_{l \rightarrow (k,m),t}(1) & \qquad \text{if} \quad B_{l \rightarrow (k,m)} = 1
+         \end{cases}
+    \end{equation*}
+\end{linenomath*}
+The key identifying assumption is that conditional on geographic determinants, border assignment is unconfounded relative to variance in differences in cost-of-living differences across pairs of regions. In particular, 
+\begin{linenomath*}
+    \begin{equation*} 
+        B_{l \rightarrow (k,m)} \indep  \left( V_{l \rightarrow (k,m),t}(0),V_{l \rightarrow (k,m),t}(1) \middle\vert \boldsymbol{X}_{l \rightarrow (k,m)}\right)
+    \end{equation*}
+\end{linenomath*}
+where $\boldsymbol{X}_{l \rightarrow (k,m)}$ are pairwise geographic differences between the location pairs $(l,k)$ and $(l,m)$. This assumption implies that: 
 \begin{linenomath*}
     \begin{equation*}
         \begin{aligned}
-            \left(\sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} \tilde{\varphi}_{fpl,t}^{\sigma_p-1}\right)^{\frac{1}{1-\sigma_p}}
-                &=  \frac{P_{il,t}C_{il,t}}
-                         {  \left(
-                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
-                            \right)^{\frac{1}{N_{fpl,t}}}} \\
-                &=  \frac{P_{il,t}C_{il,t}}
-                {           \left(
-                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
-                            \right)^{\frac{1}{N_{fpl,t}}}}
+            \left(V_{l \rightarrow (k,m),t}(1) \middle\vert B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)} \right) 
+                & \sim \left(V_{l \rightarrow (k,m),t}(1) \middle\vert B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)} \right) \\
+            \left(V_{l \rightarrow (k,m),t}(0) \middle\vert B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)} \right) 
+                & \sim \left(V_{l \rightarrow (k,m),t}(0) \middle\vert B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)} \right) 
         \end{aligned}
     \end{equation*}
 \end{linenomath*}
+where $\sim$ represents equality in terms of their distributions. Now consider,
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            &\mathbb{E}\left[V_{l \rightarrow (k,m),t} \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}\right] 
+                - \mathbb{E}\left[V_{l \rightarrow (k,m),t} \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}\right] \\
+            & \qquad =    
+                \mathbb{E}
+                \left[
+                    \mathbb{V}
+                    \left(
+                        \Delta_{ml}^{kl}SV_{p,t}^{kl}+ \Delta_{kl}^{ml}T_{p,t}^{kl} - \Delta_{kl}^{ml}\Lambda_{p,t}^{kl}  
+                    \right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+                & \qquad \qquad -  
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}
+                        \left(
+                            \Delta_{ml}^{kl}SV_{p,t}^{kl}+ \Delta_{kl}^{ml}T_{p,t}^{kl} - \Delta_{kl}^{ml}\Lambda_{p,t}^{kl}  
+                        \right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+            & \qquad =    
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+                    & \qquad \qquad \qquad + 
+                        \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                    & \qquad \qquad \qquad + 
+                        \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                & \qquad \qquad -  
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                        & \qquad \qquad \qquad -
+                        \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                        & \qquad \qquad \qquad -
+                            \mathbb{E}
+                            \left[
+                                \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                    - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                            \right] \\
+            & \qquad = 
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+                & \qquad \qquad \qquad -  
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                & \qquad \qquad + 
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                    & \qquad \qquad \qquad -  
+                        \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                & \qquad \qquad + 
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                    & \qquad \qquad \qquad -  
+                        \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                                - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+where $\sigma = \sigma_{l \rightarrow (k,m),t}$ is covariance operator defined over product categories. In this expression, the first part represents the variance of difference in LOP deviations between location pairs $(k,l)$ and $(m,l)$, the second part represents the variance of difference in taste differences between location pairs $(k,l)$ and $(m,l)$ and the final part represents the variance of difference in choice set differences deviations between location pairs $(k,l)$ and $(m,l)$. \\
+
+(1) To prove the first part of the proposition, we proceed by contradiction. Suppose that the following condition holds: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad -  
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right) 
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] > 0
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+then we will show that $\exists \tau_{i,t} \neq 0$. Suppose that $\exists \tau_{i,t} = 0 \forall i,t$ instead. By definition of $V_{l \rightarrow (k,m),t}$, we have that $V_{l \rightarrow (k,m),t} = B_{l \rightarrow (k,m)}\cdot V_{l \rightarrow (k,m),t}(1) + \left(1-B_{l \rightarrow (k,m)}\right)\cdot V_{l \rightarrow (k,m),t}(0)$. Therefore, we can write the condition as:
+\begin{linenomath*}
+    \begin{equation*}
+    \begin{aligned}
+        & \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] \\
+        & \qquad \qquad -  
+            \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}T_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] \\
+        & \qquad = 
+            \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}T_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad \qquad \qquad -  
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}T_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad = 
+            \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}T_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+                & \qquad \qquad \qquad -  
+                    \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0)\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}T_{p,t}^{kl}(0)\right)
+                            - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}
+where the third line used the unconfoundedness assumption. 
+
+Consider 
+$\mathbb{E}\left[\mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0)\right)\middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}\right]$: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0)\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                & \qquad = 
+                    \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(SV_{p,t}^{kl}(0) - SV_{p,t}^{ml}(0)\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                &  \qquad = 
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                            \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(0)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{ml}_{p}(0)} \omega^{ml}_{i,t}(0)\left[\text{ln}\left(P_{im,t}(0)\right) - \text{ln}\left(P_{il,t}(0)\right)\right]
+                            \right] \\
+                            & \qquad \qquad \qquad   
+                                - \sum_{f \in \mathcal{F}^{kl}_{p}(0)}\omega^{kl}_{fp,t}(0)
+                                    \left[
+                                        \sum_{i \in \mathcal{B}^{kl}_{p}(0)} \omega^{kl}_{fp,t}(0)\left[\text{ln}\left(P_{ik,t}(0)\right) - \text{ln}\left(P_{il,t}(0)\right)\right]
+                                    \right]
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg] \\
+                &  \qquad =
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                            \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(0)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{ml}_{p}(0)} \omega^{ml}_{i,t}(0)
+                                \left[\text{ln}\left(\text{MC}_{im,t}(0)\right) - \text{ln}\left(\text{MC}_{il,t}(0)\right)
+                                \right]
+                            \right] \\
+                            & \qquad \qquad \qquad   
+                                - \sum_{f \in \mathcal{F}^{kl}_{p}(0)}\omega^{kl}_{fp,t}(0)
+                                    \left[
+                                        \sum_{i \in \mathcal{B}^{kl}_{p}(0)} \omega^{kl}_{fp,t}(0)
+                                        \left[\text{ln}\left(\text{MC}_{ik,t}(0)\right) - \text{ln}\left(\text{MC}_{il,t}(0)\right)
+                                        \right]
+                                    \right] 
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg] \\
+                &  \qquad =
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                        \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(0)
+                        \left[
+                            \sum_{i \in \mathcal{B}^{ml}_{p}(0)} \omega^{ml}_{i,t}(0)
+                            \left[\text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                        \right] \\
+                        & \qquad \qquad \qquad   
+                            - \sum_{f \in \mathcal{F}^{kl}_{p}(0)}\omega^{kl}_{fp,t}(0)
+                                \left[
+                                    \sum_{i \in \mathcal{B}^{kl}_{p}(0)} \omega^{kl}_{fp,t}(0)
+                                    \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                                \right] 
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg]
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+where we have used the fact that $\text{ln}\left(\mu_{im,t}(0)\right) = \text{ln}\left(\mu_{ik,t}(0)\right) = \text{ln}\left(\mu_{il,t}(0)\right)$ under monopolistic competition. And that given the marginal cost function, we have that $\text{ln}\left(\text{MC}_{im,t}(0)\right) - \text{ln}\left(\text{MC}_{im,t}(0)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right) + \text{ln}\left(\left(1+\tau_{i,t}B_{z,m}\right)(0)\right) - \text{ln}\left(\left(1+\tau_{i,t}B_{z,l}\right)(0)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)$ because $m,l \in c$. Also, by construction, By construction, $\text{ln}\left(\text{MC}_{ik,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)$. Conditional on $\boldsymbol{X}_{l \rightarrow (k,m)}$, we have that $t(\boldsymbol{X}_{z,m}) = t(\boldsymbol{X}_{z,k})$, such that:
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+            \Bigg[
+                \mathbb{V}
+                \Bigg(
+                \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(0)
+                \left[
+                    \sum_{i \in \mathcal{B}^{ml}_{p}(0)} \omega^{ml}_{i,t}(0)
+                    \left[\text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                \right] \\
+                & \qquad \qquad \qquad   
+                    - \sum_{f \in \mathcal{F}^{kl}_{p}(0)}\omega^{kl}_{fp,t}(0)
+                        \left[
+                            \sum_{i \in \mathcal{B}^{kl}_{p}(0)} \omega^{kl}_{fp,t}(0)
+                            \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                        \right] 
+                \Bigg)
+                \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \Bigg] \\
+            &  \qquad =
+                \mathbb{E}
+                \Bigg[
+                    \mathbb{V}
+                    \Bigg(
+                    \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(0)
+                    \left[
+                        \sum_{i \in \mathcal{B}^{ml}_{p}(0)} \omega^{ml}_{i,t}(0)
+                        \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                    \right] \\
+                    & \qquad \qquad \qquad   
+                        - \sum_{f \in \mathcal{F}^{kl}_{p}(0)}\omega^{kl}_{fp,t}(0)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{kl}_{p}(0)} \omega^{kl}_{fp,t}(0)
+                                \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                            \right] 
+                    \Bigg)
+                    \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \Bigg] \\
+            &  \qquad = 0
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Following similar steps for the covariance terms, we have that: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0)\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}T_{p,t}^{kl}(0)\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] = 0 \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Now, Consider 
+$\mathbb{E}\left[\mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)\middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}\right]$: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+                    \left[
+                        \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)
+                        \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \right] \\
+                & \qquad = 
+                    \mathbb{E}
+                        \left[
+                            \mathbb{V}\left(SV_{p,t}^{kl}(1) - SV_{p,t}^{ml}(1)\right)
+                            \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                        \right] \\
+                &  \qquad = 
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                            \sum_{f \in \mathcal{F}^{ml}_{p}(0)}\omega^{ml}_{fp,t}(1)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)\left[\text{ln}\left(P_{im,t}(1)\right) - \text{ln}\left(P_{il,t}(1)\right)\right]
+                            \right] \\
+                            & \qquad \qquad \qquad   
+                                - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                                    \left[
+                                        \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)\left[\text{ln}\left(P_{ik,t}(1)\right) - \text{ln}\left(P_{il,t}(1)\right)\right]
+                                    \right]
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg] \\
+                &  \qquad =
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                            \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                                \left[\text{ln}\left(\text{MC}_{im,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right)
+                                \right]
+                            \right] \\
+                            & \qquad \qquad \qquad   
+                                - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                                    \left[
+                                        \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)
+                                        \left[\text{ln}\left(\text{MC}_{ik,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right)
+                                        \right]
+                                    \right] 
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg]
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+where we have used the fact that $\text{ln}\left(\mu_{im,t}(1)\right) = \text{ln}\left(\mu_{ik,t}(1)\right) = \text{ln}\left(\mu_{il,t}(1)\right)$ under monopolistic competition.
+Depending on where goods are being shipped from, we have that $\text{ln}\left(\text{MC}_{im,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right) + \text{ln}\left(\left(1+\tau_{i,t}\right)\right)$ if $z,l \in n \cap m \in n'$, $\text{ln}\left(\text{MC}_{im,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right) - \text{ln}\left(\left(1+\tau_{i,t}\right)\right)$ if $l \in n \cap z,m \in n'$ or $\text{ln}\left(\text{MC}_{im,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)$ if $l \in n \cap m \in n' \cap z \in n^{''}$. By construction, $\text{ln}\left(\text{MC}_{ik,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right) = \text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)$. Therefore,
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            &\mathbb{E}
+            \Bigg[
+                \mathbb{V}
+                \Bigg(
+                    \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                    \left[
+                        \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                        \left[\text{ln}\left(\text{MC}_{im,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right)
+                        \right]
+                    \right] \\
+                    & \qquad \qquad \qquad   
+                        - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                            \left[
+                                \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)
+                                \left[\text{ln}\left(\text{MC}_{ik,t}(1)\right) - \text{ln}\left(\text{MC}_{il,t}(1)\right)
+                                \right]
+                            \right] 
+                \Bigg)
+                \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \Bigg] \\
+                &  \qquad =
+                    \mathbb{E}
+                    \Bigg[
+                        \mathbb{V}
+                        \Bigg(
+                        \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                        \left[
+                            \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                            \left[
+                                \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)
+                                + \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n)
+                                - \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n')
+                            \right]
+                        \right] \\
+                        & \qquad \qquad \qquad   
+                            - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                                \left[
+                                    \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)
+                                    \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                                \right] 
+                        \Bigg)
+                        \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                    \Bigg]
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Conditional on $\boldsymbol{X}_{l \rightarrow (k,m)}$, we have that $t(\boldsymbol{X}_{z,m}) = t(\boldsymbol{X}_{z,k})$, such that:
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+            \Bigg[
+                \mathbb{V}
+                \Bigg(
+                \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                \left[
+                    \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                    \left[
+                        \text{ln}\left(t(\boldsymbol{X}_{z,m})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)
+                        + \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n)
+                        - \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n')
+                    \right]
+                \right] \\
+                & \qquad \qquad  
+                    - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                        \left[
+                            \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)
+                            \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                        \right] 
+                \Bigg)
+                \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \Bigg] \\
+            & \qquad = 
+            \mathbb{E}
+            \Bigg[
+                \mathbb{V}
+                \Bigg(
+                \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                \left[
+                    \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                    \left[
+                        \text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)
+                        + \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n)
+                        - \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n')
+                    \right]
+                \right] \\
+                & \qquad \qquad \qquad
+                    - \sum_{f \in \mathcal{F}^{kl}_{p}(1)}\omega^{kl}_{fp,t}(1)
+                        \left[
+                            \sum_{i \in \mathcal{B}^{kl}_{p}(1)} \omega^{kl}_{fp,t}(1)
+                            \left[\text{ln}\left(t(\boldsymbol{X}_{z,k})\right) - \text{ln}\left(t(\boldsymbol{X}_{z,l})\right)\right]
+                        \right] 
+                \Bigg)
+                \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \Bigg] \\
+            & \qquad = 
+            \mathbb{E}
+            \left[
+                \mathbb{V}
+                \left(
+                \sum_{f \in \mathcal{F}^{ml}_{p}(1)}\omega^{ml}_{fp,t}(1)
+                \left[
+                    \sum_{i \in \mathcal{B}^{ml}_{p}(1)} \omega^{ml}_{i,t}(1)
+                    \left[
+                        \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n)
+                        - \text{ln}\left(\left(1+\tau_{i,t}\right)\right)\mathbb{1}(z(i) \in n')
+                    \right]
+                \right]
+                \right)
+                \Bigg|  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] 
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Now if $\tau_{i,t} = 0 \forall i,t$, $\mathbb{E}\left[\mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)\middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}\right]= 0$. Following similar steps for the covariance steps, it must be that: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1)\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}T_{p,t}^{kl}(1)\right)
+                    - \sigma\left(\Delta_{ml}^{kl}SV_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] = 0 \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+which is a contradiction. \\
+
+
+(2) To prove the first part of the proposition, we proceed by contradiction as well. Suppose that the following condition holds: 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            & \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad -  
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right) 
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] > 0
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+then we will show that $\exists f^X_{i,t} > 0 \cup \exists f^X_{fp,t} > 0$. Instead, suppose that $f^X_{i,t} = 0 \forall i,t \cap f^X_{fp,t} = 0 \forall fp,t$. By definition of $V_{l \rightarrow (k,m),t}$, we have that $V_{l \rightarrow (k,m),t} = B_{l \rightarrow (k,m)}\cdot V_{l \rightarrow (k,m),t}(1) + \left(1-B_{l \rightarrow (k,m)}\right)\cdot V_{l \rightarrow (k,m),t}(0)$. Therefore, we can write the condition as:
+\begin{linenomath*}
+    \begin{equation*}
+    \begin{aligned}
+        & \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] \\
+        & \qquad \qquad -  
+            \mathbb{E}
+            \left[
+                \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                    - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl},\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}\right)
+                \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+            \right] \\
+        & \qquad = 
+            \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad \qquad \qquad -  
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 0, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad = 
+            \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] \\
+            & \qquad \qquad \qquad -  
+                \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right]
+    \end{aligned}
+\end{equation*}
+\end{linenomath*}
+where the last line used the unconfoundedness assumption. By definition of the fixed costs, choice sets are determined at the level of the country. Therefore, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \mathcal{F}_{pl,t} &\equiv \left\{f: \sum_{l\in n} \sum_{i \in \mathcal{B}_{fpl,t}}\left(P_{il,t} - \text{MC}_{il,t}\right)Q_{il,t} > F^X_{fp,t} \right\} \\
+            \mathcal{B}_{fpl,t} &\equiv \left\{i: \sum_{l\in n}\left(P_{il,t} - \text{MC}_{il,t}\right)Q_{il,t} > F^X_{it,t} \right\}
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Because the cost function is characterized by constant returns-to-scale, the problem is seperable across locations $l$. Also, because demand is CES and variable trade costs are of the iceberg form,profits net of fixed costs are always positive. Now consider, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \Delta_{kl}^{ml}\Lambda_{p,t}^{kl}(0) 
+                &= \Lambda_{p,t}^{ml}(0) - \Lambda_{p,t}^{kl}(0) \\
+                &=  \frac{1}{\eta_p-1} 
+                    \left(\text{ln} \lambda^{F,ml}_{pm,t}(0) - \text{ln}\lambda^{F,ml}_{pl,t}(0) \right)
+                    +   \frac{1}{N^{F,ml}_{p}(0)} \sum_{f \in \mathcal{F}^{ml}_{p}(0)} 
+                            \left[
+                            \frac{1}{\sigma_p-1} 
+                            \left(\text{ln} \lambda^{B,ml}_{fpm,t}(0) - \text{ln}\lambda^{B,ml}_{fpl,t}(0) \right)  
+                        \right] \\
+                & \qquad - 
+                        \frac{1}{\eta_p-1} 
+                        \left(\text{ln} \lambda^{F,kl}_{pk,t}(0) - \text{ln}\lambda^{F,kl}_{pl,t}(0) \right)
+                        -   \frac{1}{N^{F,kl}_{p}(0)} \sum_{f \in \mathcal{F}^{kl}_{p}(0)} 
+                                \left[
+                                \frac{1}{\sigma_p-1} 
+                                \left(\text{ln} \lambda^{B,kl}_{fpk,t}(0) - \text{ln}\lambda^{B,kl}_{fpl,t}(0) \right)  
+                            \right] \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Because $l,k,m \in n$, we have that $F^X_{fp,t} = F^X_{i,t} = 0$. Therefore, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \mathcal{F}_{pm,t}(0) &= \mathcal{F}_{pl,t}(0) = \mathcal{F}^{ml}_{p,t}(0) \\
+            \mathcal{F}_{pm,t}(0) &= \mathcal{F}_{pl,t}(0) = \mathcal{F}^{ml}_{p,t}(0) \\
+            \mathcal{B}_{pk,t}(0) &= \mathcal{B}_{pl,t}(0) = \mathcal{B}^{kl}_{p,t}(0) \\
+            \mathcal{B}_{pk,t}(0) &= \mathcal{B}_{pl,t}(0) = \mathcal{B}^{kl}_{p,t}(0) \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}  
+because $\mathcal{F}^{kl}_{p,t} \equiv \mathcal{F}_{pl,t} \cap \mathcal{F}_{pk,t}$ and $\mathcal{B}^{kl}_{p,t} \equiv \mathcal{B}_{pl,t} \cap \mathcal{B}_{pk,t}$. Therefore, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \lambda^{F,ml}_{pm,t}(0) =  \lambda^{F,ml}_{pl,t}(0), &\qquad \lambda^{F,kl}_{pk,t}(0) =  \lambda^{F,kl}_{pl,t}(0) \\
+            \lambda^{B,ml}_{fpm,t}(0) =  \lambda^{B,ml}_{fpl,t}(0), &\qquad \lambda^{B,kl}_{fpk,t}(0) =  \lambda^{B,kl}_{fpl,t}(0)
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+which implies that $\Delta_{kl}^{ml}\Lambda_{p,t}^{kl}(0)$ and therefore: 
+\begin{linenomath*}
+    \begin{equation*}
+        \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(0),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(0)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] = 0
+    \end{equation*}
+\end{linenomath*}
+Now, if $f^X_{i,t} = 0 \forall i,t \cap f^X_{fp,t} = 0 \forall fp,t$, then we must also have that:
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \Delta_{kl}^{ml}\Lambda_{p,t}^{kl}(1) 
+                &= \Lambda_{p,t}^{ml}(1) - \Lambda_{p,t}^{kl}(1) \\
+                &=  \frac{1}{\eta_p-1} 
+                    \left(\text{ln} \lambda^{F,ml}_{pm,t}(1) - \text{ln}\lambda^{F,ml}_{pl,t}(1) \right)
+                    +   \frac{1}{N^{F,ml}_{p}(1)} \sum_{f \in \mathcal{F}^{ml}_{p}(1)} 
+                            \left[
+                            \frac{1}{\sigma_p-1} 
+                            \left(\text{ln} \lambda^{B,ml}_{fpm,t}(1) - \text{ln}\lambda^{B,ml}_{fpl,t}(1) \right)  
+                        \right] \\
+                & \qquad - 
+                        \frac{1}{\eta_p-1} 
+                        \left(\text{ln} \lambda^{F,kl}_{pk,t}(1) - \text{ln}\lambda^{F,kl}_{pl,t}(1) \right)
+                        -   \frac{1}{N^{F,kl}_{p}(1)} \sum_{f \in \mathcal{F}^{kl}_{p}(1)} 
+                                \left[
+                                \frac{1}{\sigma_p-1} 
+                                \left(\text{ln} \lambda^{B,kl}_{fpk,t}(1) - \text{ln}\lambda^{B,kl}_{fpl,t}(1) \right)  
+                            \right] \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+Because $l,k,m \in n$, we have that $F^X_{fp,t} = F^X_{i,t} = 0$. Therefore, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \mathcal{F}_{pm,t}(1) &= \mathcal{F}_{pl,t}(1) = \mathcal{F}^{ml}_{p,t}(1) \\
+            \mathcal{F}_{pm,t}(1) &= \mathcal{F}_{pl,t}(1) = \mathcal{F}^{ml}_{p,t}(1) \\
+            \mathcal{B}_{pk,t}(1) &= \mathcal{B}_{pl,t}(1) = \mathcal{B}^{kl}_{p,t}(1) \\
+            \mathcal{B}_{pk,t}(1) &= \mathcal{B}_{pl,t}(1) = \mathcal{B}^{kl}_{p,t}(1) \\
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}  
+because $\mathcal{F}^{kl}_{p,t} \equiv \mathcal{F}_{pl,t} \cap \mathcal{F}_{pk,t}$ and $\mathcal{B}^{kl}_{p,t} \equiv \mathcal{B}_{pl,t} \cap \mathcal{B}_{pk,t}$. Therefore, 
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \lambda^{F,ml}_{pm,t}(1) =  \lambda^{F,ml}_{pl,t}(1), &\qquad \lambda^{F,kl}_{pk,t}(1) =  \lambda^{F,kl}_{pl,t}(1) \\
+            \lambda^{B,ml}_{fpm,t}(1) =  \lambda^{B,ml}_{fpl,t}(1), &\qquad \lambda^{B,kl}_{fpk,t}(1) =  \lambda^{B,kl}_{fpl,t}(1)
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+which implies that $\Delta_{kl}^{ml}\Lambda_{p,t}^{kl}(1)$ and therefore: 
+\begin{linenomath*}
+    \begin{equation*}
+        \mathbb{E}
+                \left[
+                    \mathbb{V}\left(\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}P_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                        - \sigma\left(\Delta_{ml}^{kl}T_{p,t}^{kl}(1),\Delta_{ml}^{kl}\Lambda_{p,t}^{kl}(1)\right)
+                    \middle\vert  B_{l \rightarrow (k,m)} = 1, \boldsymbol{X}_{l \rightarrow (k,m)}
+                \right] = 0
+    \end{equation*}
+\end{linenomath*}
+which is a contradiction. 

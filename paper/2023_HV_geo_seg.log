@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.18)  2 MAR 2023 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.18)  7 MAR 2023 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -907,7 +907,7 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks51
 \minrowclearance=\skip89
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 60.
+Package hyperref Info: Option `colorlinks' set `true' on input line 62.
 ) (./sections/2023_HV_geo_seg_1_frontmatter.tex) (./2023_HV_geo_seg.aux
 
 LaTeX Warning: Label `eq:border_effect_barcodes' multiply defined.
@@ -1092,13 +1092,18 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./2023_HV_geo_seg.toc
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 4.
+(Font)              scaled to size 10.07397pt on input line 11.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 4.
+(Font)              scaled to size 7.63599pt on input line 11.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 4.
+(Font)              scaled to size 10.07397pt on input line 11.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 4.
+(Font)              scaled to size 7.63599pt on input line 11.
+
+Overfull \hbox (1.09499pt too wide) detected at line 62
+ []\T1/futs/m/n/10.95 105
+ []
+
 )
 \tf@toc=\write5
 \openout5 = `2023_HV_geo_seg.toc'.
@@ -1107,19 +1112,19 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [4] [5] [6] [7]) (./sections/2023_HV_geo_seg_4_data.tex [8] [9] [10]) (./sections/2023_HV_geo_seg_5_redform.tex [11] (./figures/descriptives/P1_2_3_2_2_sd_nr.tex) [12] [13] (./tables/descriptives/P1_2_3_2_1_sd_agg.tex
+) [4] [5] [6] [7]) (./sections/2023_HV_geo_seg_4_data.tex [8] [9] [10]) (./sections/2023_HV_geo_seg_5_redform.tex [11] (./figures/descriptives/P1_2_3_2_2_sd_nr.tex) [12] [13] [14] (./tables/descriptives/P1_2_3_2_1_sd_agg.tex
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 5.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)) [14]
+)) [15]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 106.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 106.
- (./figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex) (./figures/descriptives/P1_2_3_4_1_firm_n_n_na.tex) (./figures/descriptives/P1_2_3_4_1_firm_n_s_na.tex) [15] [16] [17] (./tables/descriptives/P1_2_3_3_1_choice_agg.tex) [18]) (./sections/2023_HV_geo_seg_6_theory.tex [19
+ (./figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex) (./figures/descriptives/P1_2_3_4_1_firm_n_n_na.tex) (./figures/descriptives/P1_2_3_4_1_firm_n_s_na.tex) [16] [17] [18] (./tables/descriptives/P1_2_3_3_1_choice_agg.tex) [19]) (./sections/2023_HV_geo_seg_6_theory.tex [20
 
 
-] [20] [21] [22] [23]) (./sections/2023_HV_geo_seg_7_structest.tex
+] [21] [22] [23] [24] [25]) (./sections/2023_HV_geo_seg_7_structest.tex [26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 10.
@@ -1136,7 +1141,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 10.
 
-[24] [25] [26]
+[27] [28]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 45.
@@ -1153,61 +1158,81 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 45.
 
-[27] [28] [29] [30] (./figures/estimation/P1_3_4_1_1_markups_hom_country.tex) [31] (./tables/estimation/P1_3_4_3_NCES_vardecomp_intra.tex) (./tables/estimation/P1_3_4_3_NCES_vardecomp_inter.tex)) (./sections/2023_HV_geo_seg_8_geo_seg_eu.tex [32] [33] [34] [35] [36] [37] (./tables/estimation/P1_3_4_3_NCES_cl.tex) [38] [39] (./tables/estimation/P1_3_4_3_NCES_decomp.tex)) [40] (./sections/2023_HV_geo_seg_9_conclusion.tex [41]) [42] (./2023_HV_geo_seg.bbl [43] [44]) [45] (./sections/2023_HV_geo_seg_10_app_1_data.tex (./tables/descriptives/P1_1_5_2_2_barcodes_omit.tex) [46] (./tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_BEFR.tex) (./tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_DENL.tex) (./tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_BEFR.tex) (./tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_DENL.tex) [47] (./tables/descriptives/P1_2_2_3_desc_firms_HRW2016_T3.tex)
+[29] [30] [31] [32] (./figures/estimation/P1_3_4_1_1_markups_hom_country.tex) [33] [34] (./tables/estimation/P1_3_4_3_NCES_vardecomp_intra.tex) (./tables/estimation/P1_3_4_3_NCES_vardecomp_inter.tex)) (./sections/2023_HV_geo_seg_8_geo_seg_eu.tex [35] [36] [37] [38] [39] [40] (./tables/estimation/P1_3_4_3_NCES_cl.tex) [41] [42] (./tables/estimation/P1_3_4_3_NCES_decomp.tex)) [43] (./sections/2023_HV_geo_seg_9_conclusion.tex [44]) [45] (./2023_HV_geo_seg.bbl [46] [47] [48]) [49] (./sections/2023_HV_geo_seg_10_app_1_data.tex (./tables/descriptives/P1_1_5_2_2_barcodes_omit.tex) [50] (./tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_BEFR.tex) (./tables/descriptives/P1_2_2_1_desc_firms_HRW2016_T1_DENL.tex) (./tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_BEFR.tex) (./tables/descriptives/P1_2_2_2_desc_firms_HRW2016_T2_DENL.tex) [51] (./tables/descriptives/P1_2_2_3_desc_firms_HRW2016_T3.tex)
 Overfull \hbox (52.22151pt too wide) in paragraph at lines 101--102
  [][] 
  []
 
-[48] (./tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_BEFR.tex) (./tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_DENL.tex) [49] (./tables/descriptives/P1_1_5_2_1_categories_omit.tex) [50] (./figures/descriptives/P1_2_1_3_categories_desc_exp_share.tex) [51] (./tables/descriptives/P1_2_1_1_1_desc_households_excluded_BEFR.tex) (./tables/descriptives/P1_2_1_1_1_desc_households_excluded_DENL.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_1.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_2.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_3.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_4.tex) [52] (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_1.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_2.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_3.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_4.tex) [53] (./figures/descriptives/P1_2_1_3_4_households_desc_trans_1.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_2.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_3.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_4.tex) [54] (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_1.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_2.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_3.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_4.tex) [55] (./tables/descriptives/P1_2_1_4_desc_stores.tex)) (./sections/2023_HV_geo_seg_10_app_2_reform.tex (./figures/descriptives/P1_2_3_2_1_dp_nr.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_h.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_s.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_hs.tex) [56] (./figures/descriptives/P1_2_3_2_1_dp_trans.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_h.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_s.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_hs.tex) [57] (./figures/descriptives/P1_2_3_2_2_var_nr.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_s.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_h.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_hs.tex) [58] (./figures/descriptives/P1_2_3_2_2_var_trans.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_s.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_h.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_hs.tex) [59] (./figures/descriptives/P1_2_3_2_4_sd_years.tex) [60] (./figures/descriptives/P1_2_3_2_3_sd_cats.tex) [61] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na.tex) [62] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na_bp.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na_bp.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na_bp.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na_bp.tex) [63] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na_b.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na_b.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na_b.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na_b.tex) [64] (./figures/descriptives/P1_2_3_3_4_bar_years_n_na.tex) (./figures/descriptives/P1_2_3_3_4_bar_years_s_na.tex) (./figures/descriptives/P1_2_3_4_4_firm_years_n_na.tex) (./figures/descriptives/P1_2_3_4_4_firm_years_s_na.tex) [65] (./figures/descriptives/P1_2_3_3_3_bar_cats_n_na.tex) [66] (./figures/descriptives/P1_2_3_3_3_bar_cats_s_na.tex) [67] (./figures/descriptives/P1_2_3_4_3_firm_cats_n_na.tex) [68] (./figures/descriptives/P1_2_3_4_3_firm_cats_s_na.tex)) [69] (./sections/2023_HV_geo_seg_10_app_3_theory.tex [70] [71] [72] [73] [74]) (./sections/2023_HV_geo_seg_10_app_4_structest.tex (./figures/estimation/P1_3_1_1_1_elas_bar_w_cat.tex) [75] [76] (./tables/estimation/P1_3_1_1_2_elas_bar_w_cat.tex) [77
+[52] (./tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_BEFR.tex) (./tables/descriptives/P1_2_2_4_desc_firms_HRW2016_T4_DENL.tex) [53] (./tables/descriptives/P1_1_5_2_1_categories_omit.tex) [54] (./figures/descriptives/P1_2_1_3_categories_desc_exp_share.tex) [55] (./tables/descriptives/P1_2_1_1_1_desc_households_excluded_BEFR.tex) (./tables/descriptives/P1_2_1_1_1_desc_households_excluded_DENL.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_1.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_2.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_3.tex) (./figures/descriptives/P1_2_1_3_2_households_desc_sales_4.tex) [56] (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_1.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_2.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_3.tex) (./figures/descriptives/P1_2_1_3_3_households_desc_nbar_4.tex) [57] (./figures/descriptives/P1_2_1_3_4_households_desc_trans_1.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_2.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_3.tex) (./figures/descriptives/P1_2_1_3_4_households_desc_trans_4.tex) [58] (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_1.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_2.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_3.tex) (./figures/descriptives/P1_2_1_3_5_households_desc_shoptrip_4.tex) [59] (./tables/descriptives/P1_2_1_4_desc_stores.tex)) (./sections/2023_HV_geo_seg_10_app_2_reform.tex (./figures/descriptives/P1_2_3_2_1_dp_nr.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_h.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_s.tex) (./figures/descriptives/P1_2_3_2_1_dp_nr_hs.tex) [60] (./figures/descriptives/P1_2_3_2_1_dp_trans.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_h.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_s.tex) (./figures/descriptives/P1_2_3_2_1_dp_trans_hs.tex) [61] (./figures/descriptives/P1_2_3_2_2_var_nr.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_s.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_h.tex) (./figures/descriptives/P1_2_3_2_2_var_nr_hs.tex) [62] (./figures/descriptives/P1_2_3_2_2_var_trans.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_s.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_h.tex) (./figures/descriptives/P1_2_3_2_2_var_trans_hs.tex) [63] (./figures/descriptives/P1_2_3_2_4_sd_years.tex) [64] (./figures/descriptives/P1_2_3_2_3_sd_cats.tex) [65] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na.tex) [66] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na_bp.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na_bp.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na_bp.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na_bp.tex) [67] (./figures/descriptives/P1_2_3_3_1_bar_n_n_na_b.tex) (./figures/descriptives/P1_2_3_3_1_bar_n_s_na_b.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_n_na_b.tex) (./figures/descriptives/P1_2_3_3_2_bar_n_s_na_b.tex) [68] (./figures/descriptives/P1_2_3_3_4_bar_years_n_na.tex) (./figures/descriptives/P1_2_3_3_4_bar_years_s_na.tex) (./figures/descriptives/P1_2_3_4_4_firm_years_n_na.tex) (./figures/descriptives/P1_2_3_4_4_firm_years_s_na.tex) [69] (./figures/descriptives/P1_2_3_3_3_bar_cats_n_na.tex) [70] (./figures/descriptives/P1_2_3_3_3_bar_cats_s_na.tex) [71] (./figures/descriptives/P1_2_3_4_3_firm_cats_n_na.tex) [72] (./figures/descriptives/P1_2_3_4_3_firm_cats_s_na.tex)) [73] (./sections/2023_HV_geo_seg_10_app_3_theory.tex [74] [75] [76] [77] [78] [79]
+Overfull \hbox (22.78691pt too wide) detected at line 525
+[][]
+ []
 
-] (./figures/estimation/P1_3_1_2_1_elas_bar_m_cat.tex) [78
-
-] (./tables/estimation/P1_3_1_1_2_elas_bar_m_cat.tex) [79
-
-] (./figures/estimation/P1_3_2_1_1_elas_firm_w_cat.tex) [80
-
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat.tex) [81
-
-] (./tables/estimation/P1_3_1_2_1_elas_firm_m_cat.tex) [82
+[80] [81]
+Overfull \hbox (53.94315pt too wide) detected at line 770
+[][]
+ []
 
 
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_country_comp.tex) [83
+Overfull \hbox (51.62386pt too wide) detected at line 838
+[][]
+ []
+
+[82]
+Overfull \hbox (7.79637pt too wide) detected at line 931
+[][]
+ []
+
+[83] [84]) (./sections/2023_HV_geo_seg_10_app_4_structest.tex (./figures/estimation/P1_3_1_1_1_elas_bar_w_cat.tex) [85] [86] (./tables/estimation/P1_3_1_1_2_elas_bar_w_cat.tex) [87
+
+] (./figures/estimation/P1_3_1_2_1_elas_bar_m_cat.tex) [88
+
+] (./tables/estimation/P1_3_1_1_2_elas_bar_m_cat.tex) [89
+
+] (./figures/estimation/P1_3_2_1_1_elas_firm_w_cat.tex) [90
+
+] [91] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat.tex) [92
+
+] (./tables/estimation/P1_3_1_2_1_elas_firm_m_cat.tex) [93
 
 
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c1.tex) [84
+] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_country_comp.tex) [94
 
 
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c2.tex) [85
+] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c1.tex) [95
 
 
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c3.tex) [86
+] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c2.tex) [96
 
 
-] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c4.tex) [87
+] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c3.tex) [97
 
 
-] (./figures/estimation/P1_3_4_1_2_rel_share_bar.tex) (./figures/estimation/P1_3_4_1_3_rel_share_firm.tex)) (./sections/2023_HV_geo_seg_10_app_5_geo_seg_eu.tex (./tables/descriptives/P1_2_1_1_2_crossborder_overall.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_fr_prop.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_fr_exp.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_nl_prop.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_nl_exp.tex) [88
+] (./tables/estimation/P1_3_1_2_1_elas_firm_w_cat_c4.tex) [98
 
-] (./tables/estimation/P1_3_4_2_prop_score_sumstat.tex) [89] (./tables/estimation/P1_3_4_2_prop_score_spec.tex) (./tables/estimation/P1_3_4_2_prop_score_est.tex) [90] (./figures/estimation/P1_2_4_3_2_ps_n_untrimmed.tex) (./figures/estimation/P1_2_4_3_2_ps_n_trimmed.tex) (./figures/estimation/P1_2_4_3_2_ps_n_trimmed_re.tex) [91] (./figures/estimation/P1_2_4_3_1_trimming.tex) [92] (./tables/estimation/P1_3_4_2_prop_score_blockdiff.tex) [93] (./tables/estimation/P1_3_4_3_NCES_cl_sens.tex) (./tables/estimation/P1_3_4_3_NCES_decomp0.tex) (./tables/estimation/P1_3_4_3_NCES_decomp1.tex) (./tables/estimation/P1_3_4_3_NCES_decomp2.tex)) [94] [95] (./2023_HV_geo_seg.aux)
+
+] (./figures/estimation/P1_3_4_1_2_rel_share_bar.tex) (./figures/estimation/P1_3_4_1_3_rel_share_firm.tex)) (./sections/2023_HV_geo_seg_10_app_5_geo_seg_eu.tex (./tables/descriptives/P1_2_1_1_2_crossborder_overall.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_fr_prop.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_fr_exp.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_nl_prop.tex) (./figures/descriptives/P1_2_1_1_2_crossborder_nl_exp.tex) [99
+
+] (./tables/estimation/P1_3_4_2_prop_score_sumstat.tex) [100] (./tables/estimation/P1_3_4_2_prop_score_spec.tex) (./tables/estimation/P1_3_4_2_prop_score_est.tex) [101] (./figures/estimation/P1_2_4_3_2_ps_n_untrimmed.tex) (./figures/estimation/P1_2_4_3_2_ps_n_trimmed.tex) (./figures/estimation/P1_2_4_3_2_ps_n_trimmed_re.tex) [102] (./figures/estimation/P1_2_4_3_1_trimming.tex) [103] (./tables/estimation/P1_3_4_2_prop_score_blockdiff.tex) [104] (./tables/estimation/P1_3_4_3_NCES_cl_sens.tex) (./tables/estimation/P1_3_4_3_NCES_decomp0.tex) (./tables/estimation/P1_3_4_3_NCES_decomp1.tex) (./tables/estimation/P1_3_4_3_NCES_decomp2.tex)) [105] [106] (./2023_HV_geo_seg.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `2023_HV_geo_seg.out' has not changed.
-(rerunfilecheck)             Checksum: 82D4321602594870E643C8BF077527C3;6847.
+(rerunfilecheck)             Checksum: 40C66B49D90277E3DC3AF37BE031985E;6777.
  ) 
 Here is how much of TeX's memory you used:
- 33489 strings out of 478268
- 674674 string characters out of 5846346
- 1188344 words of memory out of 5000000
- 50321 multiletter control sequences out of 15000+600000
+ 33571 strings out of 478268
+ 675984 string characters out of 5846346
+ 1190538 words of memory out of 5000000
+ 50367 multiletter control sequences out of 15000+600000
  671271 words of font info for 232 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 95i,19n,102p,3879b,1076s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,19n,102p,3908b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc} </Users/jorishoste/Library/texlive/2022/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-alt.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-mcl.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putbi8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on 2023_HV_geo_seg.pdf (95 pages, 786173 bytes).
+Output written on 2023_HV_geo_seg.pdf (106 pages, 824188 bytes).
 PDF statistics:
- 1448 PDF objects out of 1728 (max. 8388607)
- 1283 compressed objects within 13 object streams
- 335 named destinations out of 1000 (max. 500000)
+ 1583 PDF objects out of 1728 (max. 8388607)
+ 1405 compressed objects within 15 object streams
+ 371 named destinations out of 1000 (max. 500000)
  461 words of extra memory for PDF output out of 10000 (max. 10000000)
 

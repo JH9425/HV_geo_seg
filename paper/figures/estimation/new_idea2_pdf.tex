@@ -1,14 +1,16 @@
-%***************************************
+\documentclass[12pt]{article}
+ 
+
+%****************************************
 % Packages
 %**************************************** 
 % Format letter types
-\usepackage{fourier}
+\usepackage{fouriernc}
 \usepackage[T1]{fontenc}
 
-% Set page size and margins 
+% Set page size and margins
 \usepackage{setspace}
 \usepackage{hyphenat}
-\usepackage{ragged2e}
 
 \usepackage[top=0.85in,left=0.8in,right=0.8in,footskip=0.75in,marginparwidth=2in]{geometry}
 
@@ -19,17 +21,13 @@
 \usepackage{mathtools}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
-\newcommand{\indep}{\perp \!\!\! \perp}
 
-
-\newtheorem{proposition}{Proposition}
 
 
 % Set format options for pictures and figures
 \usepackage{graphicx}
 
 % Set bibliography and appendix packages
-%\usepackage[authordate,backend=bibtex]{biblatex-chicago}
 \usepackage{apacite} 
 \bibliographystyle{apacite}
 \usepackage{natbib} 
@@ -65,4 +63,29 @@
 \let\myinput\@@input
 \makeatother
 
-%\usepackage{breqn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+										% START OF THE DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%****************************************
+% Start document
+%****************************************
+\begin{document}
+\setstretch{1.25} 
+ 
+\begin{figure}
+	\centering 
+    \input{new_idea2.tex}
+ \end{figure}  
+
+
+\end{document}

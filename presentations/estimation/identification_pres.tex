@@ -1,0 +1,289 @@
+\documentclass[aspectratio=169,10pt,hyperref={colorlinks,linkcolor={red!50!black},citecolor={blue!90!black},urlcolor={blue!80!black}},usenames,dvipsnames]{beamer}
+\setbeamersize{text margin left = 0.25cm,text margin right = 0.255cm}
+
+
+%*********** Packages
+% Format lettertypes
+\usepackage{fourier}
+\usefonttheme{serif} % here, there are other solutions
+
+
+% Format options
+\usepackage{amsmath,amssymb,amsthm,bbm}
+\usepackage{eurosym}
+\usepackage{mathtools}
+\usepackage{dsfont}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+% Set bibliography and appendix packages
+% 
+\usepackage{apacite} 
+\bibliographystyle{apacite}
+\usepackage{natbib} 
+\setcitestyle{round}
+\usepackage{appendix}
+
+% Set format options for picture and figures
+\usepackage{graphicx}
+
+%Use additional packages
+\usepackage{multirow} %merge columns
+\usepackage{array}
+\usepackage{threeparttable} %used for table notes
+\usepackage{arydshln}
+\usepackage[most]{tcolorbox}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage[labelfont=bf]{caption,subcaption}
+\captionsetup[table]{font=small,aboveskip=-1pt,belowskip=1pt}
+\captionsetup[figure]{font=small,aboveskip=-1pt,belowskip=-1pt}
+\captionsetup[subfigure]{aboveskip=-1pt,belowskip=-1pt}
+
+% Define colors
+\usepackage{xcolor}
+\setbeamercolor{button}{bg={gray!50!white},fg=white}
+
+%************* Themes
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+%\usetheme{metropolis}
+
+%\usefonttheme{serif}
+%\useoutertheme{miniframes}
+
+% Proposition 
+\newtheorem{proposition}[theorem]{Proposition}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+% Automatically resize equation to fit on slide
+\usepackage{environ}
+\newlength{\myl}
+\expandafter\let\expandafter\origequation\csname equation*\endcsname
+\expandafter\let\expandafter\endorigequation\csname endequation*\endcsname
+\long\def\[#1\]{\begin{equation*}#1\end{equation*}}
+\RenewEnviron{equation*}{
+  \settowidth{\myl}{$\displaystyle\BODY$} % calculate width and save as \myl
+  \origequation
+    \ifdim\myl>\linewidth
+      \resizebox{\linewidth}{!}{$\displaystyle\BODY$}% \myl > \linewidth
+    \else
+      \BODY % \myl <= \linewidth
+    \fi
+  \endorigequation
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+										% START OF THE SLIDE DECK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+											   % PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%********** Preamble block
+\title{\textbf{Testing for Geographic Market Segmentation}}
+
+% NOTE: Columns and the figure packages seem to be interfering
+
+\author[hoste]{\textbf{Joris Hoste} \inst{1} \and 
+			   \textbf{Frank Verboven} \inst{2}}
+\institute[inst]{\inst{1} KU Leuven \and %
+                 \inst{2} KU Leuven \& CEPR}
+					  
+\date{\vspace{10pt} \\ \today}
+
+% Let's get started
+\begin{document}
+\setstretch{1.5}
+
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Santamaria, Ventura and Yesilbayrakter (2021) - Setup}
+  Consider regions $l,k, m$ and countries $n$ and $n'$ and the following Armington/Ricardian model:  
+  \begin{equation*}
+    \Delta_{kl}p_{k} \equiv p_{k} - p_{l} = \boldsymbol{\beta}\cdot \boldsymbol{X}_{lk} + \tau B_{l,k}
+  \end{equation*}
+  where $\boldsymbol{X}_{lk}$ as the geographic differences between $l$ and $k$ and: 
+  \begin{equation*} 
+    B_{lk} \equiv
+    \begin{cases}
+      0 &\qquad \text{if} \quad l,k \in n \\
+      1 &\qquad \text{if} \quad l \in n \cap k \in n'
+    \end{cases}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Santamaria, Ventura and Yesilbayrakter (2021) - Identifying $\tau$}
+  Define the potential outcomes:
+  \begin{equation*}
+    \Delta_{kl}P_{k} \equiv
+    \begin{cases}
+      \Delta_{kl}P_{k}(0) &\qquad \text{if} \quad B_{lk} = 0 \\
+      \Delta_{kl}P_{k}(1) &\qquad \text{if} \quad B_{lk} = 1
+    \end{cases}
+  \end{equation*}
+  The crucial identifying assumption (conditional unconfoundedness): 
+  $$B_{lk} \indep \left(\Delta_{kl}P_{k}(0),\Delta_{kl}P_{k}(1) \middle\vert \boldsymbol{X}_{lk}\right)$$
+  which implies 
+  \begin{equation*}
+    \begin{aligned}
+      \left(\Delta_{kl}P_{k}(0) \middle \vert B_{lk} = 0,\boldsymbol{X}_{lk}\right) \sim  \left(\Delta_{kl}P_{k}(0) \middle \vert B_{lk} = 1,\boldsymbol{X}_{lk}\right) \\
+      \left(\Delta_{kl}P_{k}(1) \middle \vert B_{lk} = 1,\boldsymbol{X}_{lk}\right) \sim  \left(\Delta_{kl}P_{k}(1) \middle \vert B_{lk} = 0,\boldsymbol{X}_{lk}\right) \\
+    \end{aligned}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Santamaria, Ventura and Yesilbayrakter (2021) - Identifying $\tau$ - Contd.}
+  Define the estimand and check sensibility: \vspace{-10pt}
+  \begin{equation*}
+    \begin{aligned}
+      \tau_{\text{ATT}} 
+        &\equiv \mathbb{E}\left[\Delta_{kl}P_{k}(1) - \Delta_{kl}P_{k}(0)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] \\
+        &= \mathbb{E}\left[\beta_0 + \boldsymbol{\beta}\cdot \boldsymbol{X}_{lk} + \tau
+                          - \left(\beta_0 + \boldsymbol{\beta}\cdot \boldsymbol{X}_{lk}\right)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] \\
+        &= \mathbb{E}\left[\tau \middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] \\
+        &= \tau \\[-10pt]
+    \end{aligned}
+  \end{equation*}
+  By definition $\Delta_{kl}P_{k} = B_{lk}\cdot\Delta_{kl}P_{k}(1) + \left(1-B_{lk}\right)\cdot\Delta_{kl}P_{k}(0)$. Define the estimator, $\hat{\tau}$, and show consistency: \vspace{-10pt}
+  \begin{equation*}
+    \begin{aligned}
+      \hat{\tau} 
+        &\equiv \mathbb{E}\left[\Delta_{kl}P_{k}\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] 
+            - \mathbb{E}\left[\Delta_{kl}P_{k}\middle \vert B_{lk} = 0,\boldsymbol{X}_{lk} \right] \\
+        &= \mathbb{E}\left[\Delta_{kl}P_{k}(1)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] 
+            - \mathbb{E}\left[\Delta_{kl}P_{k}(0)\middle \vert B_{lk} = 0,\boldsymbol{X}_{lk} \right] \\
+            &= \mathbb{E}\left[\Delta_{kl}P_{k}(1)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] 
+            - \mathbb{E}\left[\Delta_{kl}P_{k}(0)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] \\
+        &= \mathbb{E}\left[\Delta_{kl}P_{k}(1)-\Delta_{kl}P_{k}(0)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] = \tau_{\text{ATT}} 
+        \\[-10pt]
+    \end{aligned}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Santamaria, Ventura and Yesilbayrakter (2021)- Identifying $\tau$ graphically}
+  \vspace{-15pt}
+  \begin{figure}[H]
+    \centering
+      \includegraphics[trim = 3cm 7cm 3cm 7cm,scale=0.7, clip = TRUE]{../../paper/figures/estimation/SVY2021_pdf.pdf}
+ \end{figure} 
+\end{frame}
+
+\begin{frame}{Differences in datasets - Directional vs. Un-directional data}
+  \vspace{-15pt}
+  \begin{figure}[H]
+    \centering
+      \includegraphics[trim = 3cm 7cm 3cm 7cm,scale=0.7, clip = TRUE]{../../paper/figures/estimation/old_idea_pdf.pdf}
+ \end{figure} 
+\end{frame}
+
+\begin{frame}{Differences in datasets - Directional vs. Un-directional data}
+  \begin{itemize}
+    \item<1-> They can estimate differences in expected value of levels:
+    \vspace{-25pt}
+    \begin{equation*}
+      \begin{aligned}
+        \hat{\tau} 
+          &\equiv \mathbb{E}\left[\Delta_{kl}P_{k}\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] 
+              - \mathbb{E}\left[\Delta_{kl}P_{k}\middle \vert B_{lk} = 0,\boldsymbol{X}_{lk} \right] \\[-20pt]
+      \end{aligned}
+    \end{equation*}
+    $\Longrightarrow$ We need to consider differences in expected value of variances: 
+    \vspace{-25pt}
+    \begin{equation*}
+      \begin{aligned}
+        \hat{\tau} 
+          &\equiv \mathbb{E}\left[\mathbb{V}\left(\Delta_{kl}P_{k}\right)\middle \vert B_{lk} = 1,\boldsymbol{X}_{lk} \right] 
+            - \mathbb{E}\left[\mathbb{V}\left(\Delta_{kl}P_{k}\right)\middle \vert B_{lk} = 0,\boldsymbol{X}_{lk} \right] \\[-20pt]
+      \end{aligned}
+    \end{equation*}
+    \item<2-> Difference in variances messes up differencing out the transport cost differences. \\
+    $\Longrightarrow$ Re-define problem to take differences inside the variance operator: 
+    \vspace{-10pt}
+    \begin{equation*}
+      \begin{aligned}
+        \tau_{\text{ATT}} 
+          &\equiv  \mathbb{E}\left[\mathbb{V}\left(\Delta_{ml}P_{m} - \Delta_{kl}P_{l}\right)
+                  \middle \vert B_{l \rightarrow (mk)} = 1,\boldsymbol{X}_{lk} = \boldsymbol{X}_{lm} \right] \\
+            & \qquad - 
+                \mathbb{E}\left[\mathbb{V}\left(\Delta_{ml}P_{m} - \Delta_{kl}P_{l}\right)
+                \middle \vert B_{l \rightarrow (mk)} = 0,\boldsymbol{X}_{lk} = \boldsymbol{X}_{lm} \right]  \\[-15pt]
+      \end{aligned}
+    \end{equation*}
+    with $$B_{l \rightarrow (mk)} \equiv \begin{cases} 0 \qquad &\text{if} \quad l,km \in n \\ 1 \qquad &\text{if} \quad l,k \in n \cap m \in n' \end{cases}$$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Identification - $\mathbb{E}\left[\cdot\middle \vert B_{l \rightarrow (mk)} = 1,\boldsymbol{X}_{lk} = \boldsymbol{X}_{lm} \right]$}
+  \vspace{-15pt}
+  \begin{figure}[H]
+    \centering
+      \includegraphics[trim = 3cm 7cm 3cm 7cm,scale=0.7, clip = TRUE]{../../paper/figures/estimation/new_idea1_pdf.pdf}
+ \end{figure} 
+\end{frame}
+
+\begin{frame}{Identification - $\mathbb{E}\left[\cdot \middle \vert B_{l \rightarrow (mk)} = 1,\boldsymbol{X}_{lk} = \boldsymbol{X}_{lm} \right] - 
+  \mathbb{E}\left[\cdot \middle \vert B_{l \rightarrow (mk)} = 0,\boldsymbol{X}_{lk} = \boldsymbol{X}_{lm} \right]$}  
+  \vspace{-15pt}
+  \begin{figure}[H]
+    \centering
+      \includegraphics[trim = 3cm 7cm 3cm 7cm,scale=0.7, clip = TRUE]{../../paper/figures/estimation/new_idea2_pdf.pdf}
+ \end{figure} 
+\end{frame}
+
+\end{document}

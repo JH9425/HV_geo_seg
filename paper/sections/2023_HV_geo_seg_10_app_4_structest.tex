@@ -81,8 +81,63 @@
     \end{table}
 \end{landscape}
 
-\subsection{Firm-level Elasticities}
+\subsection{Firm-level Elasticities: Identification}\label{app:theory_residuals_instrument}
+Given our normalization, we back out the product variety-level taste parameters by taking the ratio of the market share $S_{il,t}$ and its geometric average $\tilde{S}_{fpclt}$: 
+\begin{equation*}
+    \begin{aligned}
+        \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
+            &=  \frac{\bigg(\frac{P_{ilt}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
+                     {  \left(
+                            \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}
+                        \right)^{\frac{1}{N_{fpl,t}}}} \\
+            &=  \frac{\bigg(\frac{P_{il,t}}{\varphi_{il,t}}\bigg)^{1-\sigma_p}}
+                     {\bigg(\frac{\tilde{P}_{fpl,t}}{\tilde{\varphi}_{fpl,t}}\bigg)^{1-\sigma_p}} \\
+        \varphi_{il,t} 
+            &=  \frac{P_{il,t}}{\tilde{P}_{fpl,t}}  
+                \left(\frac{S_{il,t}}{\tilde{S}_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} 
+                \tilde{\varphi}_{fpl,t}
+    \end{aligned}
+\end{equation*}
 
+\noindent where $\tilde{\varphi}_{fpl,t}$ is defined as before and $\tilde{P}_{fpl,t} \equiv \left(\prod_{i \in \mathcal{B}_{fpl,t}} P_{il,t}\right)^{\frac{1}{N_{fpl,t}}}$. In addition, we can write the overall price index as the product of the unweighted geometric average firm-level price index and a term that depends on the dispersion in market share within firm 
+
+\begin{equation*}
+    \begin{aligned}
+       P_{fpl,t}   &=   \left(
+                            \sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p} \varphi_{il,t}^{\sigma_p-1} 
+                        \right)^{\frac{1}{1-\sigma_p}} \\
+                    &=  \left(\sum_{i \in \mathcal{B}_{fpl,t}} P_{il,t}^{1-\sigma_p}
+                                \left(\frac{P_{il,t}}{\tilde{P}_{il,t}}  
+                                    \left(\frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}}\right)^{\frac{1}{\sigma_p-1}} \tilde{\varphi}_{fpl,t}
+                                \right)^{\sigma_p-1} 
+                        \right)^{\frac{1}{1-\sigma_p}} \\
+                    &=  \tilde{P}_{fpl,t} 
+                        \left(
+                            \sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} 
+                            \tilde{\varphi}_{fpl,t}^{\sigma_p-1}
+                        \right)^{\frac{1}{1-\sigma_p}}
+    \end{aligned}
+\end{equation*}
+
+To see that market the instrument is uncorrelated with the firm-level demand, shock note that: 
+
+\begin{linenomath*}
+    \begin{equation*}
+        \begin{aligned}
+            \left(\sum_{i \in \mathcal{B}_{fpl,t}} \frac{S^f_{il,t}}{\tilde{S}^f_{fpl,t}} \tilde{\varphi}_{fpl,t}^{\sigma_p-1}\right)^{\frac{1}{1-\sigma_p}}
+                &=  \frac{P_{il,t}C_{il,t}}
+                         {  \left(
+                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
+                            \right)^{\frac{1}{N_{fpl,t}}}} \\
+                &=  \frac{P_{il,t}C_{il,t}}
+                {           \left(
+                                \prod_{i \in \mathcal{B}_{fpl,t}} \bigg(P_{il,t}C_{il,t}
+                            \right)^{\frac{1}{N_{fpl,t}}}}
+        \end{aligned}
+    \end{equation*}
+\end{linenomath*}
+
+\subsection{Firm-level Elasticities: Results}
 \begin{figure}[H]
     \centering
     \caption{Elasticity of substitution $\eta_p$: Weekly frequency $\sum_{t \in y(t)} \mathbb{1}(P_{il,t}C_{il,t} > 0) \geq 0.5$}
